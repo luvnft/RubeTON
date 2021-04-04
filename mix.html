@@ -1,101 +1,147 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <meta name="theme-color" content="#ffffff">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>Miska Bowls</title>
-  </head>
-  <body style='background-image: url("")'>
-    <div class="container">
-        <br>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <img src="logo/2.png" width="100%">
-        
-        <br><br>
-        
-        <br>
-        
-        <div id="constructor" style="text-align: center">  
-          <div class="row">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <meta name="theme-color" content="#ffffff">
 
-            <div style="padding-bottom: 60px" class="col-12">
-              <h2 id='title' style="color: #333">Тебе на чём сделать боул?</h2>
-            </div>
-            
-            <div class="col-6" id="button1" onclick="buttonClicked(1)">
-              <h1 class='display-1' style="font-size: 102px">🍚</h1>
-              <h5>50₽</h5>
-              <h3>Рис</h3>
-            </div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-            <div class="col-6" id="button2" onclick="buttonClicked(2);">
-              <h1 class='display-1' style="font-size: 102px" >🥗</h1>
-              <h5>160₽</h5>
-              <h3>Салат</h3>
-            </div>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
-            <div style="padding-top: 60px" class="col-12">
-              <h6 id="desc" style="color: #333">↑ Выберите основу ↑</h6>
-            </div>
+  <link rel="stylesheet" href="css/checkmystyle.css">
 
-          </div>
+  <title>Miska Bowls</title>
+</head>
+
+<body style='background-image: url("")'>
+
+  <div class="container">
+    <br>
+    <img src="logo/2.png" width="100%">
+    <br><br>
+    <br>
+
+    <div id="constructor" style="text-align: center">
+      <div class="row">
+
+        <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX animate__delay-1s">
+          <h2 id='title'>💁 На чём готовим боул?</h2>
         </div>
-        
-        <br><br>
-        
 
-        <div class="text-center text-muted">
-            
-            
-            
-
-            
-              <a class="btn btn-success">📞 Заказать по Whatsapp</a>
-
-              <br><br>
-              <p>
-                <a style="text-decoration: none;" class="btn btn-clear display-5" href="https://www.instagram.com/miska.bowls/"><img src="ig.png" width="24px">  miska.bowls</a>
-              </p>
-            
-            
-            <p style="" class=" badge bg-primary ">❤️ Шаумяна 80</p>
-
-            
-            
-            
-            
-            
-            
-            
+        <div id="button-1" class="col-4 animate__animated animate__zoomInUp" onclick="buttonClicked(1)">
+          <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size:96px">🍚</h1>
+          <h5>Рис</h5>
+          <h6>40₽ / 150г</h6>
         </div>
+
+        <div id="button-2" class="col-4 animate__animated animate__zoomInUp" onclick="buttonClicked(2);">
+          <h1 class='' style="font-size: 96px">🥘</h1>
+          <h5>Киноа</h5>
+          <h6>70₽ / 120г</h6>
+        </div>
+
+        <div id="button-3" class="col-4 animate__animated animate__zoomInUp" onclick="buttonClicked(3);">
+          <h1 class='' style="font-size: 96px">🥗</h1>
+          <h5>Микс салата</h5>
+          <h6>100₽ / 30г</h6>
+        </div>
+
         
+        <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn animate__delay-2s">
+          <h6 id="desc">Шаг 1 из 4</h6>
+        </div>
+
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <div class='card my-4 animate__animated animate__fadeIn animate__delay-2s'>
+      <!-- <div class="card-header">
+        <h6 id="desc">Шаг 1 из 4</h6>
+      </div> -->
+      <div class="card-body">
+        Выберите основу для приготовления боула
+      </div>
+      <!-- <div class="card-footer">
+        <h6 id="desc">Шаг 1 из 4</h6>
+      </div> -->
+    </div>
+
+    
+  
+    <br>
+    <div class="text-center text-muted">
+      <h6>Доставка вкуснейших боулов за 40 мин.</h6>
+      <br>
+      
+      <a class="btn btn-success">📞 Заказать по WhatsApp</a>
+      <br><br>
+
+      <p>
+        <a style="text-decoration: none;" class="btn btn-clear display-5"
+          href="https://www.instagram.com/miska.bowls/"><img src="ig.png" width="24px"> miska.bowls</a>
+      </p>
+      
+      <p class=" badge bg-primary ">❤️ Шаумяна 80</p>
+      <br><br>
+      
+    </div>
+  </div>
 
 
 
-    <script>
-      buttonClicked = function(x) {
-        document.getElementById("title").innerHTML = "Какую добавляем начинку?";
-        document.getElementById("button1").innerHTML = "Мясо";
-        document.getElementById("button2").innerHTML = "Рыба";
-        document.getElementById("desc").innerHTML = "/ Самое главное /";
 
-          
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <script src="js/etc.js"></script>
+
+  <script>
+    buttonClicked = function (x) {
+      
+      
+        
+        $("#button-1").removeClass("animate__animated animate__zoomInUp");
+        $("#button-1").addClass("animate__animated animate__bounceOutUp");
+
+        // animateCSS('#button1', 'bounce');
+        
+
+        $("#button-2").removeClass("animate__animated animate__zoomInUp");
+        $("#button-2").addClass("animate__animated animate__fadeOut");
+
+        $("#button-3").removeClass("animate__animated animate__zoomInUp");
+        $("#button-3").addClass("animate__animated animate__fadeOut");
+
+      
+
+      // document.getElementById("button1").innerHTML = "Мясо";
+
+      document.getElementById("title").innerHTML = "Выберите протеин:";
+      // document.getElementById("button1").innerHTML = "Мясо";
+      // document.getElementById("button2").innerHTML = "Рыба";
+      document.getElementById("desc").innerHTML = "Шаг 2 из 4";
+
+    }
+
+      
+
+  </script>
 
 
-      }
-ns
-      //TODO Animatio
 
-    </script>
-  </body>
+</body>
+
 </html>
