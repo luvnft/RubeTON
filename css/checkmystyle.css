@@ -1,1 +1,11 @@
+/* rgb(230, 227, 255) */
 
+/* rgb(248, 33,83) */
+
+
+.list-group-item {
+    background-color: rgb(230, 227, 255); 
+    
+    font-size: 14px;
+
+}

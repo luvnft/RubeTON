@@ -23,61 +23,281 @@
   <title>Miska Bowls</title>
 </head>
 
-<body style='background-image: url("")'>
+<body style='background-color: rgb(230, 227, 255)'>
 
   <div class="container">
-    <br>
-    <img src="logo/2.png" width="100%">
-    <br><br>
-    <br>
+    
+    <div class="row">
+      <div class="col-12">
+        <br>
+        <img src="logo/2.png" width="100%" onclick="showBlock(1);">
+        <br><br>
+        
+        <span style="height: 22px"  class="align-middle badge bg-danger rounded-pill">Конструктор боулов</span>
+        <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Меню</span>
+        <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Бронь столиков</span>
+        <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Контакты</span>
+        <span style="height: 22px" class="align-middle badge bg-success rounded-pill">Позвонить</span>
+        
+        <br><br>
+      </div>
+    </div>
+    
 
-    <div id="constructor" style="text-align: center">
-      <div class="row">
 
-        <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX animate__delay-1s">
-          <h2 id='title'>💁 На чём готовим боул?</h2>
-        </div>
+    <div class="row text-center" id="block-1">
+      
+      <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX animate__delay-1s">
+        <h2 style='col2or: rgb(248, 33,83)' id=''>💁 На чём готовим боул?</h2>
+      </div>
 
-        <div id="button-1" class="col-4 animate__animated animate__zoomInUp" onclick="buttonClicked(1)">
-          <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size:96px">🍚</h1>
-          <h5>Рис</h5>
-          <h6>40₽ / 150г</h6>
-        </div>
+      
+      <div id="button-1" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(2)">
+        <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size:72px">🍚</h1>
+        <h5>Рис</h5>
+        <h6>40₽ / 150г</h6>
+      </div>
 
-        <div id="button-2" class="col-4 animate__animated animate__zoomInUp" onclick="buttonClicked(2);">
-          <h1 class='' style="font-size: 96px">🥘</h1>
-          <h5>Киноа</h5>
-          <h6>70₽ / 120г</h6>
-        </div>
+      <div id="button-2" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(2)">
+        <img src="img/kinoa.png" width="140px">
+        <h5>Киноа</h5>
+        <h6>70₽ / 120г</h6>
+      </div>
 
-        <div id="button-3" class="col-4 animate__animated animate__zoomInUp" onclick="buttonClicked(3);">
-          <h1 class='' style="font-size: 96px">🥗</h1>
-          <h5>Микс салата</h5>
-          <h6>100₽ / 30г</h6>
-        </div>
+      <div id="button-3" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(2)">
+        <h1 class='' style="font-size: 72px">🥗</h1>
+        <h5>Микс салата</h5>
+        <h6>100₽ / 30г</h6>
+      </div>
+
+      
+      <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn animate__delay-2s">
+        <h6 style='col2or: rgb(248, 33,83)' id="desc">1 <b>ВЫБЕРИТЕ ОСНОВУ</b></h6>
+      </div>
 
         
-        <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn animate__delay-2s">
-          <h6 id="desc">Шаг 1 из 4</h6>
-        </div>
-
-      </div>
     </div>
 
-    <div class='card my-4 animate__animated animate__fadeIn animate__delay-2s'>
+
+
+
+    <div class="row text-center" id="block-2" style="display: none">
+      
+      <div style="padding-bottom: 10px" class="col-12 animate__animated animate__flipInX ">
+        <h2 id='title'>💁 Рис - отличное начало, теперь давай выберем протеин</h2>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='' style="font-size:96px">🐟</h1>
+        <h5>Угорь</h5>
+        <h6>200₽ / 30г</h6>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='' style="font-size: 96px">🐟</h1>
+        <h5>Лосось</h5>
+        <h6>200₽ / 50г</h6>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='' style="font-size: 96px">🍣</h1>
+        <h5>Тунец</h5>
+        <h6>200₽ / 30г</h6>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='' style="font-size: 96px">🍤</h1>
+        <h5>Креветка</h5>
+        <h6>200₽ / 50г</h6>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='' style="font-size: 96px">🥩</h1>
+        <h5>Ростбиф</h5>
+        <h6>200₽ / 30г</h6>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size: 96px">🦃</h1>
+        <h5>Индейка</h5>
+        <h6>100₽ / 30г</h6>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='' style="font-size: 96px">🍗</h1>
+        <h5>Курица</h5>
+        <h6>100₽ / 30г</h6>
+      </div>
+
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+        <h1 class='' style="font-size: 96px">🍢</h1>
+        <h5>Тофу VEG</h5>
+        <h6>100₽ / 30г</h6>
+      </div>
+
+      <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
+        <h6 id="">2 ВЫБЕРИТЕ ПРОТЕИН</h6>
+      </div>
+      
+    </div>
+
+
+
+
+    <div class="row text-center" id="block-3" style="display: none">
+      
+      <div style="padding-bottom: 10px" class="col-12 animate__animated animate__flipInX ">
+        <h2 id='title'>💁 Какими топпингами приправим?</h2>
+      </div>
+
+      <div id="" class="col-4">
+        <ul class="list-group" >
+          <li class="list-group-item align-items-left">🥑 <br> Авокадо<br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🥒 <br>Огурец <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🥕 <br>Морковь <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🍠 <br>Дайкон <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item ">🍠 <br>Эдомаме <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🥭 <br>Манго <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🥬 <br>Микс салат <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🥬 <br>Шпинат <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🍅 <br>Черри <br>    
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+         
+        </ul>
+      </div>
+
+      <div id="" class="col-4">
+      
+        <ul class="list-group">
+        <li class="list-group-item ">🥦<br>Красная капуста <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🥬<br>Чука<br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🥒 <br>Битый огурец <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item ">🍅 <br>Вяленый томат <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🧅 <br>Лук красный <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+          <li class="list-group-item">🥑 <br>Гукамоле <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🌱 <br>Проростки <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item">🍠<br>Редис<br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="" class="col-4">
+        <ul class="list-group" >
+        <li class="list-group-item">🥬 <br>Кимчи капуста HOT <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🌽 <br>Кукуруза <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🌶 <br>Халапенью <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🍍 <br>Ананас <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🍠<br> Имбирь <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+        <li class="list-group-item">🍥 <br>Тобико <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+          <li class="list-group-item">🍳<br> Японский омлет <br>             
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+        </ul>
+
+      </div>
+
+      <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
+        <h6 id="">3 ВЫБЕРИТЕ НЕСКОЛЬКО ТОППИНГОВ</h6>
+        <div onclick="showBlock(4)"><a  class="btn btn-xl btn-primary">Дальше</a></div>
+      </div>
+      
+    </div>
+
+
+
+    <div class="row text-center" id="block-4" style="display: none">
+      
+      <div style="padding-bottom: 20px" class="col-12 animate__animated animate__flipInX ">
+        <h2 id='title'>💁 Почти готово! Осталось добавить соусы и присыпки</h2>
+      </div>
+
+      <div id="" class="col-6 p-0">
+
+        <ul class="list-group">
+          <li class="list-group-item">Айоли</li>
+          <li class="list-group-item">Имбирный</li>
+          <li class="list-group-item">Терияки</li>
+          <li class="list-group-item">Манго SWEET</li>
+          <li class="list-group-item">Чесночная райта</li>
+          <li class="list-group-item">Ореховый</li>
+          <li class="list-group-item">Тофу</li>
+          <li class="list-group-item">Йогурт с травами</li>
+          <li class="list-group-item">Медовый</li>
+          <li class="list-group-item">Спайси</li>
+          <li class="list-group-item">Шрирача</li>
+          <li class="list-group-item">Свит чили HOT</li>
+        </ul>
+      </div>
+
+      <div id="" class="col-6 p-0">
+        <li class="list-group-item">Лук Фри</li>
+        <li class="list-group-item">Начос</li>
+        <li class="list-group-item">Нори</li>
+        <li class="list-group-item">Фурикаке</li>
+        <li class="list-group-item">Шичими</li>
+        <li class="list-group-item">Кунжут микс</li>
+        <li class="list-group-item">Кешью</li>
+        <li class="list-group-item">Арахис</li>
+        
+      </div>
+
+      <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
+        <h6 id="">4 ДОБАВЬТЕ СОУСЫ ИЛИ ПРИСЫПКИ</h6>
+        <div onclick="alert('Заказ оформлен'); showBlock(5);"><a  class="btn btn-xl btn-primary">Заказать боул</a></div>
+      </div>
+      
+    </div>
+
+
+
+
+    <div class='card my-2 animate__animated animate__fadeIn '>
       <!-- <div class="card-header">
-        <h6 id="desc">Шаг 1 из 4</h6>
+        <h6>Доставка вкуснейших боулов за 40 мин.</h6>
       </div> -->
-      <div class="card-body">
-        Выберите основу для приготовления боула
+      <div class="card-body" id='message'>
+        Выберите основу и ингредиенты для приготовления боула
       </div>
-      <!-- <div class="card-footer">
-        <h6 id="desc">Шаг 1 из 4</h6>
-      </div> -->
+      <div class="card-footer " id='sum'>
+          Итого: 0₽
+      </div>
     </div>
+    
 
     
-  
     <br>
     <div class="text-center text-muted">
       <h6>Доставка вкуснейших боулов за 40 мин.</h6>
@@ -91,57 +311,19 @@
           href="https://www.instagram.com/miska.bowls/"><img src="ig.png" width="24px"> miska.bowls</a>
       </p>
       
-      <p class=" badge bg-primary ">❤️ Шаумяна 80</p>
+      <p class="badge bg-primary">❤️ Шаумяна 80</p>
       <br><br>
       
     </div>
   </div>
 
 
-
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
-
   <script src="js/etc.js"></script>
-
-  <script>
-    buttonClicked = function (x) {
-      
-      
-        
-        $("#button-1").removeClass("animate__animated animate__zoomInUp");
-        $("#button-1").addClass("animate__animated animate__bounceOutUp");
-
-        // animateCSS('#button1', 'bounce');
-        
-
-        $("#button-2").removeClass("animate__animated animate__zoomInUp");
-        $("#button-2").addClass("animate__animated animate__fadeOut");
-
-        $("#button-3").removeClass("animate__animated animate__zoomInUp");
-        $("#button-3").addClass("animate__animated animate__fadeOut");
-
-      
-
-      // document.getElementById("button1").innerHTML = "Мясо";
-
-      document.getElementById("title").innerHTML = "Выберите протеин:";
-      // document.getElementById("button1").innerHTML = "Мясо";
-      // document.getElementById("button2").innerHTML = "Рыба";
-      document.getElementById("desc").innerHTML = "Шаг 2 из 4";
-
-    }
-
-      
-
-  </script>
-
-
-
+  <script src="js/bowl-mixer.js"></script>
 </body>
 
 </html>
