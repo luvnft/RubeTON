@@ -30,10 +30,10 @@
     <div class="row">
       <div class="col-12">
         <br>
-        <img src="logo/2.png" width="100%" onclick="showBlock(1);">
+        <img src="logo/2.png" width="100%" onclick="refresh();">
         <br><br>
         
-        <span style="height: 22px"  class="align-middle badge bg-danger rounded-pill">Конструктор боулов</span>
+        <span style="height: 22px"  class="align-middle badge bg-danger rounded-pill" onclick="refresh();">Конструктор боулов</span>
         <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Меню</span>
         <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Бронь столиков</span>
         <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Контакты</span>
@@ -52,19 +52,19 @@
       </div>
 
       
-      <div id="button-1" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(2)">
+      <div id="button-1" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Рис', 40)">
         <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size:72px">🍚</h1>
         <h5>Рис</h5>
         <h6>40₽ / 150г</h6>
       </div>
 
-      <div id="button-2" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(2)">
+      <div id="button-2" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Киноа', 70)">
         <img src="img/kinoa.png" width="140px">
         <h5>Киноа</h5>
         <h6>70₽ / 120г</h6>
       </div>
 
-      <div id="button-3" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(2)">
+      <div id="button-3" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Микс салата', 100)">
         <h1 class='' style="font-size: 72px">🥗</h1>
         <h5>Микс салата</h5>
         <h6>100₽ / 30г</h6>
@@ -74,7 +74,6 @@
       <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn animate__delay-2s">
         <h6 style='col2or: rgb(248, 33,83)' id="desc">1 <b>ВЫБЕРИТЕ ОСНОВУ</b></h6>
       </div>
-
         
     </div>
 
@@ -84,52 +83,52 @@
     <div class="row text-center" id="block-2" style="display: none">
       
       <div style="padding-bottom: 10px" class="col-12 animate__animated animate__flipInX ">
-        <h2 id='title'>💁 Рис - отличное начало, теперь давай выберем протеин</h2>
+        <h2 id='title'>💁 <span id="block1-choose">Рис</span> - отличное начало, теперь давай выберем протеин</h2>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Угорь', 200)">
         <h1 class='' style="font-size:96px">🐟</h1>
         <h5>Угорь</h5>
         <h6>200₽ / 30г</h6>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Лосось', 200)">
         <h1 class='' style="font-size: 96px">🐟</h1>
         <h5>Лосось</h5>
         <h6>200₽ / 50г</h6>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Тунец', 200)">
         <h1 class='' style="font-size: 96px">🍣</h1>
         <h5>Тунец</h5>
         <h6>200₽ / 30г</h6>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Креветка', 200)">
         <h1 class='' style="font-size: 96px">🍤</h1>
         <h5>Креветка</h5>
         <h6>200₽ / 50г</h6>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Ростбиф', 200)">
         <h1 class='' style="font-size: 96px">🥩</h1>
         <h5>Ростбиф</h5>
         <h6>200₽ / 30г</h6>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Индейка', 100)">
         <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size: 96px">🦃</h1>
         <h5>Индейка</h5>
         <h6>100₽ / 30г</h6>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Курица', 100)">
         <h1 class='' style="font-size: 96px">🍗</h1>
         <h5>Курица</h5>
         <h6>100₽ / 30г</h6>
       </div>
 
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="showBlock(3)">
+      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Тофу VEG', 100)">
         <h1 class='' style="font-size: 96px">🍢</h1>
         <h5>Тофу VEG</h5>
         <h6>100₽ / 30г</h6>
@@ -151,32 +150,32 @@
       </div>
 
       <div id="" class="col-4">
-        <ul class="list-group" >
-          <li class="list-group-item align-items-left">🥑 <br> Авокадо<br>
+        <ul class="list-group">
+          <li class="list-group-item topping" onclick="addTopping('Авокадо', 50)">🥑 <br> Авокадо<br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🥒 <br>Огурец <br>
+          <li class="list-group-item topping" onclick="addTopping('Огурец', 50)">🥒 <br>Огурец <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🥕 <br>Морковь <br>
+          <li class="list-group-item topping" onclick="addTopping('Морковь', 50)">🥕 <br>Морковь <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🍠 <br>Дайкон <br>
+          <li class="list-group-item topping" onclick="addTopping('Дайкон', 50)">🍠 <br>Дайкон <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item ">🍠 <br>Эдомаме <br>
+          <li class="list-group-item topping" onclick="addTopping('Эдомаме', 50)">🍠 <br>Эдомаме <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🥭 <br>Манго <br>
+          <li class="list-group-item topping" onclick="addTopping('Манго', 50)">🥭 <br>Манго <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🥬 <br>Микс салат <br>
+          <li class="list-group-item topping" onclick="addTopping('Микс салат', 50)">🥬 <br>Микс салат <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🥬 <br>Шпинат <br>
+          <li class="list-group-item topping" onclick="addTopping('Шпинат', 50)">🥬 <br>Шпинат <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🍅 <br>Черри <br>    
+          <li class="list-group-item topping" onclick="addTopping('Черри', 50)">🍅 <br>Черри <br>    
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
          
@@ -186,23 +185,23 @@
       <div id="" class="col-4">
       
         <ul class="list-group">
-        <li class="list-group-item ">🥦<br>Красная капуста <br>
+        <li class="list-group-item topping" onclick="addTopping('Красная капуста', 50)">🥦<br>Красная капуста <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🥬<br>Чука<br>
+        <li class="list-group-item topping" onclick="addTopping('Чука', 50)">🥬<br>Чука<br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🥒 <br>Битый огурец <br>
+        <li class="list-group-item topping" onclick="addTopping('Битый огурец', 50)">🥒 <br>Битый огурец <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item ">🍅 <br>Вяленый томат <br>
+        <li class="list-group-item topping" onclick="addTopping('Вяленый томат', 50)">🍅 <br>Вяленый томат <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🧅 <br>Лук красный <br>
+        <li class="list-group-item topping" onclick="addTopping('Лук красный', 50)">🧅 <br>Лук красный <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-          <li class="list-group-item">🥑 <br>Гукамоле <br>
+          <li class="list-group-item topping" onclick="addTopping('Гукамоле', 50)">🥑 <br>Гукамоле <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🌱 <br>Проростки <br>
+          <li class="list-group-item topping" onclick="addTopping('Проростки', 50)">🌱 <br>Проростки <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item">🍠<br>Редис<br>
+          <li class="list-group-item topping" onclick="addTopping('Редис', 50)">🍠<br>Редис<br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
         </ul>
@@ -210,19 +209,19 @@
 
       <div id="" class="col-4">
         <ul class="list-group" >
-        <li class="list-group-item">🥬 <br>Кимчи капуста HOT <br>
+        <li class="list-group-item topping" onclick="addTopping('Кимчи капуста HOT', 50)">🥬 <br>Кимчи капуста HOT <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🌽 <br>Кукуруза <br>
+        <li class="list-group-item topping" onclick="addTopping('Кукуруза', 50)">🌽 <br>Кукуруза <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🌶 <br>Халапенью <br>
+        <li class="list-group-item topping" onclick="addTopping('Халапенью', 50)">🌶 <br>Халапенью <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🍍 <br>Ананас <br>
+        <li class="list-group-item topping" onclick="addTopping('Ананас', 50)">🍍 <br>Ананас <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🍠<br> Имбирь <br>
+        <li class="list-group-item topping" onclick="addTopping('Имбирь', 50)">🍠<br> Имбирь <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item">🍥 <br>Тобико <br>
+        <li class="list-group-item topping" onclick="addTopping('Тобико', 50)">🍥 <br>Тобико <br>
           <span class="badge bg-primary rounded-pill">50р</span></li>
-          <li class="list-group-item">🍳<br> Японский омлет <br>             
+          <li class="list-group-item topping" onclick="addTopping('Японский омлет', 50)">🍳<br> Японский омлет <br>             
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
         </ul>
@@ -230,8 +229,8 @@
       </div>
 
       <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
-        <h6 id="">3 ВЫБЕРИТЕ НЕСКОЛЬКО ТОППИНГОВ</h6>
-        <div onclick="showBlock(4)"><a  class="btn btn-xl btn-primary">Дальше</a></div>
+        <h6 id="">3 ВЫБЕРИТЕ ТОППИНГИ</h6>
+        <div onclick="toppingsFinished()"><a  class="btn btn-xl btn-primary">Дальше</a></div>
       </div>
       
     </div>
@@ -241,42 +240,44 @@
     <div class="row text-center" id="block-4" style="display: none">
       
       <div style="padding-bottom: 20px" class="col-12 animate__animated animate__flipInX ">
-        <h2 id='title'>💁 Почти готово! Осталось добавить соусы и присыпки</h2>
+        <h2 id='title'>💁 Почти готово! Осталось добавить соусы или посыпки</h2>
       </div>
 
       <div id="" class="col-6 p-0">
 
-        <ul class="list-group">
-          <li class="list-group-item">Айоли</li>
-          <li class="list-group-item">Имбирный</li>
-          <li class="list-group-item">Терияки</li>
-          <li class="list-group-item">Манго SWEET</li>
-          <li class="list-group-item">Чесночная райта</li>
-          <li class="list-group-item">Ореховый</li>
-          <li class="list-group-item">Тофу</li>
-          <li class="list-group-item">Йогурт с травами</li>
-          <li class="list-group-item">Медовый</li>
-          <li class="list-group-item">Спайси</li>
-          <li class="list-group-item">Шрирача</li>
-          <li class="list-group-item">Свит чили HOT</li>
+        <ul class="list-group"><b>Соусы</b>
+          <li class="list-group-item sauce" onclick="addSauce('Айоли', 50)">Айоли <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Имбирный', 50)">Имбирный <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Терияки', 50)">Терияки <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Манго SWEET', 50)">Манго SWEET <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Чесночная райта', 50)">Чесночная райта <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Ореховый', 50)">Ореховый <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Тофу', 50)">Тофу <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Йогурт с травами', 50)">Йогурт с травами <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Медовый', 50)">Медовый <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Спайси', 50)">Спайси <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Шрирача', 50)">Шрирача <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Свит чили HOT', 50)">Свит чили HOT <br> 50₽</li>
         </ul>
       </div>
 
       <div id="" class="col-6 p-0">
-        <li class="list-group-item">Лук Фри</li>
-        <li class="list-group-item">Начос</li>
-        <li class="list-group-item">Нори</li>
-        <li class="list-group-item">Фурикаке</li>
-        <li class="list-group-item">Шичими</li>
-        <li class="list-group-item">Кунжут микс</li>
-        <li class="list-group-item">Кешью</li>
-        <li class="list-group-item">Арахис</li>
+        <ul class="list-group"><b>Посыпки</b>
+        <li class="list-group-item posipka" onclick="addPosipka('Лук Фри', 10)">Лук Фри <br> 10₽</li>
+        <li class="list-group-item posipka" onclick="addPosipka('Начос', 10)">Начос <br> 10₽</li>
+        <li class="list-group-item posipka" onclick="addPosipka('Нори', 0)">Нори <br> <i>Бесплатно</i></li>
+        <li class="list-group-item posipka" onclick="addPosipka('Фурикаке', 10)">Фурикаке <br> 10₽</li>
+        <li class="list-group-item posipka" onclick="addPosipka('Шичими', 10)">Шичими <br> 10₽</li>
+        <li class="list-group-item posipka" onclick="addPosipka('Кунжут микс', 0)">Кунжут микс <br> <i>Бесплатно</i></li>
+        <li class="list-group-item posipka" onclick="addPosipka('Кешью', 10)">Кешью <br> 10₽</li>
+        <li class="list-group-item posipka" onclick="addPosipka('Арахис', 10)">Арахис <br> 10₽</li>
+      </ul>
         
       </div>
 
       <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
-        <h6 id="">4 ДОБАВЬТЕ СОУСЫ ИЛИ ПРИСЫПКИ</h6>
-        <div onclick="alert('Заказ оформлен'); showBlock(5);"><a  class="btn btn-xl btn-primary">Заказать боул</a></div>
+        <h6 id="">4 ДОБАВЬТЕ СОУСЫ ИЛИ ПОСЫПКИ</h6>
+        <div onclick="order();"><a  class="btn btn-xl btn-primary">Заказать боул</a></div>
       </div>
       
     </div>
@@ -285,14 +286,14 @@
 
 
     <div class='card my-2 animate__animated animate__fadeIn '>
-      <!-- <div class="card-header">
-        <h6>Доставка вкуснейших боулов за 40 мин.</h6>
-      </div> -->
-      <div class="card-body" id='message'>
-        Выберите основу и ингредиенты для приготовления боула
+      <div class="card-header">
+        <h6>Ваш Боул</h6>
       </div>
-      <div class="card-footer " id='sum'>
-          Итого: 0₽
+      <div class="card-body" id='message'>
+        <span id="totalOrder">Выберите основу и ингредиенты для приготовления боула</span>
+      </div>
+      <div class="card-footer" id='sum'>
+          Итого: <span id="totalSum">0</span>₽
       </div>
     </div>
     
@@ -322,6 +323,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/etc.js"></script>
   <script src="js/bowl-mixer.js"></script>
 </body>
