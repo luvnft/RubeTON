@@ -1,3 +1,61 @@
+$('.menu-item').click(function(){
+
+
+    switch ($(this).data("page")) {
+        case "index":
+            $("#constructor").show();
+            $("#menu-block").hide();
+            $("#bron-block").hide();
+            $("#contacts-block").hide();
+            
+            $("#index").addClass('bg-danger');
+            $("#menu").removeClass('bg-danger');
+            $("#bron").removeClass('bg-danger');
+            $("#contacts").removeClass('bg-danger');
+
+            refresh();
+            break;
+
+        case "menu":
+            $("#constructor").hide();
+            $("#menu-block").show();
+            $("#bron-block").hide();
+            $("#contacts-block").hide()
+            
+            $("#index").removeClass('bg-danger');
+            $("#menu").addClass('bg-danger');
+            $("#bron").removeClass('bg-danger');
+            $("#contacts").removeClass('bg-danger');
+            break;
+
+        case "bron":
+            $("#constructor").hide();
+            $("#menu-block").hide();
+            $("#bron-block").show();
+            $("#contacts-block").hide()
+            
+            $("#index").removeClass('bg-danger');
+            $("#menu").removeClass('bg-danger');
+            $("#bron").addClass('bg-danger');
+            $("#contacts").removeClass('bg-danger');
+            break;
+
+        case "contacts":
+            $("#constructor").hide();
+            $("#menu-block").hide();
+            $("#bron-block").hide();
+            $("#contacts-block").show()
+            
+            $("#index").removeClass('bg-danger');
+            $("#menu").removeClass('bg-danger');
+            $("#bron").removeClass('bg-danger');
+            $("#contacts").addClass('bg-danger');
+            break;
+    
+        default:
+            break;
+    } 
+})
 
 
     currentBlock = 1;
@@ -20,6 +78,8 @@
     $('.posipka').click(function(){
         $(this).toggleClass('active');
     })
+
+    
 
     addItem = function (item, price)  {
         
@@ -77,6 +137,10 @@
         }
         
         bowl[4] = bowlPosipka;
+
+        if (!bowl[3]) {
+            bowl[3] = "Нет";
+        }
         updateBowl();
 
     }
@@ -96,15 +160,15 @@
         }
 
         if (bowl.length == 3) {
-            bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2];
+            bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2].join(", ");
         }
 
         if (bowl.length == 4) {
-            bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2] + "<br>" + "Соусы: " + bowl[3];
+            bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2].join(", ") + "<br>" + "Соусы: " + bowl[3].join(", ");
         }
 
         if (bowl.length == 5) {
-            bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2] + "<br>" + "Соусы: " + bowl[3] + "<br>" + "Посыпка: " + bowl[4];
+            bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2].join(", ") + "<br>" + "Соусы: " + bowl[3].join(", ") + "<br>" + "Посыпка: " + bowl[4].join(", ");
         }
 
         $("#totalOrder").html(bowlDesc);
@@ -146,6 +210,10 @@
         $("#block-4").hide();
 
         $("#block-"+x).show();
+
+        $('body,html').animate({
+            scrollTop: 200
+        }, 400);
     }
 
 
@@ -157,6 +225,8 @@
         bowlPosipka = [];
         bowlDesc = "Выберите основу и ингредиенты для приготовления боула";
         bowlPrice = 0;
+
+        $(".active").removeClass("active");
                 
         updateBowl();
         showBlock(1);

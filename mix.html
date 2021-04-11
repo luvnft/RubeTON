@@ -30,14 +30,14 @@
     <div class="row">
       <div class="col-12">
         <br>
-        <img src="logo/2.png" width="100%" onclick="refresh();">
+        <img src="logo/2.png" width="100%">
         <br><br>
         
-        <span style="height: 22px"  class="align-middle badge bg-danger rounded-pill" onclick="refresh();">Конструктор боулов</span>
-        <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Меню</span>
-        <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Бронь столиков</span>
-        <span style="height: 22px" class="align-middle badge bg-secondary rounded-pill">Контакты</span>
-        <span style="height: 22px" class="align-middle badge bg-success rounded-pill">Позвонить</span>
+        <span data-page="index" id="index" class="align-middle badge bg-secondary bg-danger rounded-pill menu-item">Конструктор боулов</span>
+        <span data-page="menu" id="menu" class="align-middle badge bg-secondary rounded-pill menu-item">Меню</span>
+        <span data-page="bron" id="bron" class="align-middle badge bg-secondary rounded-pill menu-item">Бронь столиков</span>
+        <span data-page="contacts" id="contacts" class="align-middle badge bg-secondary rounded-pill menu-item">Контакты</span>
+        <span class="align-middle badge bg-success rounded-pill menu-item" onclick="window.location.href = 'tel:+79266869609';">Позвонить</span>
         
         <br><br>
       </div>
@@ -45,6 +45,7 @@
     
 
 
+    <div id="constructor">
     <div class="row text-center" id="block-1">
       
       <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX animate__delay-1s">
@@ -141,8 +142,6 @@
     </div>
 
 
-
-
     <div class="row text-center" id="block-3" style="display: none">
       
       <div style="padding-bottom: 10px" class="col-12 animate__animated animate__flipInX ">
@@ -236,7 +235,6 @@
     </div>
 
 
-
     <div class="row text-center" id="block-4" style="display: none">
       
       <div style="padding-bottom: 20px" class="col-12 animate__animated animate__flipInX ">
@@ -296,6 +294,35 @@
           Итого: <span id="totalSum">0</span>₽
       </div>
     </div>
+  </div>
+
+
+  <div id="menu-block" style="display: none">
+    <div class="row text-center" id="">
+      
+      <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX ">
+        <h2>💁 Меню</h2>
+      </div>
+    </div>
+  </div>
+
+  <div id="bron-block" style="display: none">
+    <div class="row text-center" id="">
+      
+      <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX ">
+        <h2 >💁 Бронь столиков</h2>
+      </div>
+    </div>
+  </div>
+
+  <div id="contacts-block" style="display: none">
+    <div class="row text-center" id="">
+      
+      <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX ">
+        <h2 >💁 Контакты</h2>
+      </div>
+    </div>
+  </div>
     
 
     
@@ -304,7 +331,7 @@
       <h6>Доставка вкуснейших боулов за 40 мин.</h6>
       <br>
       
-      <a class="btn btn-success">📞 Заказать по WhatsApp</a>
+      <a class="btn btn-success" href="https://wa.me/79266869609?text=Здравствуйте!%20Я%20хочу%20сделать%20заказ">📞 Заказать по WhatsApp</a>
       <br><br>
 
       <p>
