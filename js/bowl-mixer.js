@@ -139,7 +139,7 @@ $('.menu-item').click(function(){
         bowl[4] = bowlPosipka;
 
         if (!bowl[3]) {
-            bowl[3] = "Нет";
+            bowl[3] = ['Нет']
         }
         updateBowl();
 
@@ -188,12 +188,38 @@ $('.menu-item').click(function(){
     };
 
     order = function() {
-        Swal.fire({
-            icon: 'success',
-            title: 'Ваш заказ',
-            html: bowlDesc,
-            confirmButtonText: 'Отправить'
-          })   
+        // Swal.fire({
+        //     icon: 'success',
+        //     title: 'Ваш заказ',
+        //     html: bowlDesc,
+        //     confirmButtonText: 'Отправить'
+        //   })   
+
+
+          Swal.fire({
+            title: "Ваш заказ",
+            html: bowlDesc + "<br><br>Стоимость – "+bowlPrice+"₽<br><br>Укажите телефон:",
+            input: 'text',
+            showCancelButton: true        
+        }).then((result) => {
+            if (result.value) {
+                // console.log("Result: " + result.value);
+
+                Swal.fire({
+                    title: "Адрес доставки",
+                    text: "Куда доставить заказ?",
+                    input: 'text',
+                    confirmButtonText: 'Готово'
+                }).then((result) => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Супер',
+                        text: 'Заказ усшешно оформлен, мы начали готовить',
+                        confirmButtonText: 'Ок, жду 😋'
+                      })
+                })
+            }
+        });
 
 
     }
@@ -233,7 +259,7 @@ $('.menu-item').click(function(){
     }
 
     
+//  showBlock(4);   
     
-    // showBlock(4);
       
 
