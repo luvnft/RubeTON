@@ -1,61 +1,61 @@
-$('.menu-item').click(function(){
+// $('.menu-item').click(function(){
 
 
-    switch ($(this).data("page")) {
-        case "index":
-            $("#constructor").show();
-            $("#menu-block").hide();
-            $("#bron-block").hide();
-            $("#contacts-block").hide();
+//     switch ($(this).data("page")) {
+//         case "index":
+//             $("#constructor").show();
+//             $("#menu-block").hide();
+//             $("#bron-block").hide();
+//             $("#contacts-block").hide();
             
-            $("#index").addClass('bg-danger');
-            $("#menu").removeClass('bg-danger');
-            $("#bron").removeClass('bg-danger');
-            $("#contacts").removeClass('bg-danger');
+//             $("#index").addClass('bg-danger');
+//             $("#menu").removeClass('bg-danger');
+//             $("#bron").removeClass('bg-danger');
+//             $("#contacts").removeClass('bg-danger');
 
-            refresh();
-            break;
+//             refresh();
+//             break;
 
-        case "menu":
-            $("#constructor").hide();
-            $("#menu-block").show();
-            $("#bron-block").hide();
-            $("#contacts-block").hide()
+//         case "menu":
+//             $("#constructor").hide();
+//             $("#menu-block").show();
+//             $("#bron-block").hide();
+//             $("#contacts-block").hide()
             
-            $("#index").removeClass('bg-danger');
-            $("#menu").addClass('bg-danger');
-            $("#bron").removeClass('bg-danger');
-            $("#contacts").removeClass('bg-danger');
-            break;
+//             $("#index").removeClass('bg-danger');
+//             $("#menu").addClass('bg-danger');
+//             $("#bron").removeClass('bg-danger');
+//             $("#contacts").removeClass('bg-danger');
+//             break;
 
-        case "bron":
-            $("#constructor").hide();
-            $("#menu-block").hide();
-            $("#bron-block").show();
-            $("#contacts-block").hide()
+//         case "bron":
+//             $("#constructor").hide();
+//             $("#menu-block").hide();
+//             $("#bron-block").show();
+//             $("#contacts-block").hide()
             
-            $("#index").removeClass('bg-danger');
-            $("#menu").removeClass('bg-danger');
-            $("#bron").addClass('bg-danger');
-            $("#contacts").removeClass('bg-danger');
-            break;
+//             $("#index").removeClass('bg-danger');
+//             $("#menu").removeClass('bg-danger');
+//             $("#bron").addClass('bg-danger');
+//             $("#contacts").removeClass('bg-danger');
+//             break;
 
-        case "contacts":
-            $("#constructor").hide();
-            $("#menu-block").hide();
-            $("#bron-block").hide();
-            $("#contacts-block").show()
+//         case "contacts":
+//             $("#constructor").hide();
+//             $("#menu-block").hide();
+//             $("#bron-block").hide();
+//             $("#contacts-block").show()
             
-            $("#index").removeClass('bg-danger');
-            $("#menu").removeClass('bg-danger');
-            $("#bron").removeClass('bg-danger');
-            $("#contacts").addClass('bg-danger');
-            break;
+//             $("#index").removeClass('bg-danger');
+//             $("#menu").removeClass('bg-danger');
+//             $("#bron").removeClass('bg-danger');
+//             $("#contacts").addClass('bg-danger');
+//             break;
     
-        default:
-            break;
-    } 
-})
+//         default:
+//             break;
+//     } 
+// })
 
 
     currentBlock = 1;
@@ -236,6 +236,7 @@ $('.menu-item').click(function(){
         $("#block-4").hide();
 
         $("#block-"+x).show();
+        //TODO добавить запись в адресную строку 
 
         $('body,html').animate({
             scrollTop: 200
