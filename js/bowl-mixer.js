@@ -239,7 +239,7 @@
         //TODO добавить запись в адресную строку 
 
         $('body,html').animate({
-            scrollTop: 200
+            scrollTop: 100
         }, 400);
     }
 

@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="css/checkmystyle.css">
 
   <title>Miska Bowls</title>
+
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+        <script src="js/swiper-bundle.min.js"></script>
 </head>
 
 <body style='background-color: rgb(230, 227, 255)'>
@@ -61,22 +64,77 @@
 
 
   <div class="container">
-    
    <br>
   
     <div id="menu-block" style="">
       <div class="row text-center" id="">
         <div style="padding-bottom: 50px" class="col-12 animate__animated animate__backInRight ">
           <h2>💁 Меню</h2>
+         
           <br>
-          <img src="img/menu.jpg" alt="" width='100%'>
+            <div class="bg">
+                    
+                    <p id="Меню2" class="title" style="margin-top: 0px">ПОКЕ</p>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="ПОКЕ"></div>
+                        <br><div class="swiper-pagination"></div>
+                    </div>
+        
+                    <p id="Салаты2" class="title">БОУЛЫ</p>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="БОУЛЫ"></div>
+                        <br><div class="swiper-pagination"></div>
+                    </div>
+                    
+                    <p id="Холодные закуски2" class="title">СТАРТЕР</p>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="СТАРТЕР"></div>
+                        <br><div class="swiper-pagination"></div>
+                    </div>
+                    
+                    <p id="Горячие закуски2" class="">ЗАВТРАК</p>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="ЗАВТРАК"></div>
+                        <br><div class="swiper-pagination"></div>
+                    </div>
+
+                    <p id="Горячие закус2ки2" class="title">СУП</p>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="СУП"></div>
+                        <br><div class="swiper-pagination"></div>
+                    </div>
+
+                    <p id="Горячие закуски23" class="title">СМУЗИ БОУЛ</p>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper" id="СМУЗИ БОУЛ"></div>
+                        <br><div class="swiper-pagination"></div>
+                    </div>
+                      
+                    <br>    
+                </div>
+
+                <div class='card my-2 animate__animated animate__fadeIn '>
+                  <div class="card-header">
+                    <h6>Корзина</h6>
+                  </div>
+                  <div class="card-body" id='message'>
+                    <span id="totalOrder">В корзине пусто</span>
+                  </div>
+                  <div class="card-footer" id='sum'>
+                      Итого: <span id="totalSum">0</span>₽
+                  </div>
+                  <a class="btn btn-lg btn-primary" href="#">Заказать</a>  
+                </div>
+                
+                
+          
+          <br>
+          <!-- <img src="img/menu.jpg" alt="" width='100%'> -->
         </div>
       </div>
     </div>
 
   
-    
-
     
     <br>
     <div class="text-center text-muted">
@@ -104,7 +162,11 @@
     crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/etc.js"></script>
-  <script src="js/bowl-mixer.js"></script>
+
+  <script src="js/google-spreadsheets-db.min.js"></script>
+  <script src="js/veronika.js"></script>
+
+  <!-- <script src="js/bowl-mixer.js"></script> -->
 </body>
 
 </html>
