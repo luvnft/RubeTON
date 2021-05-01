@@ -1,11 +1,24 @@
 /* rgb(230, 227, 255) */
-
 /* rgb(248, 33,83) */
 
 
 .list-group-item {
     background-color: rgb(230, 227, 255); 
-    
     font-size: 14px;
+}
 
+
+.swal2-header {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+.swal2-image {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-weight: bold;
 }

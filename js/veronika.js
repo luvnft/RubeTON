@@ -77,7 +77,7 @@ rows2 = {};
         rows.forEach(row => {   
             
             if (!row.image) {
-                row.image = "unnamed-800x533.jpg";
+                row.image = "empty.jpg";
             }
             
             el = document.getElementById(row.category);
@@ -129,8 +129,9 @@ rows2 = {};
 
 generateHTML = function(row) {
     return `<div class="swiper-slide">
-    <img src="img/`+row.image +`" width="100%" onclick="showAlert(`+row.id+`)">
-    <p class="dishTitle"><b>`+row.name_ru +`</b><br>`+ row.price + `₽</p>
+    <img src="img/food/`+row.image +`" width="100%" class="rounded" onclick="showAlert(`+row.id+`)">
+    <span class="dishTitle">`+row.name +`</span><br>
+    <span class="badge bg-primary">`+row.price+`₽</span>
     </div>`;
 }
 
@@ -139,21 +140,33 @@ showAlert = function(id) {
     // console.log(rows2[id-1]);
     item = rows2[id-1];
 
-    img = "img/"+item.image;
+    img = "img/food/"+item.image;
 
     Swal.fire({
-        title: item.name_ru,
-        text: item.price + "₽",
+        title: item.name,
+        text: "200 г Описание Описание Описание Описание Описание Описание Описание",
         imageUrl: img,
-        // imageWidth: 400,
+        // imageWidth: "300",
         // imageHeight: 200,
-        confirmButtonText: "В корзину",
-        showCloseButton: true,
+        // imageSize: '180x180',
+        confirmButtonText: item.price + " ₽ +",
+        // showCloseButton: true,
         imageAlt: 'Custom image',
+        // padding: '0.8em',
+        // grow: "fullscreen",
+        // showClass: {
+        //     popup: 'animate__animated animate__bounceInUp'
+        //   },
+        backdrop: `
+            rgba(0,0,123,0.4)
+            url("/gif/mew.gif")
+            center top
+            no-repeat
+            `
       })
 
     // Swal.fire({
-    //     title: item.name_ru,
+    //     title: item.name,
     //     html: "sd",
     //     // input: 'text',
     //     showCancelButton: true        
@@ -181,8 +194,8 @@ showAlert = function(id) {
 //             elHTML = elHTML + `
 //             <div class="swiper-slide">
 //                 <img src="img/`+row.image +`" width="100%">
-//                 <p class="dishTitle"><b>`+row.name_ru +` – `+ row.price + `р. </b></p>
-//                 <p class="description">`+row.description_ru +`</p>
+//                 <p class="dishTitle"><b>`+row.name +` – `+ row.price + `р. </b></p>
+//                 <p class="description">`+row.description +`</p>
 //             </div>
 //             `;
 //             el.innerHTML = elHTML;
@@ -209,17 +222,18 @@ function runSwiper() {
     if (i > 40) {
 
         const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
             direction: 'horizontal',
             loop: false,
             // effect: "flip",
-            slidesPerView: 3,
+            slidesPerView: "2.5",
+            spaceBetween: 10,
             // pagination: {
             //     el: '.swiper-pagination',
             //     dynamicBullets: true,
             //     type: "progressbar"
             // },
-            spaceBetween: 20,
+            
+            
         });
 
         // const swiper2 = new Swiper('.swiper-container-zavtrak', {
