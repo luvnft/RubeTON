@@ -6,6 +6,7 @@ const db = new GoogleSpreadsheetsDb(
 
 
 
+
 // var categories = [
 //     {
 //         ru: "Супы",
@@ -144,8 +145,12 @@ showAlert = function(id) {
 
     Swal.fire({
         title: item.name,
-        text: "200 г Описание Описание Описание Описание Описание Описание Описание",
+        html:
+            '<b>' +item.output + 'г.</b>, ' +
+            item.description,
+        // text: "200 г.<br>" + item.description,
         imageUrl: img,
+        
         // imageWidth: "300",
         // imageHeight: 200,
         // imageSize: '180x180',
@@ -163,7 +168,10 @@ showAlert = function(id) {
             center top
             no-repeat
             `
-      })
+      }).then((result) => {
+            if (result.value) {
+                addToCart(item);
+            }
 
     // Swal.fire({
     //     title: item.name,
@@ -177,7 +185,81 @@ showAlert = function(id) {
     //     }
     // });
 
+})
+
+
+
+};
+
+cart = [];
+
+addToCart = function(item) {
+    price= 0;
+
+    cart.push(item);
+    
+
+    $("#totalOrder").html("");
+
+    cart.forEach(element => {
+        
+        str = element.name + " – " + element.price + "₽<br>"
+
+        $("#totalOrder").append(str);
+        price = price + parseInt(element.price);
+    });
+    
+    $("#totalSum").html(price)
+
+    if (price > 0) {
+        $("#btnOrder").show();
+        $("#cartClear").show();
+    }
+    
+
 }
+
+$("#cartClear").on( "click", function() {
+    cart = [];
+    $("#totalSum").html("0");
+    $("#totalOrder").html("В корзине пусто");
+    
+    $("#btnOrder").hide();
+    $("#cartClear").hide();
+});
+
+$("#btnOrder").on( "click", function() {
+
+
+    Swal.fire({
+        title: "Ваш заказ",
+        html: $("#totalOrder").html() + "<br><br>Стоимость – "+$("#totalSum").html() + "₽<br><br>Укажите телефон:",
+        input: 'text',
+        showCancelButton: true        
+    }).then((result) => {
+        if (result.value) {
+            // console.log("Result: " + result.value);
+
+            Swal.fire({
+                title: "Адрес доставки",
+                text: "Куда доставить заказ?",
+                input: 'text',
+                confirmButtonText: 'Готово'
+            }).then((result) => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Супер',
+                    text: 'Заказ усшешно оформлен, мы начали готовить',
+                    confirmButtonText: 'Ок, жду 😋'
+                  })
+            })
+        }
+    });
+
+
+});
+
+
 
 
 // categories.forEach(category => {

@@ -9,10 +9,12 @@
 
 
 .swal2-header {
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
+    padding-left: 0!important;
+    padding-right: 0!important;
+    padding-top: 0!important;
 }
+
+
 
 .swal2-image {
     margin: 0;
