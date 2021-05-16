@@ -28,7 +28,7 @@ db.getAll('Меню!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_poke;
                 break;
 
-            case "БОУЛЫ":
+            case "БОУЛ":
                 elHTML_bowl = elHTML_bowl + generateHTML(row);
                 el.innerHTML = elHTML_bowl;
                 break;
@@ -64,33 +64,43 @@ db.getAll('Меню!A1:L100', (err, rows) => {
 generateHTML = function (row) {
     return `<div class="swiper-slide">
     <img src="img/food/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
-    <span class="dishTitle">`+ row.name + `</span><br>
-    <span class="badge bg-primary">`+ row.price + `₽</span>
+    <span class="">`+ row.name + `</span><br>
+    <span class="text-muted small">`+ row.output + ` г</span>
+    <br>
+    <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + ` ₽ +</span>
     </div>`;
 }
 
-showAlert = function (id) {
+showAlert = function (id, showMessage) {
     item = rows2[id - 1];
     img = "img/food/" + item.image;
-    Swal.fire({
-        title: item.name,
-        html:
-            '<b>' + item.output + 'г.</b>, ' +
-            item.description,
-        imageUrl: img,
-        confirmButtonText: item.price + " ₽ +",
-        imageAlt: 'Custom image',
-        backdrop: `
-            rgba(0,0,123,0.4)
-            url("/gif/mew.gif")
-            center top
-            no-repeat
-            `
-    }).then((result) => {
-        if (result.value) {
-            addToCart(item);
-        }
-    })
+    if (showMessage != false) {
+
+    
+        Swal.fire({
+            title: item.name,
+            html:
+                '<b>' + item.output + ' г</b>, ' +
+                item.description,
+            imageUrl: img,
+            showCloseButton: true,
+            confirmButtonText: item.price + " ₽ +",
+            confirmButtonColor: '#0d6efd',
+            imageAlt: 'Miska Bowls',
+            backdrop: `
+                rgba(0,0,123,0.4)
+                url("/gif/mew.gif")
+                center top
+                no-repeat
+                `
+        }).then((result) => {
+            if (result.value) {
+                addToCart(item);
+            }
+        })
+    } else {
+        addToCart(item);
+    }
 
 };
 
@@ -101,7 +111,7 @@ addToCart = function (item) {
     cart.push(item);
     $("#totalOrder").html("");
     cart.forEach(element => {
-        str = element.name + " – " + element.price + "₽<br>"
+        str = element.name + " – " + element.price + " ₽<br>"
         $("#totalOrder").append(str);
         price = price + parseInt(element.price);
     });
@@ -110,6 +120,9 @@ addToCart = function (item) {
         $("#btnOrder").show();
         $("#cartClear").show();
     }
+
+    animateCSS('#blockCart', 'pulse');
+    
 }
 
 $("#cartClear").on("click", function () {
@@ -123,18 +136,31 @@ $("#cartClear").on("click", function () {
 $("#btnOrder").on("click", function () {
 
     Swal.fire({
-        title: "Ваш заказ",
-        confirmButtonText: 'Готово',
-        html: $("#totalOrder").html() + "<br><br>Стоимость – " + $("#totalSum").html() + "₽<br><br>" +
-            `
-        <div class="input-group flex-nowrap">
-            <input id="phone" type="text" class="form-control" placeholder="Ваш телефон" aria-label="Phone" aria-describedby="addon-wrapping">
+        title: "Заказать",
+        // showCloseButton: true,
+        confirmButtonText: 'Готово 👍',
+        confirmButtonColor: '#0d6efd',
+        html: `
+        <div class="input-group flex-nowrap pt-2 pb-2">
+            <input id="phone" type="text" class="form-control" placeholder="Телефон">
         </div>
-        <br>
-        <div class="input-group flex-nowrap">
-            <textarea id="address" class="form-control" placeholder="Адрес доставки" aria-label="Address" aria-describedby="addon-wrapping"></textarea>
+        <div class="input-group flex-nowrap pb-2">
+            <textarea id="address" class="form-control" placeholder="Адрес доставки"></textarea>
         </div>
-        `
+
+        <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked> Доставка
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2" autocomplete="off"> Самовывоз
+            </label>    
+        </div>
+        
+        
+        `+
+        "<br>Итого – " + $("#totalSum").html() + " ₽"
+        
     }).then((result) => {
 
         phone = $("#phone").val();
@@ -146,6 +172,7 @@ $("#btnOrder").on("click", function () {
                 icon: 'success',
                 title: 'Супер',
                 text: 'Ваш заказ усшешно оформлен',
+                confirmButtonColor: '#0d6efd',
                 confirmButtonText: 'Ок, жду 😋'
             })
         } else {
@@ -153,7 +180,8 @@ $("#btnOrder").on("click", function () {
                 icon: 'warning',
                 title: 'Ой',
                 text: 'Укажите телефон и адрес доставки',
-                confirmButtonText: 'Ок'
+                confirmButtonColor: '#0d6efd',
+                confirmButtonText: 'Хорошо'
             })
         }
     });
@@ -174,7 +202,7 @@ placeOrder = function (order, sum, phone, address) {
                 }],
                 'autotext': 'true',
                 'subject': "Новый заказ",
-                'html': "Новый заказ:<br>" + order + " На сумму: " + sum + "₽<br><br>Телефон: " + phone + "<br>Адрес доставки: " + address
+                'html': "Новый заказ:<br>" + order + " На сумму: " + sum + " ₽<br><br>Телефон: " + phone + "<br>Адрес доставки: " + address
             }
         }
     }).done(function (response) {

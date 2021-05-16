@@ -26,274 +26,223 @@
 <body style='background-color: rgb(230, 227, 255)'>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Miska – Bowls & Friends</a>
+    <div class="container-fluid" style="justify-content: flex-start">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <a class="navbar-brand px-2" href="#"> Miska – Bowls & Folks</a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="mix.html">Конструктор боулов</a>
+            <a class="nav-link "  href="menu.html">Меню</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="menu.html">Меню</a>
+            <a class="nav-link active" aria-current="page" href="mix.html">Собери свой боул сам</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "  href="contacts.html">Контакты</a>
+            <a class="nav-link"  href="contacts.html">Обратная связь</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="contacts.html">Контакты</a>
           </li>
         </ul>
-
         <form class="d-flex">
-          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-          <!-- <button class="btn btn-success px-2" type="submit">Позвонить</button> -->
           <button class="btn btn-success px-2" type="submit">Заказать в WhatsApp</button>
-          
           <a style="text-decoration: none;" class="btn btn-clear px-2 mx-1"
           href="https://www.instagram.com/miska.bowls/"><img class="" src="ig.png" width="28"></a>
-
-         
-          
-          <!-- <span data-page="index" id="index" class="align-middle badge bg-secondary bg-danger rounded-pill menu-item">Конструктор боулов</span>
-        <span data-page="menu" id="menu" class="align-middle badge bg-secondary rounded-pill menu-item">Меню</span>
-        <span data-page="bron" id="bron" class="align-middle badge bg-secondary rounded-pill menu-item">Бронь столиков</span>
-        <span data-page="contacts" id="contacts" class="align-middle badge bg-secondary rounded-pill menu-item">Контакты</span>
-        <span class="align-middle badge bg-success rounded-pill menu-item" onclick="window.location.href = 'tel:+79266869609';">Позвонить</span> -->
-          
         </form>
       </div>
     </div>
-    </nav>
+  </nav>
 
   <div class="container">
     
-    <div class="row">
-      <div class="col-12">
-        <!-- <br>
-        <img src="logo/2.png" width="100%">
-        <br><br>
-         -->
-        <!-- <span data-page="index" id="index" class="align-middle badge bg-secondary bg-danger rounded-pill menu-item">Конструктор боулов</span>
-        <span data-page="menu" id="menu" class="align-middle badge bg-secondary rounded-pill menu-item">Меню</span>
-        <span data-page="bron" id="bron" class="align-middle badge bg-secondary rounded-pill menu-item">Бронь столиков</span>
-        <span data-page="contacts" id="contacts" class="align-middle badge bg-secondary rounded-pill menu-item">Контакты</span>
-        <span class="align-middle badge bg-success rounded-pill menu-item" onclick="window.location.href = 'tel:+79266869609';">Позвонить</span> -->
-        
-        <br><br>
-      </div>
-    </div>
-    
-
-
     <div id="constructor">
-    <div class="row text-center" id="block-1">
-      
-      <div style="padding-bottom: 50px" class="col-12 animate__animated animate__flipInX animate__delay-1s">
-        <h2 style='col2or: rgb(248, 33,83)' id=''>💁 На чём готовим боул?</h2>
-        <h6 style='col2or: rgb(248, 33,83)' class='text-muted' id="">выберите основу</h6>
-      </div>
 
-      
-      <div id="button-1" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Рис', 40)">
-        <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size:72px">🍚</h1>
-        <h5>Рис</h5>
-        <h6>40₽ / 150г</h6>
-      </div>
-
-      <div id="button-2" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Киноа', 70)">
-        <img src="img/kinoa.png" width="140px">
-        <h5>Киноа</h5>
-        <h6>70₽ / 120г</h6>
-      </div>
-
-      <div id="button-3" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Микс салата', 100)">
-        <h1 class='' style="font-size: 72px">🥗</h1>
-        <h5>Микс салата</h5>
-        <h6>100₽ / 30г</h6>
-      </div>
-
-      
-      <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn animate__delay-2s">
+      <div class="row text-left pt-4 " id="block-1">
+        <div class="pb-4 pt-4  col-12 animate__animated animate__flipInX animate__delay-1s">
+          <h2 class="titleMix">1 ОСНОВА</h2>
+          <h6 class='text-muted'>выберите основу</h6>
+        </div>
+    
+        <div id="button-1" class="pb-4 animate__animated animate__zoomInUp" onclick="addItem('Рис', 40)">
+          Рис &nbsp; &nbsp; <span class="text-muted small">150 г</span> &nbsp; <span>40 ₽</span>
+        </div>
         
-      </div>
+        <div id="button-2" class="pb-4 animate__animated animate__zoomInUp" onclick="addItem('Киноа', 70)">
+          Киноа &nbsp; &nbsp; <span class="text-muted small">120 г</span> &nbsp; <span>80 ₽</span>
+        </div>
         
-    </div>
 
+        <div id="button-3" class="pb-4 animate__animated animate__zoomInUp" onclick="addItem('Микс салата', 100)">
+          Микс корн-макдональд &nbsp; &nbsp; <span class="text-muted small">120 г</span> &nbsp; <span>80 ₽</span>
+        </div>
 
-
-
-    <div class="row text-center" id="block-2" style="display: none">
-      
-      <div style="padding-bottom: 10px" class="col-12 animate__animated animate__flipInX ">
-        <h2 id='title'>💁 <span id="block1-choose">Рис</span> – отличное начало, теперь давай выберем протеин</h2>
         
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Угорь', 200)">
-        <h1 class='' style="font-size:96px">🐟</h1>
-        <h5>Угорь</h5>
-        <h6>200₽ / 30г</h6>
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Лосось', 200)">
-        <h1 class='' style="font-size: 96px">🐟</h1>
-        <h5>Лосось</h5>
-        <h6>200₽ / 50г</h6>
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Тунец', 200)">
-        <h1 class='' style="font-size: 96px">🍣</h1>
-        <h5>Тунец</h5>
-        <h6>200₽ / 30г</h6>
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Креветка', 200)">
-        <h1 class='' style="font-size: 96px">🍤</h1>
-        <h5>Креветка</h5>
-        <h6>200₽ / 50г</h6>
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Ростбиф', 200)">
-        <h1 class='' style="font-size: 96px">🥩</h1>
-        <h5>Ростбиф</h5>
-        <h6>200₽ / 30г</h6>
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Индейка', 100)">
-        <h1 class='animate__animated animate__rubberBand animate__delay-5s' style="font-size: 96px">🦃</h1>
-        <h5>Индейка</h5>
-        <h6>100₽ / 30г</h6>
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Курица', 100)">
-        <h1 class='' style="font-size: 96px">🍗</h1>
-        <h5>Курица</h5>
-        <h6>100₽ / 30г</h6>
-      </div>
-
-      <div id="" class="col-4  animate__animated animate__zoomInUp" onclick="addItem('Тофу VEG', 100)">
-        <h1 class='' style="font-size: 96px">🍢</h1>
-        <h5>Тофу VEG</h5>
-        <h6>100₽ / 30г</h6>
-      </div>
-
-      <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
-        <h6 id=""class='text-muted' >Протеин нужен для придания сил организму</h6>
-      </div>
-      
-    </div>
-
-
-    <div class="row text-center" id="block-3" style="display: none">
-      
-      <div style="padding-bottom: 10px" class="col-12 animate__animated animate__flipInX ">
-        <h2 id='title'>💁 Какими топпингами приправим?</h2>
+        <!-- <div class='card text-white bg-secondary mt-4'>
+          <div class="card-body">
+            <span>Любая основа хорошо сочетается со всеми протеинами, рис – если хочется посытнее. Киноая и Салатный Микс – для любителей следить за фигурой</span>
+          </div>
+        </div> -->
         
+        <div class="col-12 pt-4 animate__animated animate__fadeIn">
+          <h6 class='text-muted'>Любая основа хорошо сочетается со всеми протеинами, рис – если хочется посытнее. Киноая и Салатный Микс – для любителей следить за фигурой</h6>
+        </div>
+
       </div>
 
-      <div id="" class="col-4">
+
+      <div class="row text-center pt-4" id="block-2" style="display: none">
+        <div class="pb-4 col-12 animate__animated animate__flipInX ">
+          <!-- <h2 class="titleMix" id='title'><span id="block1-choose">Рис</span> – отличное начало, теперь давай выберем протеин</h2> -->
+          <h2 class="titleMix" id='title'>2 ПРОТЕИН</h2>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Лосось', 200)">
+          Лосось &nbsp; &nbsp; <span class="text-muted small">50 г</span> &nbsp; <span>200 ₽</span>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Тунец', 200)">
+          Тунец &nbsp; &nbsp; <span class="text-muted small">50 г</span> &nbsp; <span>200 ₽</span>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Угорь', 200)">
+          Угорь &nbsp; &nbsp; <span class="text-muted small">30 г</span> &nbsp; <span>200 ₽</span>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Креветка', 200)">
+          Креветка &nbsp; &nbsp; <span class="text-muted small">60 г</span> &nbsp; <span>200 ₽</span>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Говядина', 200)">
+          Говядина &nbsp; &nbsp; <span class="text-muted small">50 г</span> &nbsp; <span>200 ₽</span>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Курица', 100)">
+          Курица &nbsp; &nbsp; <span class="text-muted small">80 г</span> &nbsp; <span>120 ₽</span>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Индейка', 100)">
+          Индейка &nbsp; &nbsp; <span class="text-muted small">50 г</span> &nbsp; <span>120 ₽</span>
+        </div>
+
+        <div class="pb-2 animate__animated animate__zoomInUp" onclick="addItem('Тофу', 100)">
+          Тофу &nbsp; &nbsp; <span class="text-muted small">50 г</span> &nbsp; <span>100 ₽</span>
+        </div>
+
+        <!-- <div class="col-12 animate__animated animate__fadeIn ">
+          <h6 class='text-muted'>Протеин нужен для придания сил организму</h6>
+        </div> -->
+
+      </div>
+
+
+    <div class="row text-center pt-4 pb-4" id="block-3" style="display: none">
+      <div class="pb-4 col-12 animate__animated animate__flipInX ">
+        <h2 class="titleMix">3 ТОППИНГ</h2>
+      </div>
+      <div class="col-4">
         <ul class="list-group">
-          <li class="list-group-item topping" onclick="addTopping('Авокадо', 50)">🥑 <br> Авокадо<br>
-            <span class="badge bg-primary rounded-pill">50р</span>
+          <li class="list-group-item topping" onclick="addTopping('Авокадо', 50)">Авокадо<br>
+            <span class="badge bg-primary rounded-pill">70р</span>
           </li>
-          <li class="list-group-item topping" onclick="addTopping('Огурец', 50)">🥒 <br>Огурец <br>
-            <span class="badge bg-primary rounded-pill">50р</span>
+          <li class="list-group-item topping" onclick="addTopping('Манго', 50)">Манго <br>
+            <span class="badge bg-primary rounded-pill">70р</span>
           </li>
-          <li class="list-group-item topping" onclick="addTopping('Морковь', 50)">🥕 <br>Морковь <br>
-            <span class="badge bg-primary rounded-pill">50р</span>
+          <li class="list-group-item topping" onclick="addTopping('Гукамоле', 50)">Гукамоле <br>
+            <span class="badge bg-primary rounded-pill">70р</span>
           </li>
-          <li class="list-group-item topping" onclick="addTopping('Дайкон', 50)">🍠 <br>Дайкон <br>
-            <span class="badge bg-primary rounded-pill">50р</span>
-          </li>
-          <li class="list-group-item topping" onclick="addTopping('Эдомаме', 50)">🍠 <br>Эдомаме <br>
-            <span class="badge bg-primary rounded-pill">50р</span>
-          </li>
-          <li class="list-group-item topping" onclick="addTopping('Манго', 50)">🥭 <br>Манго <br>
-            <span class="badge bg-primary rounded-pill">50р</span>
-          </li>
-          <li class="list-group-item topping" onclick="addTopping('Микс салат', 50)">🥬 <br>Микс салат <br>
-            <span class="badge bg-primary rounded-pill">50р</span>
-          </li>
-          <li class="list-group-item topping" onclick="addTopping('Шпинат', 50)">🥬 <br>Шпинат <br>
-            <span class="badge bg-primary rounded-pill">50р</span>
-          </li>
-          <li class="list-group-item topping" onclick="addTopping('Черри', 50)">🍅 <br>Черри <br>    
-            <span class="badge bg-primary rounded-pill">50р</span>
-          </li>
-         
-        </ul>
-      </div>
 
-      <div id="" class="col-4">
-      
-        <ul class="list-group">
-        <li class="list-group-item topping" onclick="addTopping('Красная капуста', 50)">🥦<br>Красная капуста <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Чука', 50)">🥬<br>Чука<br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Битый огурец', 50)">🥒 <br>Битый огурец <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Вяленый томат', 50)">🍅 <br>Вяленый томат <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Лук красный', 50)">🧅 <br>Лук красный <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-          <li class="list-group-item topping" onclick="addTopping('Гукамоле', 50)">🥑 <br>Гукамоле <br>
+          <li class="list-group-item topping" onclick="addTopping('Шпинат', 50)">Шпинат <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item topping" onclick="addTopping('Проростки', 50)">🌱 <br>Проростки <br>
+
+          <li class="list-group-item topping" onclick="addTopping('Эдомаме', 50)">Эдомаме <br>
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
-          <li class="list-group-item topping" onclick="addTopping('Редис', 50)">🍠<br>Редис<br>
+
+          <li class="list-group-item topping" onclick="addTopping('Вяленый томат', 50)">Вяленый томат <br>
+            <span class="badge bg-primary rounded-pill">50р</span></li>
+
+          <li class="list-group-item topping" onclick="addTopping('Чука', 50)">Чука<br>
+            <span class="badge bg-primary rounded-pill">50р</span></li>
+
+          <li class="list-group-item topping" onclick="addTopping('Битый огурец', 50)">Битый огурец <br>
+            <span class="badge bg-primary rounded-pill">50р</span></li>
+
+          <li class="list-group-item topping" onclick="addTopping('Японский омлет', 50)">Японский омлет <br>             
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+
+          <li class="list-group-item topping" onclick="addTopping('Огурец свежий', 50)">Огурец свежий <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item topping" onclick="addTopping('Морковь', 50)">Морковь <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item topping" onclick="addTopping('Дайкон', 50)">Дайкон <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          
+          <li class="list-group-item topping" onclick="addTopping('Черри', 50)">Черри <br>    
             <span class="badge bg-primary rounded-pill">50р</span>
           </li>
         </ul>
       </div>
+      
+      <div class="col-4">
+        <ul class="list-group">
+        <li class="list-group-item topping" onclick="addTopping('Красная капуста', 50)">Красная капуста <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
 
-      <div id="" class="col-4">
+          <li class="list-group-item topping" onclick="addTopping('Грибы муэр', 50)">Грибы муэр <br>
+            <span class="badge bg-primary rounded-pill">50р</span></li>
+        
+        <li class="list-group-item topping" onclick="addTopping('Лук красный', 50)">Лук красный <br>
+          <span class="badge bg-primary rounded-pill">50р</span></li>
+          
+          <li class="list-group-item topping" onclick="addTopping('Ростки мояши', 50)">Ростки мояши <br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+          <li class="list-group-item topping" onclick="addTopping('Редис', 50)">Редис<br>
+            <span class="badge bg-primary rounded-pill">50р</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-4">
         <ul class="list-group" >
-        <li class="list-group-item topping" onclick="addTopping('Кимчи капуста HOT', 50)">🥬 <br>Кимчи капуста HOT <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Кукуруза', 50)">🌽 <br>Кукуруза <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Халапенью', 50)">🌶 <br>Халапенью <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Ананас', 50)">🍍 <br>Ананас <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Имбирь', 50)">🍠<br> Имбирь <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-        <li class="list-group-item topping" onclick="addTopping('Тобико', 50)">🍥 <br>Тобико <br>
-          <span class="badge bg-primary rounded-pill">50р</span></li>
-          <li class="list-group-item topping" onclick="addTopping('Японский омлет', 50)">🍳<br> Японский омлет <br>             
-            <span class="badge bg-primary rounded-pill">50р</span>
-          </li>
+        
+          <li class="list-group-item topping" onclick="addTopping('Халапенью', 50)">Халапенью <br>
+            <span class="badge bg-primary rounded-pill">50р</span></li>
+          <li class="list-group-item topping" onclick="addTopping('Ананас', 50)">Ананас <br>
+            <span class="badge bg-primary rounded-pill">50р</span></li>
+           
         </ul>
+      </div>
 
+      <div class="pt-4 col-12 animate__animated animate__fadeIn ">
+        <h6 class='text-muted'>Добавь от четырех до шести топпингов для баланса вкусовых сочетаний</h6>
       </div>
 
       <div style="padding-top: 20px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
-        
         <div onclick="toppingsFinished()"><a  class="btn btn-lg btn-primary animate__animated animate__rubberBand animate__delay-5s">Дальше 👉</a></div>
       </div>
-      
+
+      <br><br><br><br><br><br><br><br><br><br>
     </div>
 
-
-    <div class="row text-center" id="block-4" style="display: none">
-      
-      <div style="padding-bottom: 20px" class="col-12 animate__animated animate__flipInX ">
-        <h2 id='title'>💁 Почти готово! Осталось добавить соусы или посыпки</h2>
-        
+    <div class="row text-center pt-4" id="block-4" style="display: none">
+      <div class="pb-2 col-12 animate__animated animate__flipInX ">
+        <h2 class="titleMix">4 СОУС & CRUNCHY</h2>
       </div>
-
-      <div id="" class="col-6 p-0">
-
-        <ul class="list-group"><b>Соусы</b>
+      <div class="col-6 p-0">
+        <ul class="list-group"><b>Соус</b>
           <li class="list-group-item sauce" onclick="addSauce('Айоли', 50)">Айоли <br> 50₽</li>
           <li class="list-group-item sauce" onclick="addSauce('Имбирный', 50)">Имбирный <br> 50₽</li>
           <li class="list-group-item sauce" onclick="addSauce('Терияки', 50)">Терияки <br> 50₽</li>
           <li class="list-group-item sauce" onclick="addSauce('Манго SWEET', 50)">Манго SWEET <br> 50₽</li>
-          <li class="list-group-item sauce" onclick="addSauce('Чесночная райта', 50)">Чесночная райта <br> 50₽</li>
+          <li class="list-group-item sauce" onclick="addSauce('Чесночная райта', 50)">Лимонный кимчи <br> 50₽</li>
           <li class="list-group-item sauce" onclick="addSauce('Ореховый', 50)">Ореховый <br> 50₽</li>
           <li class="list-group-item sauce" onclick="addSauce('Тофу', 50)">Тофу <br> 50₽</li>
           <li class="list-group-item sauce" onclick="addSauce('Йогурт с травами', 50)">Йогурт с травами <br> 50₽</li>
@@ -303,35 +252,37 @@
           <li class="list-group-item sauce" onclick="addSauce('Свит чили HOT', 50)">Свит чили HOT <br> 50₽</li>
         </ul>
       </div>
-
       <div id="" class="col-6 p-0">
-        <ul class="list-group"><b>Посыпки</b>
-        <li class="list-group-item posipka" onclick="addPosipka('Лук Фри', 10)">Лук Фри <br> 10₽</li>
-        <li class="list-group-item posipka" onclick="addPosipka('Начос', 10)">Начос <br> 10₽</li>
-        <li class="list-group-item posipka" onclick="addPosipka('Нори', 0)">Нори <br> <i>Бесплатно</i></li>
-        <li class="list-group-item posipka" onclick="addPosipka('Фурикаке', 10)">Фурикаке <br> 10₽</li>
-        <li class="list-group-item posipka" onclick="addPosipka('Шичими', 10)">Шичими <br> 10₽</li>
-        <li class="list-group-item posipka" onclick="addPosipka('Кунжут микс', 0)">Кунжут микс <br> <i>Бесплатно</i></li>
-        <li class="list-group-item posipka" onclick="addPosipka('Кешью', 10)">Кешью <br> 10₽</li>
-        <li class="list-group-item posipka" onclick="addPosipka('Арахис', 10)">Арахис <br> 10₽</li>
-      </ul>
-        
+        <ul class="list-group"><b>Crunchy</b>
+          <li class="list-group-item posipka" onclick="addPosipka('Лук Фри', 10)">Лук Фри <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Лук Фри', 10)">Картофельный пай <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Лук Фри', 10)">Тобико <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Лук Фри', 10)">Имбирь <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Начос', 10)">Начос <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Нори', 0)">Нори <br> <i>Бесплатно</i></li>
+          <li class="list-group-item posipka" onclick="addPosipka('Фурикаке', 10)">Фурикаке <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Шичими', 10)">Шичими <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Кунжут микс', 0)">Кунжут микс <br> <i>Бесплатно</i></li>
+          <li class="list-group-item posipka" onclick="addPosipka('Кунжут микс', 0)">Зеленый лук <br> <i>Бесплатно</i></li>
+          <li class="list-group-item posipka" onclick="addPosipka('Кешью', 10)">Кешью <br> 10₽</li>
+          <li class="list-group-item posipka" onclick="addPosipka('Арахис', 10)">Арахис <br> 10₽</li>
+        </ul>
       </div>
-
-      <div style="padding-top: 40px; padding-bottom:20px" class="col-12 animate__animated animate__fadeIn ">
-
-        <div onclick="order();"><a  class="btn btn-lg btn-primary">🛵 Заказать доставку </a></div>
+      <div class="pt-4 col-12 animate__animated animate__fadeIn ">
+        <div onclick="order();"><a  class="btn btn-lg btn-primary">Заказать</a></div>
       </div>
       
+      <br><br><br><br><br><br><br><br><br><br>
+
     </div>
 
 
 
 
-    <div class='card my-2 animate__animated animate__fadeIn '>
-      <div class="card-header">
+    <div class='card fixed-bottom '>
+      <!-- <div class="card-header">
         <h6>Ваш Боул</h6>
-      </div>
+      </div> -->
       <div class="card-body" id='message'>
         <span id="totalOrder">Выберите основу и ингредиенты для приготовления боула</span>
       </div>
@@ -339,32 +290,15 @@
           Итого: <span id="totalSum">0</span>₽
       </div>
     </div>
+    
   </div>
 
 
     
 
     
-    <br>
-    <div class="text-center text-muted">
-      <h6>Доставка вкуснейших боулов за 40 мин.</h6>
-      <br>
-      
-      <!-- <a class="btn btn-success" href="https://wa.me/79266869609?text=Здравствуйте!%20Я%20хочу%20сделать%20заказ">📞 Заказать по WhatsApp</a>
-      <br><br>
-
-      <p>
-        <a style="text-decoration: none;" class="btn btn-clear display-5"
-          href="https://www.instagram.com/miska.bowls/"><img src="ig.png" width="24px"> miska.bowls</a>
-      </p> -->
-
-      <!-- Каждый день, открывая для вас свои двери, мы стремимся стать лучше, а знать мнение наших гостей о нас - основной ключ к успеху в этом стремлении.
-Заполни форму ниже если у тебя есть за что нас похвалить или поругать, или же ты просто хочешь что-либо предложить и быть услышанным. Спасибо! -->
-      
-      <p class="badge bg-primary">❤️ Шаумяна 90</p>
-      <br><br>
-      
-    </div>
+   
+    
   </div>
 
 

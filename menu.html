@@ -23,36 +23,32 @@
   <title>Miska Bowls</title>
 
   <link rel="stylesheet" href="css/swiper-bundle.min.css" />
-        <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
 </head>
 
-<body style='background-color: rgb(230, 227, 255)'>
+<body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid" style="justify-content: flex-start">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
       <a class="navbar-brand px-2" href="#"> Miska – Bowls & Folks</a>
-      
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="menu.html">Меню</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "  href="mix.html">Собери свой боул сам</a>
+            <a class="nav-link"  href="mix.html">Собери свой боул сам</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "  href="contacts.html">Обратная связь</a>
+            <a class="nav-link"  href="contacts.html">Обратная связь</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "  href="contacts.html">Контакты</a>
+            <a class="nav-link"  href="contacts.html">Контакты</a>
           </li>
         </ul>
-
         <form class="d-flex">
           <button class="btn btn-success px-2" type="submit">Заказать в WhatsApp</button>
           <a style="text-decoration: none;" class="btn btn-clear px-2 mx-1"
@@ -60,119 +56,72 @@
         </form>
       </div>
     </div>
-    </nav>
+  </nav>
 
 
   <div class="container">
-   <br>
   
-    <div id="menu-block" style="">
-      <div class="row text-left" id="">
-        <div style="" class="ps-2 pe-0 col-12 animate__animated animate__backInRight ">
-          <!-- <h2>💁 Меню</h2> -->
-         
-          
-            <div class="bg">
-                    
-                    <p id="Меню2" class="title">ПОКЕ</p>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper" id="ПОКЕ"></div>
-                        <br>
-                    </div>
-        
-                    <p id="Салаты2" class="title">БОУЛЫ</p>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper" id="БОУЛЫ"></div>
-                        <br>
-                    </div>
-                    
-                    <p id="Холодные закуски2" class="title">СТАРТЕР</p>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper" id="СТАРТЕР"></div>
-                        <br>
-                        
-                    </div>
-                    
-                    <p id="Горячие закуски2" class="title">ЗАВТРАК</p>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper" id="ЗАВТРАК"></div>
-                        <br>
-                        
-                    </div>
+    <div id="menu-block">
+      <div class="row text-left">
+        <div class="ps-2 pe-0 col-12 animate__animated animate__backInRight">  
+            <p class="title pt-2">ПОКЕ</p>
+            <div class="swiper-container pb-4">
+                <div class="swiper-wrapper" id="ПОКЕ"></div>
+            </div>
 
-                    <p id="Горячие закус2ки2" class="title">СУП</p>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper" id="СУП"></div>
-                        <br>
-                        
-                    </div>
+            <p class="title pt-2">БОУЛ</p>
+            <div class="swiper-container pb-4">
+                <div class="swiper-wrapper" id="БОУЛ"></div>    
+            </div>
+            
+            <p class="title pt-2">СТАРТЕР</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="СТАРТЕР"></div>
+            </div>
+            
+            <p class="title pt-2">ЗАВТРАК</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="ЗАВТРАК"></div>
+            </div>
 
-                    <p id="Горячие закуски23" class="title">СМУЗИ БОУЛ</p>
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper" id="СМУЗИ БОУЛ"></div>
-                        <br>
-                        
-                    </div>
-                      
-                    
-                </div>
+            <p class="title pt-4">СУП</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="СУП"></div>
+            </div>
 
-                
-                
-                
-          
-          
-          <!-- <img src="img/menu.jpg" alt="" width='100%'> -->
-        </div>
+            <p class="title pt-4">СМУЗИ БОУЛ</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="СМУЗИ БОУЛ"></div>
+            </div>                
+         </div>
       </div>
     </div>
 
-  
-    
-    
-    <div class="text-center text-muted">
-
-      <div class='card my-2 animate__animated animate__fadeIn '>
-        <div class="card-header">
+    <div class="text-left text-muted">
+      <div class='card fixed-bottom' id="blockCart">
+        <!-- <div class="card-header">
           <span id="cartClear" style='float: right; display: none' class="text-right">X</span>
           <h6>Корзина</h6>
-        </div>
-
+        </div> -->
         <div class="card-body" id='message'>
+          <span id="cartClear" style='float: right; display: none' class="text-right">╳</span>
           <span id="totalOrder">В корзине пусто</span>
         </div>
-        
-        <div class="card-footer" id='sum'>
+        <!-- <div class="card-footer" id='sum'>
             Итого: <span id="totalSum">0</span>₽
-        </div>
-        <a id="btnOrder" style="display:none" class="btn btn-lg btn-primary">Заказать</a>  
-        
+        </div> -->
+        <a id="btnOrder" style="display:none" class="btn btn-primary"><span id="totalSum">0</span> ₽ – Заказать</a>  
       </div>
       
       
       <br>
-      
       Доставка вкуснейших боулов за 40 мин.
-      
       <br>
       Miska Bowls 2021 ©
       <br>
       <img src="img/Footerpaymenticons.png" width="80%">
-
       <br>
       <span class="badge bg-primary">❤️ Шаумяна 90</span>
-      
-      
-      
-      <!-- <a class="btn btn-success" href="https://wa.me/79266869609?text=Здравствуйте!%20Я%20хочу%20сделать%20заказ">📞 Заказать по WhatsApp</a>
-      <br><br>
-
-      <p>
-        <a style="text-decoration: none;" class="btn btn-clear display-5"
-          href="https://www.instagram.com/miska.bowls/"><img src="ig.png" width="24px"> miska.bowls</a>
-      </p> -->
-      
-      
       <br><br>
       
     </div>

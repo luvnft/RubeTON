@@ -1,5 +1,28 @@
-/* rgb(230, 227, 255) */
-/* rgb(248, 33,83) */
+
+@font-face {
+    font-family: 'Cooper Black';
+    /* src: url('bedrock-display-webfont.woff2') format('woff2'),
+         url('bedrock-display-webfont.woff') format('woff');  */
+    src: url('Cooper\ Black.otf') format('opentype'); 
+    font-weight: bold;
+    font-style: bold;
+}
+
+body {
+    background-color: rgb(230, 227, 255);
+}
+
+.title {
+    font-family: "Cooper Black";
+    color: gray; 
+    font-size: 48px;
+}
+
+.titleMix {
+    font-family: "Cooper Black";
+    color: red; 
+    font-size: 48px;
+}
 
 
 .list-group-item {
@@ -17,10 +40,16 @@
 
 
 .swal2-image {
-    margin: 0;
+    margin: 0!important;
     margin-bottom: 10px;
 }
 
-.title {
-    font-weight: bold;
+.price-pill {
 }
+
+
+.price-pill:active {
+        background-color: #A4D555!important;
+        outline: none;
+        box-shadow: none;
+    }
