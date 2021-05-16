@@ -228,6 +228,7 @@ function runSwiper() {
             loop: false,
             slidesPerView: "2.5",
             spaceBetween: 10,
+            grabCursor: true,
         });
     }
 }
