@@ -1,9 +1,14 @@
 
 @font-face {
     font-family: 'Cooper Black';
-    /* src: url('bedrock-display-webfont.woff2') format('woff2'),
-         url('bedrock-display-webfont.woff') format('woff');  */
     src: url('Cooper\ Black.otf') format('opentype'); 
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Cooper Otl';
+    src: url('Cooper Otl.ttf') format('opentype'); 
     font-weight: bold;
     font-style: bold;
 }
@@ -23,6 +28,13 @@ body {
     color: red; 
     font-size: 48px;
 }
+
+.titleNum {
+    font-family: "Cooper Otl";
+    color: red; 
+    font-size: 48px;
+}
+
 
 
 .list-group-item {
@@ -52,4 +64,9 @@ body {
         background-color: #A4D555!important;
         outline: none;
         box-shadow: none;
-    }
+}
+
+.items {
+    color: red;
+    font-size: 18px;
+}
