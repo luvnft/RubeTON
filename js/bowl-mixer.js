@@ -159,26 +159,31 @@ toppingsFinished = function() {
 
 order = function() {
         Swal.fire({
-        title: "Ваш заказ",
-        html: bowlDesc + "<br><br>Стоимость – "+bowlPrice+"₽<br><br>Укажите телефон:",
-        input: 'text',
-        showCancelButton: true        
+        title: "Боул добавлен в корзину",
+        html: bowlDesc + "<br><br>"+bowlPrice+" ₽",
+        // input: 'text',
+        showCloseButton: true, 
+        confirmButtonText: 'Продолжить покупки'   
     }).then((result) => {
         if (result.value) {
+
+            location.href="menu.html";
+
             // console.log("Result: " + result.value);
-            Swal.fire({
-                title: "Адрес доставки",
-                text: "Куда доставить заказ?",
-                input: 'text',
-                confirmButtonText: 'Готово'
-            }).then((result) => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Супер',
-                    text: 'Заказ усшешно оформлен, мы начали готовить',
-                    confirmButtonText: 'Ок, жду 😋'
-                    })
-            })
+            // Swal.fire({
+            //     title: "Адрес доставки",
+            //     text: "Куда доставить заказ?",
+            //     input: 'text',
+            //     confirmButtonText: 'Готово'
+            // }).then((result) => {
+            //     Swal.fire({
+            //         icon: 'success',
+            //         title: 'Супер',
+            //         text: 'Заказ усшешно оформлен, мы начали готовить',
+            //         confirmButtonText: 'Ок, жду 😋'
+            //         })
+            // })
+
         }
     });
 

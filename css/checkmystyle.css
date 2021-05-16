@@ -40,6 +40,7 @@ body {
 .list-group-item {
     background-color: rgb(230, 227, 255); 
     font-size: 14px;
+    border: none;
 }
 
 
@@ -66,7 +67,8 @@ body {
         box-shadow: none;
 }
 
-.items {
+.items, .topping, .sauce {
     color: red;
     font-size: 18px;
 }
+
