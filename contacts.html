@@ -84,7 +84,7 @@
           Спасибо!
         </p>
 
-          <!-- <p onclick="window.location.href='tel:+79266869609';">+7 (926) 686-96-09</p> -->
+          
           <br>  
           
 
@@ -95,9 +95,9 @@
             <div class="form-group">
              <h2> <label for="exampleFormControlTextarea1">Обратная связь</label></h2>
              
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+              <textarea class="form-control" id="feedback" rows="5"></textarea>
               <br>
-              <a class="btn btn-primary btn-lg" href="mailto:info@miskabowls.ru">Отправить</a>
+              <a id="feedbackBtn" class="btn btn-primary btn-lg">Отправить</a>
             </div>
           </form>
 
@@ -112,13 +112,55 @@
 
   </div>
 
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/etc.js"></script>
+
+  <script>
+    $("#feedbackBtn").on("click", function () {
+
+      if ( $("#feedback").val() ) {
+        jQuery.ajax({
+              type: "POST",
+              url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
+              data: {
+                  'message': {
+                      'from_email': 'robot@miskabowls.ru',
+                      'from_name': 'Miska Feedback',
+                      'to': [{
+                          // 'email': "rybik@yandex.ru",
+                          'email': "orders@miskabowls.ru",
+                          'name': "",
+                          'type': 'to'
+                      }],
+                      'autotext': 'true',
+                      'subject': "Отзыв с сайта",
+                      'html': $("#feedback").val() 
+                  }
+              }
+            }).done(function (response) {
+              Swal.fire({
+                    icon: 'success',
+                    title: 'Готово',
+                    text: 'Ваш отзыв успешно отправлен',
+                    confirmButtonText: 'Ок'
+                })
+                $("#feedback").val("");
+            }).fail(function (error) {});
+    
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Ой',
+                text: 'Произошла ошибка, нет текста',
+                confirmButtonText: 'Ок'
+            })
+        }
+    });
+  </script>
   
 </body>
 
