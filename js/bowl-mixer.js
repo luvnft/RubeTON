@@ -160,33 +160,15 @@ toppingsFinished = function() {
 
 order = function() {
         Swal.fire({
-        title: "Боул добавлен в корзину",
+        title: "Ваш боул добавлен в корзину",
         confirmButtonColor: '#0d6efd',
         html: bowlDesc + "<br><br>"+bowlPrice+" ₽",
         // input: 'text',
         confirmButtonText: 'Продолжить покупки'   
     }).then((result) => {
         if (result.value) {
-
-            // localStorage.setItem(key,value);
-
+            customBowlAdd(bowlDesc, bowlPrice);
             location.href="menu.html";
-
-            // console.log("Result: " + result.value);
-            // Swal.fire({
-            //     title: "Адрес доставки",
-            //     text: "Куда доставить заказ?",
-            //     input: 'text',
-            //     confirmButtonText: 'Готово'
-            // }).then((result) => {
-            //     Swal.fire({
-            //         icon: 'success',
-            //         title: 'Супер',
-            //         text: 'Заказ усшешно оформлен, мы начали готовить',
-            //         confirmButtonText: 'Ок, жду 😋'
-            //         })
-            // })
-
         }
     });
 
@@ -231,6 +213,8 @@ refresh = function() {
     $("#cartClear").hide();
     $("#btnOrder").hide();
     $("#btnNext").hide();
+
+    removeCustomBowl();
 }
 
 

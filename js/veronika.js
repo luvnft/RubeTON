@@ -131,13 +131,14 @@ $("#cartClear").on("click", function () {
     $("#totalOrder").html("В корзине пусто");
     $("#btnOrder").hide();
     $("#cartClear").hide();
+
+    removeCustomBowl();
 });
 
 $("#btnOrder").on("click", function () {
 
     Swal.fire({
         title: "Заказать",
-        // showCloseButton: true,
         confirmButtonText: 'Готово 👍',
         confirmButtonColor: '#0d6efd',
         html: `
@@ -156,8 +157,6 @@ $("#btnOrder").on("click", function () {
                 <input type="radio" name="options" id="option2" autocomplete="off"> Самовывоз
             </label>    
         </div>
-        
-        
         `+
         "<br>Итого – " + $("#totalSum").html() + " ₽"
         
@@ -167,7 +166,7 @@ $("#btnOrder").on("click", function () {
         address = $("#address").val();
 
         if (phone.length > 2 && address.length > 2) {
-            placeOrder($("#totalOrder").html(), $("#totalSum").html(), phone, address);
+            placeOrder($("#totalOrder").html(), $("#totalSum").html(), phone, address, customBowl);
             Swal.fire({
                 icon: 'success',
                 title: 'Супер',
@@ -187,7 +186,7 @@ $("#btnOrder").on("click", function () {
     });
 });
 
-placeOrder = function (order, sum, phone, address) {
+placeOrder = function (order, sum, phone, address, customBowl) {
     jQuery.ajax({
         type: "POST",
         url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
@@ -196,16 +195,18 @@ placeOrder = function (order, sum, phone, address) {
                 'from_email': 'robot@miskabowls.ru',
                 'from_name': 'Miska Orders',
                 'to': [{
+                    // 'email': "rybik@yandex.ru",
                     'email': "orders@miskabowls.ru",
                     'name': "",
                     'type': 'to'
                 }],
                 'autotext': 'true',
                 'subject': "Новый заказ",
-                'html': "Новый заказ:<br>" + order + " На сумму: " + sum + " ₽<br><br>Телефон: " + phone + "<br>Адрес доставки: " + address
+                'html': "Новый заказ:<br>" + order + "<br>На сумму: " + sum + " ₽<br><br>"+ "Свой боул #1:<br>" + customBowl + "<br><br>Телефон: " + phone + "<br>Адрес доставки: " + address
             }
         }
     }).done(function (response) {
+        removeCustomBowl();
         window.location.href = "/success.html";
     }).fail(function (error) {
         Swal.fire({
@@ -232,3 +233,26 @@ function runSwiper() {
         });
     }
 }
+
+customBowl = false;
+
+if ( customBowlCheck() ) {
+
+    array = customBowlCheck()
+    
+    item = {
+        id: "",
+        name: "Свой Боул #1",
+        category: "",
+        image: "",
+        price: array.split("|")[0],
+        output: "",
+        description: array.split("|")[1]
+    }
+
+    addToCart(item);
+    customBowl = item.description;
+}
+
+
+
