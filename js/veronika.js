@@ -149,12 +149,16 @@ $("#btnOrder").on("click", function () {
         showCloseButton: true,
         html: `
         <div class="input-group flex-nowrap pt-2 pb-2">
+            <input id="userName" type="text" class="form-control" placeholder="Ваше имя">
+        </div>
+
+        <div class="input-group flex-nowrap pb-2">
             <input id="phone" type="text" class="form-control" placeholder="Телефон">
         </div>
+
         <div class="input-group flex-nowrap pb-2">
             <textarea id="address" class="form-control" placeholder="Адрес доставки"></textarea>
         </div>
-
         <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
             <label class="btn btn-secondary active">
                 <input type="radio" name="options" id="option1" autocomplete="off" checked> Доставка
@@ -168,11 +172,12 @@ $("#btnOrder").on("click", function () {
         
     }).then((result) => {
 
+        userName = $("#userName").val();
         phone = $("#phone").val();
         address = $("#address").val();
 
-        if (phone.length > 2 && address.length > 2) {
-            placeOrder($("#totalOrder").html(), $("#totalSum").html(), phone, address, customBowl);
+        if (phone.length > 5) {
+            placeOrder($("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowl);
             Swal.fire({
                 icon: 'success',
                 title: 'Супер',
@@ -184,7 +189,7 @@ $("#btnOrder").on("click", function () {
             Swal.fire({
                 icon: 'warning',
                 title: 'Ой',
-                text: 'Вы забыли указать телефон и адрес доставки',
+                text: 'Вы забыли указать телефон',
                 confirmButtonColor: 'rgb(77, 89, 166)',
                 confirmButtonText: 'Хорошо'
             })
@@ -192,7 +197,7 @@ $("#btnOrder").on("click", function () {
     });
 });
 
-placeOrder = function (order, sum, phone, address, customBowl) {
+placeOrder = function (order, sum, userName, phone, address, customBowl) {
     jQuery.ajax({
         type: "POST",
         url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
@@ -208,7 +213,7 @@ placeOrder = function (order, sum, phone, address, customBowl) {
                 }],
                 'autotext': 'true',
                 'subject': "Новый заказ",
-                'html': "Новый заказ:<br>" + order + "<br>На сумму: " + sum + " ₽<br><br>"+ "Свой боул #1:<br>" + customBowl + "<br><br>Телефон: " + phone + "<br>Адрес доставки: " + address
+                'html': "Новый заказ:<br>" + order + "<br>На сумму: " + sum + " ₽<br><br>"+ "Свой боул #1:<br>" + customBowl + "<br><br>Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
             }
         }
     }).done(function (response) {

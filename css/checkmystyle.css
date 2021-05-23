@@ -21,7 +21,6 @@
 }
 
 
-
 .body-mix {
     background-color: rgb(251, 217, 205);
 }
@@ -57,19 +56,11 @@
 
 
 
-/* .list-group-item { */
-    /* background-color: rgb(230, 227, 255);  */
-    font-size: 14px;
-    border: none;
-/* } */
-
-
 .swal2-header {
     padding-left: 0!important;
     padding-right: 0!important;
     padding-top: 0!important;
 }
-
 
 
 .swal2-image {
