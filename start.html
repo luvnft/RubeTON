@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="css/checkmystyle.css">
 
   <title>Miska Bowls</title>
+
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <script src="js/swiper-bundle.min.js"></script>
 </head>
 
 <body style='background-color: rgb(230, 227, 255)'>
@@ -61,54 +64,76 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container px-0 text-center animate__animated animate__flipInX">
     
    
 
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="img/food/DSC04912-Edit.jpg" width="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/food/DSC04918-Edit.jpg" width="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/food/DSC04937-Edit.jpg" width="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/food/DSC05106-Edit.jpg" width="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/food/DSC05368-Edit.jpg" width="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/food/DSC05926-Edit.jpg" width="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/food/DSC05864-Edit.jpg" width="100%">
+        </div>
+        
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+
+
+    <br><br>
+
+    <h1>ДОБРО ПОЖАЛОВАТЬ!</h1>
+
+    Приветствуем вас в Miska
+
+    <br><br>
+
+    <a id="btnStart" href="mix.html" class="btn btn-primary btn-lg">Начать</a>  
+    
+    <br><br>
+    Miska Bowls 2021 ©
     <br>
     
 
-    <div id="contacts-block" style="">
-      <div class="row text-center" id="">
+    <!-- <div id="contacts-block" >
+      <div class="row text-center" >
         
-        <div style="padding-bottom: 0px" class="col-12 animate__animated animate__flipInX ">
-          <h2 >💁 Ростов-на-Дону,<br>ул. Шаумяна 90</h2>
-          <br>
-          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ada63b44a0ff514e9d50f51cf1fed48bd8ecbcde6c88f89f52aa6528a65ed0883&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-          <br>
-          <p>
-          Каждый день, открывая для вас свои двери, мы стремимся стать лучше, а знать мнение наших гостей о нас – основной ключ к успеху в этом стремлении.
+        <div class="col-12 animate__animated animate__flipInX ">
           
-          Заполни форму ниже если у тебя есть за что нас похвалить или поругать, или же ты просто хочешь что-либо предложить и быть услышанным. 
+        
           
-          Спасибо!
-        </p>
-
-          
-          <br>  
-          
-
-          
-
-          <form>
-           
-            <div class="form-group">
-             <h2> <label for="exampleFormControlTextarea1">Обратная связь</label></h2>
-             
-              <textarea class="form-control" id="feedback" rows="5"></textarea>
-              <br>
-              <a id="feedbackBtn" class="btn btn-primary btn-lg">Отправить</a>
-            </div>
-          </form>
-
-          <br><br>
-          Miska Bowls 2021 ©
-          <br>
           
         </div>
       </div>
     </div>
-    
+     -->
 
   </div>
 
@@ -120,46 +145,30 @@
   <script src="js/etc.js?v5"></script>
 
   <script>
-    $("#feedbackBtn").on("click", function () {
-
-      if ( $("#feedback").val() ) {
-        jQuery.ajax({
-              type: "POST",
-              url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
-              data: {
-                  'message': {
-                      'from_email': 'robot@miskabowls.ru',
-                      'from_name': 'Miska Feedback',
-                      'to': [{
-                          // 'email': "rybik@yandex.ru",
-                          'email': "orders@miskabowls.ru",
-                          'name': "",
-                          'type': 'to'
-                      }],
-                      'autotext': 'true',
-                      'subject': "Отзыв с сайта",
-                      'html': $("#feedback").val() 
-                  }
-              }
-            }).done(function (response) {
-              Swal.fire({
-                    icon: 'success',
-                    title: 'Готово',
-                    text: 'Ваш отзыв успешно отправлен',
-                    confirmButtonText: 'Ок'
-                })
-                $("#feedback").val("");
-            }).fail(function (error) {});
     
-        } else {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Ой',
-                text: 'Произошла ошибка, нет текста',
-                confirmButtonText: 'Ок'
-            })
-        }
-    });
+    const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+  autoplay: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+});
+
   </script>
   
 </body>

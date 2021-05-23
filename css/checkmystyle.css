@@ -97,3 +97,7 @@
     color: green;
 }
 
+#btnOrder, #btnNext, #btnStart {
+    background-color: rgb(77, 89, 166);
+    border-color: rgb(77, 89, 166);
+}

@@ -32,8 +32,8 @@ addItem = function (item, price)  {
             icon: 'info',
             showCancelButton: true,
             showCloseButton: true,
+            confirmButtonColor: 'rgb(77, 89, 166)',
             confirmButtonText: `Да`,
-            confirmButtonColor: '#0d6efd',
             cancelButtonText: `Нет`,
         }).then((result) => {
             if (result.isConfirmed) {
@@ -161,7 +161,7 @@ toppingsFinished = function() {
 order = function() {
         Swal.fire({
         title: "Ваш боул добавлен в корзину",
-        confirmButtonColor: '#0d6efd',
+        confirmButtonColor: 'rgb(77, 89, 166)',
         html: bowlDesc + "<br><br>"+bowlPrice+" ₽",
         // input: 'text',
         confirmButtonText: 'Продолжить покупки'   
