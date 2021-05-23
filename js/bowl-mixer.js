@@ -7,15 +7,15 @@ bowlDesc = "";
 bowlPrice = 0;
 
 $('.topping').click(function(){
-    $(this).toggleClass('active');
+    $(this).toggleClass('selected');
 })
 
 $('.sauce').click(function(){
-    $(this).toggleClass('active');
+    $(this).toggleClass('selected');
 })
 
 $('.extra').click(function(){
-    $(this).toggleClass('active');
+    $(this).toggleClass('selected');
 })
 
 addItem = function (item, price)  {
@@ -205,7 +205,7 @@ refresh = function() {
     bowlDesc = "Выберите основу и ингредиенты для приготовления боула";
     bowlPrice = 0;
 
-    $(".active").removeClass("active");
+    $(".selected").removeClass("selected");
             
     updateBowl();
     showBlock(1);
@@ -223,7 +223,7 @@ $("#cartClear").on("click", function () {
     refresh();
 });
 
-//  showBlock(4);   
+//  showBlock(4);
 
     
 

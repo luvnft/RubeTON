@@ -13,35 +13,55 @@
     font-style: bold;
 }
 
-body {
-    background-color: rgb(230, 227, 255);
+@font-face {
+    font-family: 'Helvetica Hollow';
+    src: url('HelveticaBlkHollow.ttf') format('opentype'); 
+    font-weight: bold;
+    font-style: bold;
+}
+
+
+
+.body-mix {
+    background-color: rgb(251, 217, 205);
+}
+
+.body-menu {
+    background-color: rgb(228, 225, 240);
 }
 
 .title {
     font-family: "Cooper Black";
-    color: gray; 
-    font-size: 48px;
+    color: rgb(201, 122, 177);
+    font-size: 44px;
 }
 
 .titleMix {
     font-family: "Cooper Black";
-    color: red; 
+    color: rgb(228, 52, 91);
     font-size: 48px;
 }
 
 .titleNum {
-    font-family: "Cooper Otl";
-    color: red; 
+    font-family: "Helvetica Hollow";
+    color: rgb(228, 52, 91);
     font-size: 48px;
 }
 
+.mix-desc {
+    color: rgb(251, 217, 205);
+    background-color: rgb(60, 59, 57);
+    border-radius: 5px;
+    font-size: 14px;
+}
 
 
-.list-group-item {
-    background-color: rgb(230, 227, 255); 
+
+/* .list-group-item { */
+    /* background-color: rgb(230, 227, 255);  */
     font-size: 14px;
     border: none;
-}
+/* } */
 
 
 .swal2-header {
@@ -58,6 +78,8 @@ body {
 }
 
 .price-pill {
+    border-radius: 0!important;
+    background-color: rgb(77, 89, 166)!important;
 }
 
 
@@ -68,7 +90,11 @@ body {
 }
 
 .items, .topping, .sauce {
-    color: red;
+    color: rgb(228, 52, 91);
     font-size: 18px;
+}
+
+.selected {
+    color: green;
 }
 

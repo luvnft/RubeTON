@@ -14,6 +14,7 @@ db.getAll('Меню!A1:L100', (err, rows) => {
     elHTML_soup = "";
     elHTML_zavtrak = "";
     elHTML_smuzi = "";
+    elHTML_napitok = "";
 
     rows.forEach(row => {
         if (!row.image) {
@@ -53,6 +54,11 @@ db.getAll('Меню!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_smuzi;
                 break;
 
+            case "НАПИТОК":
+            elHTML_napitok = elHTML_napitok + generateHTML(row);
+            el.innerHTML = elHTML_napitok;
+            break;
+
             default:
                 break;
         }
@@ -64,10 +70,10 @@ db.getAll('Меню!A1:L100', (err, rows) => {
 generateHTML = function (row) {
     return `<div class="swiper-slide">
     <img src="img/food/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
-    <span class="">`+ row.name + `</span><br>
-    <span class="text-muted small">`+ row.output + ` г</span>
+    <span class=""><b>`+ row.name + `</b></span><br>
+    <span class="text-muted small">`+ row.output + ` гр</span>
     <br>
-    <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + ` ₽ +</span>
+    <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + `</span>
     </div>`;
 }
 
@@ -80,19 +86,18 @@ showAlert = function (id, showMessage) {
         Swal.fire({
             title: item.name,
             html:
-                '<b>' + item.output + ' г</b>, ' +
-                item.description,
+            item.description + '<br><br><b>' + item.output + ' гр</b>',
             imageUrl: img,
             showCloseButton: true,
-            confirmButtonText: item.price + " ₽ +",
-            confirmButtonColor: '#0d6efd',
-            imageAlt: 'Miska Bowls',
-            backdrop: `
-                rgba(0,0,123,0.4)
-                url("/gif/mew.gif")
-                center top
-                no-repeat
-                `
+            confirmButtonText: item.price,
+            confirmButtonColor: 'rgb(77, 89, 166)',
+            imageAlt: 'Miska Bowls'
+            // backdrop: `
+            //     rgba(0,0,123,0.4)
+            //     url("/gif/mew.gif")
+            //     center top
+            //     no-repeat
+            //     `
         }).then((result) => {
             if (result.value) {
                 addToCart(item);
@@ -138,9 +143,10 @@ $("#cartClear").on("click", function () {
 $("#btnOrder").on("click", function () {
 
     Swal.fire({
-        title: "Заказать",
-        confirmButtonText: 'Готово 👍',
-        confirmButtonColor: '#0d6efd',
+        title: "Оформить заказ",
+        confirmButtonText: 'Заказать',
+        confirmButtonColor: 'rgb(77, 89, 166)',
+        showCloseButton: true,
         html: `
         <div class="input-group flex-nowrap pt-2 pb-2">
             <input id="phone" type="text" class="form-control" placeholder="Телефон">
@@ -171,15 +177,15 @@ $("#btnOrder").on("click", function () {
                 icon: 'success',
                 title: 'Супер',
                 text: 'Ваш заказ усшешно оформлен',
-                confirmButtonColor: '#0d6efd',
-                confirmButtonText: 'Ок, жду 😋'
+                confirmButtonColor: 'rgb(77, 89, 166)',
+                confirmButtonText: 'Ок, жду'
             })
-        } else {
+        } else if (result.isConfirmed) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Ой',
-                text: 'Укажите телефон и адрес доставки',
-                confirmButtonColor: '#0d6efd',
+                text: 'Вы забыли указать телефон и адрес доставки',
+                confirmButtonColor: 'rgb(77, 89, 166)',
                 confirmButtonText: 'Хорошо'
             })
         }
