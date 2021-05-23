@@ -20,6 +20,10 @@
     font-style: bold;
 }
 
+.bg-light {
+    background-color: white!important;
+}
+
 
 .body-mix {
     background-color: rgb(251, 217, 205);
