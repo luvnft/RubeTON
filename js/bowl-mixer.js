@@ -134,13 +134,13 @@ updateBowl = function() {
         bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1]
     }
     if (bowl.length == 3) {
-        bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2].join(", ");
+        bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинг: " + bowl[2].join(", ");
     }
     if (bowl.length == 4) {
-        bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2].join(", ") + "<br>" + "Соусы: " + bowl[3].join(", ");
+        bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинг: " + bowl[2].join(", ") + "<br>" + "Соус: " + bowl[3].join(", ");
     }
     if (bowl.length == 5) {
-        bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинги: " + bowl[2].join(", ") + "<br>" + "Соусы: " + bowl[3].join(", ") + "<br>" + "Экстра: " + bowl[4].join(", ");
+        bowlDesc = "Основа: " + bowl[0] + "<br>" + "Протеин: " + bowl[1] + "<br>" + "Топпинг: " + bowl[2].join(", ") + "<br>" + "Соус: " + bowl[3].join(", ") + "<br>" + "Экстра: " + bowl[4].join(", ");
     }
     $("#totalOrder").html(bowlDesc);
 }

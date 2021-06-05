@@ -155,26 +155,36 @@ $("#btnOrder").on("click", function () {
         <div class="input-group flex-nowrap pb-2">
             <input id="phone" type="text" class="form-control" placeholder="Телефон">
         </div>
+        <br>
 
-        <div class="input-group flex-nowrap pb-2">
+        <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
+            <label class="btn btn-secondary" onclick="deliveryMethod(1)">
+                <input type="radio" name="options" id="option1" checked> Самовывоз
+            </label>    
+            <label class="btn btn-secondary active" onclick="deliveryMethod(2)">
+                <input type="radio" name="options" id="option2"> Доставка
+            </label>
+        </div>
+
+        <div id="samovivoz"  class="input-group flex-nowrap pb-2">
+        Через 30 мин с Шаумяна 90 
+        </div>
+
+        <div id="dostavka" style="display: none" class="input-group flex-nowrap pb-2">
             <textarea id="address" class="form-control" placeholder="Адрес доставки"></textarea>
         </div>
-        <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> Доставка
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option2" autocomplete="off"> Самовывоз
-            </label>    
-        </div>
-        `+
-        "<br>Итого – " + $("#totalSum").html() + " ₽"
+        `
+        //+"<br>Итого – " + $("#totalSum").html() + " ₽"
         
     }).then((result) => {
 
         userName = $("#userName").val();
         phone = $("#phone").val();
-        address = $("#address").val();
+        address = "Самовывоз";
+        if ( $("#address").val().length > 0 ) {
+            address = $("#address").val();
+        }
+        
 
         if (phone.length > 5) {
             placeOrder($("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowl);
@@ -183,7 +193,7 @@ $("#btnOrder").on("click", function () {
                 title: 'Супер',
                 text: 'Ваш заказ усшешно оформлен',
                 confirmButtonColor: 'rgb(77, 89, 166)',
-                confirmButtonText: 'Ок, жду'
+                confirmButtonText: 'Ок'
             })
         } else if (result.isConfirmed) {
             Swal.fire({
@@ -197,7 +207,31 @@ $("#btnOrder").on("click", function () {
     });
 });
 
+
+deliveryMethod = function(id) {
+    if (id == 1) {
+        $("#dostavka").hide();
+        $("#samovivoz").show();
+        
+    }
+
+    if (id == 2) {
+        $("#dostavka").show();
+        $("#samovivoz").hide();
+        
+    }
+}
+
+
+
+
+
 placeOrder = function (order, sum, userName, phone, address, customBowl) {
+
+    customBowlTxt = "";
+    if (customBowl) {
+        customBowlTxt = "Свой боул:<br>" + customBowl +"<br><br>";
+    }
     jQuery.ajax({
         type: "POST",
         url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
@@ -213,7 +247,7 @@ placeOrder = function (order, sum, userName, phone, address, customBowl) {
                 }],
                 'autotext': 'true',
                 'subject': "Новый заказ",
-                'html': "Новый заказ:<br>" + order + "<br>На сумму: " + sum + " ₽<br><br>"+ "Свой боул #1:<br>" + customBowl + "<br><br>Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
+                'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + customBowlTxt + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
             }
         }
     }).done(function (response) {
