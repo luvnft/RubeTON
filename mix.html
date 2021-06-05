@@ -71,7 +71,7 @@
         
         <div class="pb-4 col-12 animate__animated animate__flipInX animate__delay-1s">
           <h2 class="titleMix"><span class="titleNum">1</span> ОСНОВА</h2>
-          <h6 class='mix-desc p-4'>ЛЮБАЯ ОСНОВА ХОРОШО СОЧЕТАЕТСЯ СО ВСЕМИ ПРОТЕИНАМИ, РИС – ЕСЛИ ХОЧЕТСЯ ПОСЫТНЕЕ. КИНОА И МИКС КОРН-МАКДОНАЛЬД – ДЛЯ ЛЮБИТЕЛЕЙ СЛЕДИТЬ ЗА ФИГУРОЙ</h6>
+          <h6 class='mix-desc p-4'>ЛЮБАЯ ОСНОВА ХОРОШО СОЧЕТАЕТСЯ СО ВСЕМИ ПРОТЕИНАМИ, РИС – ЕСЛИ ХОЧЕТСЯ ПОСЫТНЕЕ. КИНОА И МИКС КОРН-МАНГОЛЬД – ДЛЯ ЛЮБИТЕЛЕЙ СЛЕДИТЬ ЗА ФИГУРОЙ</h6>
         </div>
     
         <div id="button-1" class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('рис', 40)">
@@ -82,9 +82,11 @@
           <b>киноа</b> &nbsp; &nbsp; <span class=" small">120 гр</span> &nbsp; <b>80</b>
         </div>
         
-        <div id="button-3" class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('микс корн-макдональд', 80)">
-          <b>микс корн-макдональд</b> &nbsp; &nbsp; <span class=" small">120 гр</span> &nbsp; <b>80</b>
+        <div id="button-3" class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('микс корн-мангольд', 80)">
+          <b>микс корн-мангольд</b> &nbsp; &nbsp; <span class=" small">120 гр</span> &nbsp; <b>80</b>
         </div>
+
+        <div style='height: 200px'></div>
 
       </div>
 
@@ -143,9 +145,10 @@
         <h6 class='mix-desc p-4'>РЕКОМЕНДУЕМ ДОБАВЛЯТЬ ОТ ЧЕТЫРЕХ ДО ШЕСТИ ТОППИНГОВ ДЛЯ БАЛАНСА ВКУСОВЫХ СОЧЕТАНИЙ</h6>
       </div>
 
-      <div class="col-6 animate__animated animate__zoomInUp">
 
-          <div class="topping pb-4 animate__animated animate__zoomInUp" onclick="addItem('авокадо', 70)">
+      <div class="col-6 col-md-3 ">
+
+          <div class="topping pb-4 " onclick="addTopping('авокадо', 70)">
             <b>авокадо</b><br><span class=" small">20&nbsp;гр</span> <b>70</b>
           </div>
 
@@ -191,7 +194,7 @@
 
       </div>
       
-      <div class="col-6 animate__animated animate__zoomInUp">
+      <div class="col-6 ">
         
           <div class="pb-4 topping" onclick="addTopping('огурец свежий', 30)"><b>огурец свежий</b><br><span class="small">20&nbsp;гр</span>
             <b class="">30</b>
@@ -237,7 +240,7 @@
 
 
     <div class="row text-left pt-2" id="block-4" style="display: none">
-      <div class="pb-2 col-12 animate__animated animate__flipInX ">
+      <div class="pb-2 col-12  ">
         <h2 class="titleMix"><span class="titleNum">4</span> СОУС и ЭКСТРА</h2>
       </div>
 
@@ -337,18 +340,43 @@
     </div>
 
 
-    <div class='card fixed-bottom '>
+    <!-- <div class='card fixed-bottom '>
+      
       <div class="card-body" id='message'>
-        <span id="cartClear" style='float: right; display: none' class="text-right">╳</span>
+        <span id="cartClear" style='float: right; display: none; cursor:pointer' class="text-right">╳</span>
         <span id="totalOrder">Выберите основу и ингредиенты для приготовления боула</span>
       </div>
+
       <div class="card-footer" id='sum'>
-        
           Итого: <span id="totalSum">0</span>  
-          <a id="btnOrder" style="display:none; float: right" class="btn btn-primary"> Создать боул</a>  
-          <a id="btnNext" style="display:none; float: right" class="btn btn-primary"> Дальше</a>  
+          <a id="btnOrder" style="display:none;" class="mx-2 btn btn-sm btn-primary"> Добавить боул в корзину</a>  
+          <a id="btnNext" style="display:none;" class="mx-2 btn btn-sm btn-primary"> Дальше</a>  
       </div>
-    </div>
+
+    </div> -->
+
+    <div class="text-left text-muted">
+      <div class='card fixed-bottom' id="">
+        
+        <div class="card-body" id='message'>
+          <span id="cartClear" style='float: right; display: none' class="text-right"><span id="totalSum">0</span> ╳</span>
+          <span id="totalOrder">Выберите основу и ингредиенты для приготовления боула</span>
+          
+           
+          
+        </div>
+
+        <a id="btnNext" style="display:none;" class="btn btn-lg btn-primary"> Дальше</a> 
+        
+        
+        <a id="btnOrder" style="display:none" class="btn btn-lg btn-primary">
+          Добавить боул в корзину
+        </a>  
+
+        <!-- Итого: <span id="totalSum">0</span>  
+        <a id="btnOrder" style="display:none;" class="mx-2 btn btn-sm btn-primary"> Добавить боул в корзину</a>   -->
+
+      </div>
     
   </div>
 

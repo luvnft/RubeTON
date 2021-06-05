@@ -253,7 +253,7 @@ if ( customBowlCheck() ) {
     
     item = {
         id: "",
-        name: "Свой Боул #1",
+        name: "свой боул",
         category: "",
         image: "",
         price: array.split("|")[0],

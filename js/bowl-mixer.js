@@ -159,18 +159,23 @@ toppingsFinished = function() {
 };
 
 order = function() {
-        Swal.fire({
-        title: "Ваш боул добавлен в корзину",
-        confirmButtonColor: 'rgb(77, 89, 166)',
-        html: bowlDesc + "<br><br>"+bowlPrice+" ₽",
-        // input: 'text',
-        confirmButtonText: 'Продолжить покупки'   
-    }).then((result) => {
-        if (result.value) {
-            customBowlAdd(bowlDesc, bowlPrice);
-            location.href="menu.html";
-        }
-    });
+
+    customBowlAdd(bowlDesc, bowlPrice);
+    location.href="menu.html";
+        
+    // Swal.fire({
+    //     title: "Ваш боул добавлен в корзину",
+    //     confirmButtonColor: 'rgb(77, 89, 166)',
+    //     html: bowlDesc + "<br><br>"+bowlPrice+" ₽",
+    //     // input: 'text',
+    //     confirmButtonText: 'Продолжить покупки'   
+    // }).then((result) => {
+    //     if (result.value) {
+    //         customBowlAdd(bowlDesc, bowlPrice);
+    //         location.href="menu.html";
+    //     }
+    // });
+
 
 }
 
@@ -223,7 +228,7 @@ $("#cartClear").on("click", function () {
     refresh();
 });
 
-//  showBlock(4);
+ //showBlock(4);
 
     
 
