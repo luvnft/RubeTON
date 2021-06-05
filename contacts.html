@@ -34,13 +34,13 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-0 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link"  href="menu.html">Меню</a>
+            <a class="nav-link" href="menu.html">Меню</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="mix.html">Собери свой боул сам</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contacts.html">Обратная связь</a>
+            <a class="nav-link" href="feedback.html">Обратная связь</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="contacts.html">Контакты</a>
@@ -75,31 +75,6 @@
           <h2 >💁 Ростов-на-Дону,<br>ул. Шаумяна 90</h2>
           <br>
           <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ada63b44a0ff514e9d50f51cf1fed48bd8ecbcde6c88f89f52aa6528a65ed0883&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-          <br>
-          <p>
-          Каждый день, открывая для вас свои двери, мы стремимся стать лучше, а знать мнение наших гостей о нас – основной ключ к успеху в этом стремлении.
-          
-          Заполни форму ниже если у тебя есть за что нас похвалить или поругать, или же ты просто хочешь что-либо предложить и быть услышанным. 
-          
-          Спасибо!
-        </p>
-
-          
-          <br>  
-          
-
-          
-
-          <form>
-           
-            <div class="form-group">
-             <h2> <label for="exampleFormControlTextarea1">Обратная связь</label></h2>
-             
-              <textarea class="form-control" id="feedback" rows="5"></textarea>
-              <br>
-              <a id="feedbackBtn" class="btn btn-primary btn-lg">Отправить</a>
-            </div>
-          </form>
 
           <br><br>
           Miska Bowls 2021 ©
@@ -119,48 +94,6 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="js/etc.js?v5"></script>
 
-  <script>
-    $("#feedbackBtn").on("click", function () {
-
-      if ( $("#feedback").val() ) {
-        jQuery.ajax({
-              type: "POST",
-              url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
-              data: {
-                  'message': {
-                      'from_email': 'robot@miskabowls.ru',
-                      'from_name': 'Miska Feedback',
-                      'to': [{
-                          // 'email': "rybik@yandex.ru",
-                          'email': "orders@miskabowls.ru",
-                          'name': "",
-                          'type': 'to'
-                      }],
-                      'autotext': 'true',
-                      'subject': "Отзыв с сайта",
-                      'html': $("#feedback").val() 
-                  }
-              }
-            }).done(function (response) {
-              Swal.fire({
-                    icon: 'success',
-                    title: 'Готово',
-                    text: 'Ваш отзыв успешно отправлен',
-                    confirmButtonText: 'Ок'
-                })
-                $("#feedback").val("");
-            }).fail(function (error) {});
-    
-        } else {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Ой',
-                text: 'Произошла ошибка, нет текста',
-                confirmButtonText: 'Ок'
-            })
-        }
-    });
-  </script>
   
 </body>
 
