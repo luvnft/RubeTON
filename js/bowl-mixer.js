@@ -192,13 +192,35 @@ showBlock = function (x) {
 
     $("#block-"+x).show();
 
-    
-    //TODO добавить запись в адресную строку 
+    window.location.hash = "block-"+x;
 
-    // $('body,html').animate({
-    //     scrollTop: 0
-    // }, 400);
+    $('body,html').animate({
+        scrollTop: 0
+    }, 400);
 }
+
+$(window).bind('hashchange', function () { //detect hash change
+    var hash = window.location.hash.slice(1); //hash to string (= "myanchor")
+    block = parseInt(hash.split("-")[1]);
+    console.log(block);
+    if (currentBlock != block) {
+        // showBlock(block);
+        
+        Swal.fire({
+        title: "Хотите начать заново?",
+        confirmButtonColor: 'rgb(77, 89, 166)',
+        showCancelButton: true,
+        confirmButtonText: 'Да',   
+        cancelButtonText: "Нет"
+    }).then((result) => {
+        if (result.value) {
+            location.href="mix.html";
+        }
+    });
+
+    } 
+
+});
 
 
 refresh = function() {
