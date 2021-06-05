@@ -94,6 +94,10 @@
     cursor: pointer;
 }
 
+.topping, .sauce {
+    height: 90px;
+}
+
 .selected {
     color: green;
 }

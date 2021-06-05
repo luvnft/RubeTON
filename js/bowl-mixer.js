@@ -161,6 +161,13 @@ toppingsFinished = function() {
 order = function() {
 
     customBowlAdd(bowlDesc, bowlPrice);
+
+    Swal.fire({
+        title: "Готово",
+        icon: "success",
+        showConfirmButton: false
+    });
+
     location.href="menu.html";
         
     // Swal.fire({
