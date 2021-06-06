@@ -55,9 +55,9 @@ db.getAll('Меню!A1:L100', (err, rows) => {
                 break;
 
             case "НАПИТОК":
-            elHTML_napitok = elHTML_napitok + generateHTML(row);
-            el.innerHTML = elHTML_napitok;
-            break;
+                elHTML_napitok = elHTML_napitok + generateHTML(row);
+                el.innerHTML = elHTML_napitok;
+                break;
 
             default:
                 break;
@@ -68,13 +68,17 @@ db.getAll('Меню!A1:L100', (err, rows) => {
 
 
 generateHTML = function (row) {
-    return `<div class="swiper-slide">
-    <img src="img/food/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
-    <span class=""><b>`+ row.name + `</b></span><br>
-    <span class="text-muted small">`+ row.output + ` гр</span>
-    <br>
-    <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + `</span>
-    </div>`;
+    if (row.hide != "yes") {
+        return `<div class="swiper-slide">
+        <img src="img/food/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
+        <span class=""><b>`+ row.name + `</b></span><br>
+        <span class="text-muted small">`+ row.output + ` гр</span>
+        <br>
+        <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + `</span>
+        </div>`;
+    } else {
+        return "";
+    }
 }
 
 showAlert = function (id, showMessage) {
@@ -128,9 +132,7 @@ addToCart = function (item) {
         $("#btnOrder").show();
         $("#cartClear").show();
     }
-
     animateCSS('#blockCart', 'pulse');
-    
 }
 
 $("#cartClear").on("click", function () {
@@ -139,7 +141,6 @@ $("#cartClear").on("click", function () {
     $("#totalOrder").html("В корзине пусто");
     $("#btnOrder").hide();
     $("#cartClear").hide();
-
     removeCustomBowl();
 });
 
@@ -158,28 +159,25 @@ $("#btnOrder").on("click", function () {
         <div class="input-group flex-nowrap pb-2">
             <input id="phone" type="text" class="form-control" placeholder="Телефон">
         </div>
-        <br>
-
+       
         <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
-            <label class="btn btn-secondary" onclick="deliveryMethod(1)">
-                <input type="radio" name="options" id="option1" checked> Самовывоз
-            </label>    
-            <label class="btn btn-secondary active" onclick="deliveryMethod(2)">
-                <input type="radio" name="options" id="option2"> Доставка
+            <label class="btn btn-secondary active" onclick="deliveryMethod(1)">
+                <input type="radio" name="options" id="option1" checked> Доставка
             </label>
+            <label class="btn btn-secondary" onclick="deliveryMethod(2)">
+                <input type="radio" name="options" id="option2" > Самовывоз
+            </label>    
         </div>
 
-        <div id="samovivoz"  class=" flex-nowrap pb-2">
+        <div id="samovivoz" style="display: none" class="flex-nowrap pb-2">
             Шаумяна 90, можно подходить через 30 мин 
         </div>
         
-        <div id="dostavka" style="display: none" class=" flex-nowrap pb-2">
-            <textarea id="address" class="form-control" placeholder="Адрес доставки"></textarea>
-            Доставка осуществляется сервисом Яндекс.Такси
+        <div id="dostavka"  class="flex-nowrap">
+            <textarea id="address" class="mb-2 form-control" placeholder="Адрес доставки"></textarea>
+            Доставка осуществляется сервисом Яндекс GO
         </div>
         `
-        //+"<br>Итого – " + $("#totalSum").html() + " ₽"
-        
     }).then((result) => {
 
         userName = $("#userName").val();
@@ -188,7 +186,6 @@ $("#btnOrder").on("click", function () {
         if ( $("#address").val().length > 0 ) {
             address = $("#address").val();
         }
-        
 
         if (phone.length > 5) {
             placeOrder($("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowl);
@@ -214,20 +211,15 @@ $("#btnOrder").on("click", function () {
 
 deliveryMethod = function(id) {
     if (id == 1) {
-        $("#dostavka").hide();
-        $("#samovivoz").show();
-        
+        $("#dostavka").show();
+        $("#samovivoz").hide();
     }
 
     if (id == 2) {
-        $("#dostavka").show();
-        $("#samovivoz").hide();
-        
+        $("#dostavka").hide();
+        $("#samovivoz").show();
     }
 }
-
-
-
 
 
 placeOrder = function (order, sum, userName, phone, address, customBowl) {

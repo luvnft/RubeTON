@@ -43,6 +43,12 @@
     font-size: 44px;
 }
 
+.titleMini {
+    font-family: "Cooper Black";
+    color: rgb(201, 122, 177);
+    font-size: 28px;
+}
+
 .titleMix {
     font-family: "Cooper Black";
     color: rgb(228, 52, 91);
@@ -99,7 +105,7 @@
 }
 
 .selected {
-    color: green;
+    color: rgb(77, 89, 166);
 }
 
 #btnOrder, #btnNext, #btnStart {
