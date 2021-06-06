@@ -169,12 +169,17 @@ $("#btnOrder").on("click", function () {
             </label>
         </div>
 
-        <div id="samovivoz"  class="input-group flex-nowrap pb-2">
-        Через 30 мин с Шаумяна 90 
+        <div id="samovivoz"  class=" flex-nowrap pb-2">
+        Шаумяна 90, можно подходить через 30 мин 
         </div>
-
-        <div id="dostavka" style="display: none" class="input-group flex-nowrap pb-2">
+        
+        
+        <div id="dostavka" style="display: none" class=" flex-nowrap pb-2">
+        
+            
             <textarea id="address" class="form-control" placeholder="Адрес доставки"></textarea>
+            Доставка осуществляется сервисом Яндекс.Такси
+            
         </div>
         `
         //+"<br>Итого – " + $("#totalSum").html() + " ₽"
