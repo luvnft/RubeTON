@@ -81,12 +81,15 @@ showAlert = function (id, showMessage) {
     item = rows2[id - 1];
     img = "img/food/" + item.image;
     if (showMessage != false) {
+        if (item.description) {
 
+        } else {
+            item.description = "";
+        }
     
         Swal.fire({
             title: item.name,
-            html:
-            item.description + '<br><br><b>' + item.output + ' гр</b>',
+            html: item.description + '<br><br><b>' + item.output + ' гр</b>',
             imageUrl: img,
             showCloseButton: true,
             confirmButtonText: item.price,
