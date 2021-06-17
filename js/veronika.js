@@ -191,10 +191,9 @@ $("#btnOrder").on("click", function () {
             placeOrder($("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowl);
             Swal.fire({
                 icon: 'success',
-                title: 'Супер',
-                text: 'Ваш заказ усшешно оформлен',
-                confirmButtonColor: 'rgb(77, 89, 166)',
-                confirmButtonText: 'Ок'
+                title: 'Ваш заказ успешно оформлен',
+                text: 'Открываем форму оплаты',
+                showConfirmButton: false
             })
         } else if (result.isConfirmed) {
             Swal.fire({
@@ -228,6 +227,7 @@ placeOrder = function (order, sum, userName, phone, address, customBowl) {
     if (customBowl) {
         customBowlTxt = "Свой боул:<br>" + customBowl +"<br><br>";
     }
+
     jQuery.ajax({
         type: "POST",
         url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
@@ -236,7 +236,6 @@ placeOrder = function (order, sum, userName, phone, address, customBowl) {
                 'from_email': 'robot@miskabowls.ru',
                 'from_name': 'Miska Orders',
                 'to': [{
-                    // 'email': "rybik@yandex.ru",
                     'email': "orders@miskabowls.ru",
                     'name': "",
                     'type': 'to'
@@ -248,7 +247,11 @@ placeOrder = function (order, sum, userName, phone, address, customBowl) {
         }
     }).done(function (response) {
         removeCustomBowl();
-        window.location.href = "/success.html";
+        
+        // window.location.href = "/success.html";
+        $("#payFormDesc").val(userName + " " + phone);
+        $("#payFormVal").val(sum);
+        $( "#payForm" ).submit();
     }).fail(function (error) {
         Swal.fire({
             icon: 'error',
