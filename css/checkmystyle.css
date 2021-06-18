@@ -108,7 +108,8 @@
     color: rgb(77, 89, 166);
 }
 
-#btnOrder, #btnNext, #btnStart {
+#btnOrder, #btnNext, #btnStart, #feedbackBtn {
     background-color: rgb(77, 89, 166);
     border-color: rgb(77, 89, 166);
+}
 }
