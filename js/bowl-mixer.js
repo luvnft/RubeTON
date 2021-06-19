@@ -6,6 +6,10 @@ bowlExtra = [];
 bowlDesc = "";
 bowlPrice = 0;
 
+$('.items').click(function(){
+    $(this).toggleClass('selected');
+})
+
 $('.topping').click(function(){
     $(this).toggleClass('selected');
 })
@@ -22,9 +26,9 @@ addItem = function (item, price)  {
 
     $("#cartClear").show();
     
-    if (bowl.length < 1) {
-        $("#block1-choose").html(item);
-    }
+    // if (bowl.length < 1) {
+    //     $("#block1-choose").html(item);
+    // }
 
     if (currentBlock == 2) {
         Swal.fire({
