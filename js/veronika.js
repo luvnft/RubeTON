@@ -206,7 +206,7 @@ $("#btnOrder").on("click", function () {
             })
         } else if (result.isConfirmed) {
             Swal.fire({
-                icon: 'warning',
+                // icon: 'warning',
                 title: 'Ой',
                 text: 'Вы забыли указать телефон',
                 confirmButtonColor: 'rgb(77, 89, 166)',
