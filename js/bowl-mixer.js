@@ -33,7 +33,7 @@ addItem = function (item, price)  {
     if (currentBlock == 2) {
         Swal.fire({
             title: 'Удвоить протеин?',
-            icon: 'info',
+            // icon: 'info',
             showCancelButton: true,
             showCloseButton: true,
             confirmButtonColor: 'rgb(77, 89, 166)',
@@ -213,7 +213,7 @@ showBlock = function (x) {
 $(window).bind('hashchange', function () { //detect hash change
     var hash = window.location.hash.slice(1); //hash to string (= "myanchor")
     block = parseInt(hash.split("-")[1]);
-    console.log(block);
+    // console.log(block);
     if (currentBlock != block) {
         // showBlock(block);
         
