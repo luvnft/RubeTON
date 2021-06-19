@@ -144,7 +144,11 @@ $("#cartClear").on("click", function () {
     removeCustomBowl();
 });
 
+lastOption = 0;
+
 $("#btnOrder").on("click", function () {
+
+    $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
 
     Swal.fire({
         title: "Оформить заказ",
@@ -161,12 +165,14 @@ $("#btnOrder").on("click", function () {
         </div>
        
         <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
-            <label class="btn btn-secondary active" onclick="deliveryMethod(1)">
-                <input type="radio" name="options" id="option1" checked> Доставка
+        
+            <label class="btn btn-secondary active">
+                <input type="radio" name="options" onclick="deliveryMethod(1)" id="option1" checked> Доставка
             </label>
-            <label class="btn btn-secondary" onclick="deliveryMethod(2)">
-                <input type="radio" name="options" id="option2" > Самовывоз
-            </label>    
+
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" onclick="deliveryMethod(2)" id="option2" > Самовывоз
+            </label>
         </div>
 
         <div id="samovivoz" style="display: none" class="flex-nowrap pb-2">
@@ -175,7 +181,10 @@ $("#btnOrder").on("click", function () {
         
         <div id="dostavka"  class="flex-nowrap">
             <textarea id="address" class="mb-2 form-control" placeholder="Адрес доставки"></textarea>
+            Стоимость доставки 200₽ в пределах <a href="delivery.html" style="color: rgb(77, 89, 166);">зоны доставки</a>
+            <br><br>
             Доставка осуществляется сервисом Яндекс GO
+            
         </div>
         `
     }).then((result) => {
@@ -204,19 +213,30 @@ $("#btnOrder").on("click", function () {
                 confirmButtonText: 'Хорошо'
             })
         }
+
     });
 });
 
 
 deliveryMethod = function(id) {
     if (id == 1) {
+        // console.log(1);
         $("#dostavka").show();
         $("#samovivoz").hide();
+        if (lastOption != 1) {  //&& $("#option1").prop('checked') == true
+            $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+        }
+        lastOption = id;
     }
 
     if (id == 2) {
+        // console.log(2);
         $("#dostavka").hide();
         $("#samovivoz").show();
+        if (lastOption != 2) { //&& $("#option2").prop('checked') == true
+            $("#totalSum").html( parseInt($("#totalSum").html()) - 200 );
+        }
+        lastOption = id;
     }
 }
 
