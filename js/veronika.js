@@ -144,12 +144,25 @@ $("#cartClear").on("click", function () {
     removeCustomBowl();
 });
 
-lastOption = 0;
+deliveryOption = 0;
 
 $("#btnOrder").on("click", function () {
 
-    $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+    if (deliveryOption == 0) {
+        $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+        deliveryOption = 1;
+    }
 
+    if (deliveryOption == 1) {
+        option1 = "checked";
+        option2 = "";
+    }
+
+    if (deliveryOption == 2) {
+        option1 = "";
+        option2 = "checked";
+    }
+    
     Swal.fire({
         title: "Оформить заказ",
         confirmButtonText: 'Заказать',
@@ -167,11 +180,11 @@ $("#btnOrder").on("click", function () {
         <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
         
             <label class="btn btn-secondary active">
-                <input type="radio" name="options" onclick="deliveryMethod(1)" id="option1" checked> Доставка
+                <input type="radio" name="options" onclick="deliveryMethod(1)" id="option1" ${option1}> Доставка
             </label>
 
             <label class="btn btn-secondary">
-                <input type="radio" name="options" onclick="deliveryMethod(2)" id="option2" > Самовывоз
+                <input type="radio" name="options" onclick="deliveryMethod(2)" id="option2" ${option2}> Самовывоз
             </label>
         </div>
 
@@ -219,25 +232,27 @@ $("#btnOrder").on("click", function () {
 
 
 deliveryMethod = function(id) {
+
     if (id == 1) {
-        // console.log(1);
         $("#dostavka").show();
         $("#samovivoz").hide();
-        if (lastOption != 1) {  //&& $("#option1").prop('checked') == true
+
+        if (deliveryOption == 2) {
             $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+            deliveryOption = id;
         }
-        lastOption = id;
     }
 
     if (id == 2) {
-        // console.log(2);
         $("#dostavka").hide();
         $("#samovivoz").show();
-        if (lastOption != 2) { //&& $("#option2").prop('checked') == true
+
+        if (deliveryOption == 1) {
             $("#totalSum").html( parseInt($("#totalSum").html()) - 200 );
+            deliveryOption = id;
         }
-        lastOption = id;
     }
+
 }
 
 
