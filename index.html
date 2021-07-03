@@ -40,11 +40,13 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/80321737" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
+  
 </head>
 
 <body style='background-color: rgb(230, 227, 255)'>
+  
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav id="mrNav" class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 1; width:100%">
     <div class="container-fluid" style="justify-content: flex-start">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -86,13 +88,45 @@
     </div>
   </nav>
 
-  <div class=" px-0 pt-0 text-center animate__animated animate__flipInX">
-   <div class="row m-0">
 
-    <div class="swiper-container col-md-6" >
-      <!-- Additional required wrapper -->
+  <div class="px-0 pt-0 text-center animate__animated animate__flipInX">
+   <div class="row m-0">
+    
+    <div id="mrDesktop" class="swiper-container col-md-6 vh-100 d-none d-md-block"> <!-- desktop -->
       <div class="swiper-wrapper">
-        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="img/start/1.jpg" height="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/start/2.jpg" height="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/start/3.jpg" height="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/start/4.jpg" height="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/start/6.jpg" height="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/start/7.jpg" height="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/start/8.jpg" height="100%">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/start/9.jpg" height="100%">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+
+    <div class="swiper-container col-md-6 d-block d-sm-none " > <!-- mobile -->      
+      <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="img/start/1.jpg" width="100%">
         </div>
@@ -105,9 +139,6 @@
         <div class="swiper-slide">
           <img src="img/start/4.jpg" width="100%">
         </div>
-        <!-- <div class="swiper-slide">
-          <img src="img/start/5.jpg" width="100%">
-        </div> -->
         <div class="swiper-slide">
           <img src="img/start/6.jpg" width="100%">
         </div>
@@ -120,39 +151,45 @@
         <div class="swiper-slide">
           <img src="img/start/9.jpg" width="100%">
         </div>
-        
       </div>
-      <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
       <div class="swiper-button-prev"></div>
       <div class="swiper-button-next"></div>
-
-      <!-- If we need scrollbar -->
-      <!-- <div class="swiper-scrollbar"></div> -->
     </div>
 
-    <div class='col-md-6'>
-      
-      <p class="title pb-2 pt-4" style="font-size: 54px">Hey, folk!</p>
 
+    <div class='col-md-6 vh-100 text-center d-none d-md-block'> <!-- desktop -->
+      <div class="position-absolute top-50  translate-middle-y w-50">
+      <p class="title pb-2" style="font-size: 54px">Hey, folk!</p>
       <p class="pb-4">Мы готовим поке, боулы и не только.<br> 
       Быстро, вкусно, красиво и со всей душой.<br>
       Приходите к нам на Шаумяна 90,<br>
       либо оформите заказ на доставку или самовывоз.</p>
-      
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="mix.html" style="background-color: rgb(201, 122, 177); border-color: rgb(201, 122, 177);" class="btn btn-primary btn-lg">Собери свой боул</a>
+        <a href="menu.html" id="btnStart" class="btn btn-lg btn-primary">Меню</a>
+      </div>
+      <br>
+      </div>  
+    </div>
+
+
+    <div class='col-md-6 d-block d-sm-none'> <!-- mobile -->
+      <p class="title pb-2 pt-4" style="font-size: 54px">Hey, folk!</p>
+      <p class="pb-4">Мы готовим поке, боулы и не только.<br> 
+      Быстро, вкусно, красиво и со всей душой.<br>
+      Приходите к нам на Шаумяна 90,<br>
+      либо оформите заказ на доставку или самовывоз.</p>
       <div class="d-grid gap-2">
         <a href="mix.html" style="background-color: rgb(201, 122, 177); border-color: rgb(201, 122, 177);" class="btn btn-primary btn-lg">Собери свой боул</a>
         <a href="menu.html" id="btnStart" class="btn btn-lg btn-primary">Меню</a>
       </div>
-      
       <br>
-      
     </div>
+
+
+
   </div>
-
-
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
@@ -163,6 +200,12 @@
   <script src="js/etc.js?v5"></script>
 
   <script>
+
+    if ( $("#mrDesktop").is(":visible") ) {
+
+      $("#mrNav").addClass("position-fixed");
+
+    }
     
     const swiper = new Swiper('.swiper-container', {
   // Optional parameters
@@ -181,10 +224,6 @@
     prevEl: '.swiper-button-prev',
   },
 
-  // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
 });
 
   </script>
