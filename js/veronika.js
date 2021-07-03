@@ -116,6 +116,7 @@ showAlert = function (id, showMessage) {
 
 };
 
+deliveryOption = 0;
 cart = [];
 
 addToCart = function (item) {
@@ -127,6 +128,9 @@ addToCart = function (item) {
         $("#totalOrder").append(str);
         price = price + parseInt(element.price);
     });
+    if (deliveryOption == 1) {
+            price = price + 200;
+        }
     $("#totalSum").html(price)
     if (price > 0) {
         $("#btnOrder").show();
@@ -144,7 +148,6 @@ $("#cartClear").on("click", function () {
     removeCustomBowl();
 });
 
-deliveryOption = 0;
 
 $("#btnOrder").on("click", function () {
 
