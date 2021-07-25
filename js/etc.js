@@ -18,27 +18,29 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
 
 
 
-  customBowlAdd = function(item, price) {
-    cart2 = localStorage.getItem("cart");
+customBowlAdd = function(item, price) {
+  bowl = price + "|" + item;
+  bowls = JSON.parse( localStorage.getItem("bowls") );
+ 
+  if (bowls) {
+    bowls.push(bowl);
+  } else {
+    bowls = [];
+    bowls.push(bowl);
+  }
+  localStorage.setItem("bowls", JSON.stringify(bowls) );
+};
 
-    if (cart2) {
-      localStorage.setItem("cart", price + "|"+item);
-    } else {
-      localStorage.setItem("cart", price + "|"+item);
-    }
-    
-  };
 
+getCustomBowls = function() {
+  bowls = JSON.parse( localStorage.getItem("bowls") );
 
-customBowlCheck = function() {
-  cart2 = localStorage.getItem("cart");
-
-  if (cart2) {
-    return cart2
+  if (bowls) {
+    return bowls
   }
 
 }
 
-removeCustomBowl = function() {
+removeCustomBowls = function() {
   localStorage.clear();
 }

@@ -99,12 +99,6 @@ showAlert = function (id, showMessage) {
             confirmButtonText: item.price,
             confirmButtonColor: 'rgb(77, 89, 166)',
             imageAlt: 'Miska Bowls'
-            // backdrop: `
-            //     rgba(0,0,123,0.4)
-            //     url("/gif/mew.gif")
-            //     center top
-            //     no-repeat
-            //     `
         }).then((result) => {
             if (result.value) {
                 addToCart(item);
@@ -145,7 +139,7 @@ $("#cartClear").on("click", function () {
     $("#totalOrder").html("В корзине пусто");
     $("#btnOrder").hide();
     $("#cartClear").hide();
-    removeCustomBowl();
+    removeCustomBowls();
 });
 
 
@@ -213,7 +207,7 @@ $("#btnOrder").on("click", function () {
         }
 
         if (phone.length > 5) {
-            placeOrder($("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowl);
+            placeOrder( $("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowlsDesc );
             Swal.fire({
                 icon: 'success',
                 title: 'Ваш заказ успешно оформлен',
@@ -259,11 +253,14 @@ deliveryMethod = function(id) {
 }
 
 
-placeOrder = function (order, sum, userName, phone, address, customBowl) {
+placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
 
     customBowlTxt = "";
-    if (customBowl) {
-        customBowlTxt = "Свой боул:<br>" + customBowl +"<br><br>";
+    if (customBowlsDesc) {
+        customBowlTxt = "Свои боулы:<br>";
+        customBowlsDesc.forEach( (bowlDesc) => {
+            customBowlTxt = customBowlTxt + bowlDesc + "<br><br>"
+        });
     }
 
     jQuery.ajax({
@@ -284,9 +281,8 @@ placeOrder = function (order, sum, userName, phone, address, customBowl) {
             }
         }
     }).done(function (response) {
-        removeCustomBowl();
+        removeCustomBowls();
         
-        // window.location.href = "/success.html";
         $("#payFormDesc").val(userName + " " + phone);
         $("#payFormVal").val(sum);
         $( "#payForm" ).submit();
@@ -316,24 +312,29 @@ function runSwiper() {
     }
 }
 
-customBowl = false;
 
-if ( customBowlCheck() ) {
+customBowlsDesc = false;
 
-    array = customBowlCheck()
-    
-    item = {
-        id: "",
-        name: "свой боул",
-        category: "",
-        image: "",
-        price: array.split("|")[0],
-        output: "",
-        description: array.split("|")[1]
-    }
+if ( getCustomBowls() ) {
 
-    addToCart(item);
-    customBowl = item.description;
+    bowls = getCustomBowls();
+    customBowlsDesc = [];
+
+    bowls.forEach( (bowl, index) => {
+        item = {
+            id: "",
+            name: "свой боул №" + (index+1),
+            category: "",
+            image: "",
+            price: bowl.split("|")[0],
+            output: "",
+            description: bowl.split("|")[1]
+        }
+
+        addToCart(item);
+
+        customBowlsDesc.push(item.name + ":<br>" + item.description)
+    });
 }
 
 

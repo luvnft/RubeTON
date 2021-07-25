@@ -61,6 +61,10 @@
     font-size: 48px;
 }
 
+.btn-block-swal {
+    width: 100%;
+}
+
 .mix-desc {
     color: rgb(251, 217, 205);
     background-color: rgb(60, 59, 57);

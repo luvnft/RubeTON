@@ -169,23 +169,20 @@ order = function() {
     Swal.fire({
         title: "Готово",
         icon: "success",
-        showConfirmButton: false
-    });
-
-    location.href="menu.html";
-        
-    // Swal.fire({
-    //     title: "Ваш боул добавлен в корзину",
-    //     confirmButtonColor: 'rgb(77, 89, 166)',
-    //     html: bowlDesc + "<br><br>"+bowlPrice+" ₽",
-    //     // input: 'text',
-    //     confirmButtonText: 'Продолжить покупки'   
-    // }).then((result) => {
-    //     if (result.value) {
-    //         customBowlAdd(bowlDesc, bowlPrice);
-    //         location.href="menu.html";
-    //     }
-    // });
+        showDenyButton: true,
+        confirmButtonText: 'Меню',
+        confirmButtonClass: "btn-block-swal",
+        confirmButtonColor: 'rgb(77, 89, 166)',
+        denyButtonText: 'Собрать ещё один боул',
+        denyButtonClass: "btn-block-swal",
+        denyButtonColor: 'rgb(228, 52, 91)'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        location.href="menu.html";
+        } else if (result.isDenied) {
+          location.href="mix.html";
+        }
+      })
 
 
 }
@@ -252,7 +249,7 @@ refresh = function() {
     $("#btnOrder").hide();
     $("#btnNext").hide();
 
-    removeCustomBowl();
+    removeCustomBowls();
 }
 
 
