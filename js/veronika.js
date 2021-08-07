@@ -68,11 +68,15 @@ db.getAll('Меню!A1:L100', (err, rows) => {
 
 
 generateHTML = function (row) {
+    units = "гр";
+    if (row.category == "НАПИТОК") {
+        units = "мл";
+    }
     if (row.hide != "yes") {
         return `<div class="swiper-slide">
         <img src="img/food/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
         <span class=""><b>`+ row.name + `</b></span><br>
-        <span class="text-muted small">`+ row.output + ` гр</span>
+        <span class="text-muted small">`+ row.output + ` ${units}</span>
         <br>
         <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + `</span>
         </div>`;
@@ -301,7 +305,7 @@ placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
 i = 0;
 function runSwiper() {
     i++;
-    if (i > 40) {
+    if (i > 60) {
         const swiper = new Swiper('.swiper-container', {
             direction: 'horizontal',
             loop: false,
