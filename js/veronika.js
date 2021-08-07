@@ -126,7 +126,7 @@ addToCart = function (item) {
         $("#totalOrder").append(str);
         price = price + parseInt(element.price);
     });
-    if (deliveryOption == 1) {
+    if (deliveryOption == 1 && price < 2000) {
             price = price + 200;
         }
     $("#totalSum").html(price)
@@ -150,7 +150,9 @@ $("#cartClear").on("click", function () {
 $("#btnOrder").on("click", function () {
 
     if (deliveryOption == 0) {
-        $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+        if (price < 2000) {        
+           $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+        }
         deliveryOption = 1;
     }
 
@@ -195,7 +197,7 @@ $("#btnOrder").on("click", function () {
         
         <div id="dostavka"  class="flex-nowrap">
             <textarea id="address" class="mb-2 form-control" placeholder="Адрес доставки"></textarea>
-            Стоимость доставки 200₽ в пределах <a href="delivery.html" style="color: rgb(77, 89, 166);">зоны доставки</a>
+            Стоимость доставки 200₽ в пределах <a href="delivery.html" style="color: rgb(77, 89, 166);">зоны доставки</a>. При заказах от 2000₽ – доставка бесплатно
             <br><br>
             Доставка осуществляется сервисом Яндекс GO
             
@@ -239,7 +241,9 @@ deliveryMethod = function(id) {
         $("#samovivoz").hide();
 
         if (deliveryOption == 2) {
-            $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+            if (price < 2000) {
+                $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+            }
             deliveryOption = id;
         }
     }
@@ -249,7 +253,9 @@ deliveryMethod = function(id) {
         $("#samovivoz").show();
 
         if (deliveryOption == 1) {
-            $("#totalSum").html( parseInt($("#totalSum").html()) - 200 );
+            if (price < 2000) {
+                $("#totalSum").html( parseInt($("#totalSum").html()) - 200 );
+            }
             deliveryOption = id;
         }
     }
