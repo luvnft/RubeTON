@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <link rel="stylesheet" href="css/checkmystyle.css?v6">
+
+  <title>Miska Bowls</title>
+
+   <!-- Yandex.Metrika counter -->
+   <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(80321737, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/80321737" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body class="body-mix">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" style="justify-content: flex-start">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand px-2" href="index.html"><img src="logo/00_preview copy 2.png" width="60px"></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-0 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Меню</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="mix.html">Собери свой боул сам</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feedback.html">Обратная связь</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="delivery.html">Условия доставки</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="policy.html">Пользовательское соглашение</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <a style="text-decoration: none;" class="btn btn-clear px-0 mx-1"
+          href="https://www.instagram.com/miska.bowls/">
+            <img class="" src="img/ig.png" width="28">
+          </a>
+
+          <a style="text-decoration: none;" class="mt-0 pt-1 btn btn-clear px-2 mx-1"
+          href="https://wa.me/79185388644?text=Здравствуйте!%20Я%20хочу%20сделать%20заказ">
+            <img class="" src="img/wa.png" width="32">
+          </a>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div id="constructor">
+
+      <!-- СОБЕРИ СВОЙ БОУЛ САМ -->
+
+      <div class="row text-left pt-2" id="block-1">
+        
+        <div class="pb-4 col-12 animate__animated animate__flipInX animate__delay-1s">
+          <h2 class="titleMix"><span class="titleNum">1</span> ОСНОВА</h2>
+          <h6 class='mix-desc p-4 text-center'>ЛЮБАЯ ОСНОВА ХОРОШО СОЧЕТАЕТСЯ СО ВСЕМИ ПРОТЕИНАМИ. РИС – ЕСЛИ ХОЧЕТСЯ ПОСЫТНЕЕ. КИНОА И САЛАТНЫЙ МИКС – ДЛЯ ЛЮБИТЕЛЕЙ СЛЕДИТЬ ЗА ФИГУРОЙ</h6>
+        </div>
+    
+        <div id="button-1" class="items pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addOsnova('рис', 40, this)">
+            <b>рис</b> &nbsp; &nbsp; <span class="small">150 гр</span> &nbsp; <b>40</b>
+          </span>          
+        </div>
+        
+        <div id="button-2" class="items pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addOsnova('киноа', 80, this)">
+            <b>киноа</b> &nbsp; &nbsp; <span class="small">120 гр</span> &nbsp; <b>80</b>
+          </span>
+        </div>
+        
+        <div id="button-3" class="items pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addOsnova('микс-корн-мангольд', 80, this)">
+            <b>микс корн-мангольд</b> &nbsp; &nbsp; <span class="small">120 гр</span> &nbsp; <b>80</b>
+          </span>
+        </div>
+
+        <div style='height: 200px'></div>
+
+      </div>
+
+
+      <div class="row text-left pt-2" id="block-2" style="display: none">
+        <div class="pb-4 col-12 animate__animated animate__flipInX ">
+          <h2 class="titleMix"><span class="titleNum">2</span> ПРОТЕИН</h2>
+          <h6 class='mix-desc p-4 text-center'>
+            <!-- <span id="block1-choose">Рис</span> – отличное начало, теперь давай выберем протеин. Кстати, его порцию можно удовить -->
+            ЕСЛИ СИЛЬНО ГОЛОДЕН – МОЖНО УДВОИТЬ ПОРЦИЮ ПРОТЕИНА
+          </h6>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp" >
+
+          <span onclick="addProtein('лосось', 200, this)">
+            <b>лосось</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp" >
+          <span onclick="addProtein('тунец', 200, this)">
+            <b>тунец</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('угорь', 200, this)">
+            <b>угорь</b> &nbsp; &nbsp; <span class="small">30&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('креветка', 200, this)">
+            <b>креветка</b> &nbsp; &nbsp; <span class="small">60&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('говядина', 200, this)">
+            <b>говядина</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('курица', 120, this)">
+            <b>курица</b> &nbsp; &nbsp; <span class="small">80&nbsp;гр</span> &nbsp; <b>120</b>
+          </span>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('индейка', 120, this)">
+            <b>индейка</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>120</b>
+          </span>
+        </div>
+
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('тофу VEG', 100, this)">
+            <b>тофу <span class="special-badge">VEG</span></b> &nbsp; &nbsp; <span class=" small">50&nbsp;гр</span> &nbsp; <b>100</b>
+          </span>
+        </div>
+
+        <div style='height: 200px'></div>
+
+      </div>
+
+
+      
+    <div class="row text-left pt-2" id="block-3" style="display: none;">
+      
+      <div class="pb-2 col-12 animate__animated animate__flipInX ">
+        <h2 class="titleMix"><span class="titleNum">3</span> ТОППИНГ</h2>
+        <h6 class='mix-desc p-4 text-center'>РЕКОМЕНДУЕМ ДОБАВЛЯТЬ ОТ ЧЕТЫРЕХ ДО ШЕСТИ ТОППИНГОВ ДЛЯ БАЛАНСА ВКУСОВЫХ СОЧЕТАНИЙ</h6>
+      </div>
+
+
+      <div class="col-6 col-md-3 ">
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('авокадо', 70, this)">
+              <b>авокадо</b><br><span class=" small">20&nbsp;гр</span> <b>70</b>
+            </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('манго', 70, this)">
+              <b>манго</b><br><span class=" small">10&nbsp;гр</span> <b>70</b>
+            </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('гуакамоле', 70, this)">
+              <b>гуакамоле</b><br><span class=" small">30&nbsp;гр</span>
+              <b class="">70</b>
+            </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('шпинат', 50, this)">
+            <b>шпинат</b><br><span class=" small">10&nbsp;гр</span>
+            <b class="">50</b>
+            </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('эдамаме', 50, this)">
+            <b>эдамаме</b><br><span class=" small">20&nbsp;гр</span>
+            <b class="">50</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('вяленый томат', 50, this)">
+            <b>вяленый томат</b><br><span class=" small">10&nbsp;гр</span>
+            <b class="">50</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('чукка', 30, this)">
+            <b>чукка</b><br><span class=" small">40&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('огурец битый', 30, this)">
+            <b>огурец битый</b><br><span class=" small">20&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('японский омлет', 30, this)">
+            <b>японский омлет</b><br><span class=" small">20&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('грибы муэр', 30, this)">
+            <b>грибы муэр</b><br><span class=" small">20&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+      </div>
+      
+      <div class="col-6">
+        
+          <div class="topping pb-4">
+            <span onclick="addTopping('огурец свежий', 30, this)">
+            <b>огурец свежий</b><br><span class="small">20&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('дайкон', 30, this)">
+            <b>дайкон</b><br><span class="small">10&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+          
+          <div class="topping pb-4">
+            <span onclick="addTopping('черри', 30, this)">
+            <b>черри</b><br><span class="small">20&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('редис', 30, this)">
+            <b>редис</b><br><span class="small">10&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('красная капуста', 30, this)">
+            <b>красная капуста</b><br><span class="small">10&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('морковь маринованная', 30, this)">
+            <b>морковь маринованная</b><br><span class="small">10&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>     
+        
+          <div class="topping pb-4">
+            <span onclick="addTopping('лук красный', 30, this)">
+            <b>лук красный</b><br><span class="small">10&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('халапеньо', 30, this)">
+            <b>халапеньо</b><br><span class="small">10&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('ананас', 30, this)">
+            <b>ананас</b><br><span class="small">20&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>          
+
+          <div class="topping pb-4">
+            <span onclick="addTopping('ростки мояши', 30, this)">
+            <b>ростки мояши</b><br><span class=" small">10&nbsp;гр</span>
+            <b class="">30</b>
+          </span>
+          </div>
+  
+      </div>
+      
+      <div style='height: 200px'></div>
+      
+    </div>
+
+
+    <div class="row text-left pt-2" id="block-4" style="display: none">
+      <div class="pb-2 col-12  ">
+        <h2 class="titleMix"><span class="titleNum">4</span> СОУС и ЭКСТРА</h2>
+      </div>
+
+      <div class="col-6 animate__animated animate__zoomInUp">
+          
+          <div class="sauce pb-4">
+            <span onclick="addSauce('айоли', 50, this)">
+            <b>айоли</b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+          </span>
+          </div>
+
+          <div class="sauce pb-4">
+          <span onclick="addSauce('имбирный', 50, this)">
+            <b>имбирный</b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+          </span>
+          </div>
+
+          <div class="sauce pb-4 ">
+          <span onclick="addSauce('манго', 50, this)">
+            <b>манго</b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
+          </div>
+
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('ореховый', 50, this)">
+            <b>ореховый <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
+          </div>
+
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('спайси', 50, this)">
+            <b>спайси</b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
+          </div>
+
+          <div class="sauce pb-4 " >
+          <span onclick="addSauce('лимонный кимчи', 50, this)">
+            <b>лимонный кимчи <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
+          </div>
+
+          <!-- <div class="sauce pb-4 ">
+          <span onclick="addSauce('тофу', 50, this)">
+            <b>тофу <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+          </span>
+          </div> -->
+
+          <div class="sauce pb-4 ">
+          <span onclick="addSauce('терияки', 50, this)">
+            <b>терияки</b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
+          </div>
+
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('свит чили', 50, this)">
+            <b>свит чили</b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
+          </div>
+
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('шрирача', 50, this)">
+            <b>шрирача <span class="special-badge">HOT!</span></b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
+          </div>  
+        
+      </div>
+
+      <div class="col-6 animate__animated animate__zoomInUp">
+        
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('кешью', 30, this)">
+            <b>кешью</b><br><span class="small">10&nbsp;гр</span> 
+            <b class="">30</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('начос', 10, this)">
+            <b>начос</b><br><span class="small">10&nbsp;гр</span> 
+            <b class="">10</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('лук фри', 10, this)">
+            <b>лук фри</b><br><span class="small">10&nbsp;гр</span> 
+            <b class="">10</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 ">
+           <span onclick="addExtra('картофель пай', 10, this)">
+            <b>картофель пай</b><br><span class="small">10&nbsp;гр</span> 
+            <b class="">10</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 ">
+           <span onclick="addExtra('арахис', 10, this)">
+            <b>арахис</b><br><span class="small">10&nbsp;гр</span> 
+            <b class="">10</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 ">
+          <span onclick="addExtra('тобико', 30, this)">
+            <b>тобико</b><br><span class="small">5&nbsp;гр</span> 
+            <b class="">30</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('фурикаке', 30, this)">
+            <b>фурикаке</b><br><span class="small">1&nbsp;гр</span> 
+            <b class="">30</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('имбирь', 10, this)">
+            <b>имбирь</b><br><span class="small">5&nbsp;гр</span> 
+            <b class="">10</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 ">
+          <span onclick="addExtra('нори', 5, this)">
+            <b>нори</b><br><span class="small">1&nbsp;гр</span> 
+            <b class="">5</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 ">
+           <span onclick="addExtra('кунжут микс', 0, this)">
+            <b>кунжут микс</b><br><span class="small">1&nbsp;гр</span> 
+            <b class="">бесплатно</b>
+            </span>
+          </div>
+
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('зеленый лук', 0, this)">
+            <b>зеленый лук</b><br><span class="small">5&nbsp;гр</span> 
+            <b class="">бесплатно</b>
+            </span>
+          </div>
+          
+      </div>
+      
+      <div style='height: 200px'></div>
+
+    </div>
+
+
+
+
+    <div class="text-left text-muted">
+      <div class='card fixed-bottom' id="">
+        
+        <div class="card-body" id='message'>
+          <span id="cartClear" style='float: right; display: none' class="text-right"><span id="totalSum">0</span> ╳</span>
+          <span id="totalOrder">Выберите основу для приготовления боула</span>
+        </div>
+
+        <a id="btnNext" style="display:none;" class="btn btn-lg btn-primary"> Дальше</a>
+        <a id="btnOrder" style="display:none" class="btn btn-lg btn-primary">
+          Добавить боул в корзину
+        </a>  
+
+      </div>
+    
+  </div>
+
+
+  
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="js/etc.js?v6"></script>
+  <script src="js/bowl-mixer2.js?v6"></script>
+</body>
+
+</html>

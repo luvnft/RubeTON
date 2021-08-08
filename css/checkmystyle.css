@@ -98,13 +98,29 @@
         box-shadow: none;
 }
 
-.items, .topping, .sauce {
+.items, .topping, .sauce, .proteins, .extra {
     color: rgb(228, 52, 91);
     font-size: 18px;
     cursor: pointer;
 }
 
-.topping, .sauce {
+.modificator {
+    color: rgb(228, 52, 91);
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.modifCounter{
+    padding: 3px;
+}
+
+.disabled {
+    /* color: gray;
+    cursor: default; */
+    visibility: hidden;
+}
+
+.topping, .sauce, .extra {
     height: 90px;
 }
 
