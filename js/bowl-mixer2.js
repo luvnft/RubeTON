@@ -8,58 +8,38 @@ bowlExtra = [];
 bowlDesc = "";
 bowlPrice = 0;
 
-// $('.items').click(function(){
-//     $(this).toggleClass('selected');
-// })
-
-// $('.proteins').click(function(){
-//     $(this).toggleClass('selected');
-// })
-
-// $('.topping').click(function(){
-//     $(this).toggleClass('selected');
-// })
-
-// $('.sauce').click(function(){
-//     $(this).toggleClass('selected');
-// })
-
-// $('.extra').click(function(){
-//     $(this).toggleClass('selected');
-// })
-
-
-
 
 addModif2 =function(item, category, price) {
-    val = parseInt( $("#modifCounter-"+item).html() );
+
+    itemRep = item.replace(" ", "_");
+    val = parseInt( $("#modifCounter-"+itemRep).html() );
     val = val + 1;
-    $("#modifCounter-"+item).html(val);
+    $("#modifCounter-"+itemRep).html(val);
 
     
     if (category == "proteins") {
-        bowlProtein.splice(jQuery.inArray(item, bowlProtein), 1) 
+        bowlProtein.splice(jQuery.inArray(item, bowlProtein), 1); 
         bowlProtein.push(item+" X"+val);
         bowlPrice = bowlPrice + price;
         bowl[1] = bowlProtein;
     }
 
     if (category == "topping") {
-        bowlToppings.splice(jQuery.inArray(item, bowlToppings), 1) 
+        bowlToppings.splice(jQuery.inArray(item, bowlToppings), 1); 
         bowlToppings.push(item+" X"+val);
         bowlPrice = bowlPrice + price;
         bowl[2] = bowlToppings;
     }
 
     if (category == "sauce") {
-        bowlSauce.splice(jQuery.inArray(item, bowlSauce), 1) 
+        bowlSauce.splice(jQuery.inArray(item, bowlSauce), 1); 
         bowlSauce.push(item+" X"+val);
         bowlPrice = bowlPrice + price;
         bowl[3] = bowlSauce;
     }
 
     if (category == "extra"){
-        bowlExtra.splice(jQuery.inArray(item, bowlExtra), 1) 
+        bowlExtra.splice(jQuery.inArray(item, bowlExtra), 1); 
         bowlExtra.push(item+" X"+val);
         bowlPrice = bowlPrice + price;
         bowl[4] = bowlExtra;
@@ -70,68 +50,69 @@ addModif2 =function(item, category, price) {
 }
 
 removeModif2 = function(item, category, price) {
+    itemRep = item.replace(" ", "_");
 
-    val = parseInt( $("#modifCounter-"+item).html() );
+    val = parseInt( $("#modifCounter-"+itemRep).html() );
     val = val - 1;
-    $("#modifCounter-"+item).html(val);
+    $("#modifCounter-"+itemRep).html(val);
 
     if (category == "proteins") {
         if (val > 0) {
-            bowlProtein.splice(jQuery.inArray(item, bowlProtein), 1) 
+            bowlProtein.splice(jQuery.inArray(item, bowlProtein), 1);
             bowlProtein.push(item+" X"+val);
             bowlPrice = bowlPrice - price;
             bowl[1] = bowlProtein;
         } else {
-            bowlProtein.splice(jQuery.inArray(item, bowlProtein), 1)             
+            bowlProtein.splice(jQuery.inArray(item, bowlProtein), 1);
             bowlPrice = bowlPrice - price;
             bowl[1] = bowlProtein;
-            $("#modificator-"+item).prev().removeClass("selected");
-            $("#modificator-"+item).remove();
+            $("#modificator-"+itemRep).prev().removeClass("selected");
+            $("#modificator-"+itemRep).remove();
         }
     }
 
     if (category == "topping") {
         if (val > 0) {
-            bowlToppings.splice(jQuery.inArray(item, bowlToppings), 1) 
+            bowlToppings.splice(jQuery.inArray(item, bowlToppings), 1); 
             bowlToppings.push(item+" X"+val);
             bowlPrice = bowlPrice - price;
             bowl[2] = bowlToppings;
         } else {
-            bowlToppings.splice(jQuery.inArray(item, bowlToppings), 1)             
+            bowlToppings.splice(jQuery.inArray(item, bowlToppings), 1);             
             bowlPrice = bowlPrice - price;
             bowl[2] = bowlToppings;
-            $("#modificator-"+item).prev().removeClass("selected");
-            $("#modificator-"+item).remove();
+            $("#modificator-"+itemRep).prev().removeClass("selected");
+            $("#modificator-"+itemRep).remove();
         }
     }
 
     if (category == "sauce") {
         if (val > 0) {
-            bowlSauce.splice(jQuery.inArray(item, bowlSauce), 1) 
+            bowlSauce.splice(jQuery.inArray(item, bowlSauce), 1); 
             bowlSauce.push(item+" X"+val);
             bowlPrice = bowlPrice - price;
             bowl[3] = bowlSauce;
         } else {
-            bowlSauce.splice(jQuery.inArray(item, bowlSauce), 1)             
+            bowlSauce.splice(jQuery.inArray(item, bowlSauce), 1);             
             bowlPrice = bowlPrice - price;
             bowl[3] = bowlSauce;
-            $("#modificator-"+item).prev().removeClass("selected");
-            $("#modificator-"+item).remove();
+            $("#modificator-"+itemRep).prev().removeClass("selected");
+            $("#modificator-"+itemRep).remove();
         }
     }
     
     if (category == "extra"){
         if (val > 0) {
-            bowlExtra.splice(jQuery.inArray(item, bowlExtra), 1) 
+            bowlExtra.splice(jQuery.inArray(item, bowlExtra), 1); 
             bowlExtra.push(item+" X"+val);
             bowlPrice = bowlPrice - price;
             bowl[4] = bowlExtra;
         } else {
-            bowlExtra.splice(jQuery.inArray(item, bowlExtra), 1)             
+            bowlExtra.splice(jQuery.inArray(item, bowlExtra), 1);
             bowlPrice = bowlPrice - price;
             bowl[4] = bowlExtra;
-            $("#modificator-"+item).prev().removeClass("selected");
-            $("#modificator-"+item).remove();
+            $("#modificator-"+itemRep).prev().removeClass("selected");
+            $("#modificator-"+itemRep).remove();
         }
     }
 
@@ -141,8 +122,9 @@ removeModif2 = function(item, category, price) {
 
 addProtein = function (item, price, e)  {
 
+    itemRep = item.replace(" ", "_");
     
-    if ( $("#modifCounter-"+item).html() == undefined ) {
+    if ( $("#modifCounter-"+itemRep).html() == undefined ) {
 
         $(e).addClass('selected');
 
@@ -154,9 +136,9 @@ addProtein = function (item, price, e)  {
             bowlPrice = bowlPrice + price;
 
             modifHTML = `
-            <span class="modificator" id="modificator-${item}">
+            <span class="modificator" id="modificator-${itemRep}">
                 <span onclick="removeModif2('${item}', '${category}', ${price})">-</span>
-                <span class="modifCounter" id="modifCounter-${item}">1</span>
+                <span class="modifCounter" id="modifCounter-${itemRep}">1</span>
                 <span onclick="addModif2('${item}', '${category}', ${price})">+</span>
             </span>
             `
@@ -214,11 +196,13 @@ addOsnova = function (item, price, e)  {
         bowlPrice = bowlPrice + price;
 
         modifCounter = 1;
+        
+        item2 = item.replace(" ", "_");
 
         modifHTML = `
         <span class="modificator">
             <span onclick="removeModif('${item}')">-</span>
-            <span class="modifCounter" id="modifCounter-${item}">${modifCounter}</span>
+            <span class="modifCounter" id="modifCounter-${item2}">${modifCounter}</span>
             <span onclick="addModif('${item}')">+</span>
           </span>
         `
@@ -235,7 +219,7 @@ addOsnova = function (item, price, e)  {
         bowlOsnova.push(item+" X"+modifCounter);
         bowlPrice = bowlPrice + price;
         
-        $("#modifCounter-"+item).html(modifCounter);
+        $("#modifCounter-"+item2).html(modifCounter);
 
         bowl[0] = bowlOsnova;
         updateBowl();
@@ -248,7 +232,7 @@ addOsnova = function (item, price, e)  {
             bowlOsnova.push(item+" X"+modifCounter);
             bowlPrice = bowlPrice - price
             
-            $("#modifCounter-"+item).html(modifCounter);
+            $("#modifCounter-"+item2).html(modifCounter);
             
         } else {
             
@@ -292,23 +276,24 @@ addOsnova = function (item, price, e)  {
 
 
 addTopping = function (item, price, e) {
+    itemRep = item.replace(" ", "_");
 
 
-    if ( $("#modifCounter-"+item).html() == undefined ) {
+    if ( $("#modifCounter-"+itemRep).html() == undefined ) {
 
         $(e).addClass('selected');
 
         category = $(e).parent()[0].classList[0]; 
     
-    
         if ( jQuery.inArray(item, bowlToppings) == -1 ) {
             bowlToppings.push(item);
             bowlPrice = bowlPrice + price;
+            
 
             modifHTML = `
-            <span class="modificator" id="modificator-${item}">
+            <span class="modificator" id="modificator-${itemRep}">
                 <span onclick="removeModif2('${item}', '${category}', ${price})">-</span>
-                <span class="modifCounter" id="modifCounter-${item}">1</span>
+                <span class="modifCounter" id="modifCounter-${itemRep}">1</span>
                 <span onclick="addModif2('${item}', '${category}', ${price})">+</span>
             </span>
             `
@@ -330,8 +315,9 @@ addTopping = function (item, price, e) {
 
 
 addSauce = function (item, price, e) {
+    itemRep = item.replace(" ", "_");
 
-    if ( $("#modifCounter-"+item).html() == undefined ) {
+    if ( $("#modifCounter-"+itemRep).html() == undefined ) {
 
         $(e).addClass('selected');
 
@@ -343,9 +329,9 @@ addSauce = function (item, price, e) {
             bowlPrice = bowlPrice + price;
 
             modifHTML = `
-            <span class="modificator" id="modificator-${item}">
+            <span class="modificator" id="modificator-${itemRep}">
                 <span onclick="removeModif2('${item}', '${category}', ${price})">-</span>
-                <span class="modifCounter" id="modifCounter-${item}">1</span>
+                <span class="modifCounter" id="modifCounter-${itemRep}">1</span>
                 <span onclick="addModif2('${item}', '${category}', ${price})">+</span>
             </span>
             `
@@ -366,9 +352,10 @@ addSauce = function (item, price, e) {
 }
 
 addExtra = function (item, price, e) {
+    itemRep = item.replace(" ", "_");
 
 
-    if ( $("#modifCounter-"+item).html() == undefined ) {
+    if ( $("#modifCounter-"+itemRep).html() == undefined ) {
 
         $(e).addClass('selected');
 
@@ -380,9 +367,9 @@ addExtra = function (item, price, e) {
             bowlPrice = bowlPrice + price;
 
             modifHTML = `
-            <span class="modificator" id="modificator-${item}">
+            <span class="modificator" id="modificator-${itemRep}">
                 <span onclick="removeModif2('${item}', '${category}', ${price})">-</span>
-                <span class="modifCounter" id="modifCounter-${item}">1</span>
+                <span class="modifCounter" id="modifCounter-${itemRep}">1</span>
                 <span onclick="addModif2('${item}', '${category}', ${price})">+</span>
             </span>
             `
@@ -405,35 +392,6 @@ addExtra = function (item, price, e) {
     updateBowl();
 
 
-
-
-    // category = $(e)[0].classList[0]; 
-
-    // if ( jQuery.inArray(item, bowlExtra) == -1 ) {
-    //     bowlExtra.push(item);
-    //     bowlPrice = bowlPrice + price;
-
-    //     modifHTML = `
-    //     <span class="modificator">
-    //         <span onclick="removeModif2('${item}, protein')">-</span>
-    //         <span class="modifCounter" id="modifCounter-${item}">1</span>
-    //         <span onclick="addModif2('${item}, ${category}, ${price}')">+</span>
-    //       </span>
-    //     `
-    //     $(e).append(modifHTML);
-
-
-    // } else {
-    //     bowlExtra.splice(jQuery.inArray(item, bowlExtra), 1)
-    //     bowlPrice = bowlPrice - price
-    // }
-    
-    // bowl[4] = bowlExtra;
-
-    // if (!bowl[3]) {
-    //     bowl[3] = ['Нет']
-    // }
-    // updateBowl();
 }
 
 $("#btnOrder").click(function(){
@@ -451,9 +409,6 @@ updateBowl = function() {
 
     $("#btnNext").show();
 
-    
-
-    
     
     if (currentBlock == 1) {
         bowlDesc = "Основа: " + bowl[0];
@@ -481,8 +436,6 @@ updateBowl = function() {
     
     }
     
-    
-
     $("#totalOrder").html(bowlDesc);
 }
 
@@ -590,8 +543,6 @@ refresh = function() {
 
     removeCustomBowls();
 
-
-
     $("#button-1").removeClass("disabled");
     $("#button-2").removeClass("disabled");
     $("#button-3").removeClass("disabled");
@@ -602,12 +553,6 @@ refresh = function() {
 }
 
 
-
 $("#cartClear").on("click", function () {
     refresh();
 });
-
-//  showBlock(2);
-
-    
-
