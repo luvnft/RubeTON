@@ -96,16 +96,22 @@
           <h6 class='mix-desc p-4 text-center'>ЛЮБАЯ ОСНОВА ХОРОШО СОЧЕТАЕТСЯ СО ВСЕМИ ПРОТЕИНАМИ. РИС – ЕСЛИ ХОЧЕТСЯ ПОСЫТНЕЕ. КИНОА И САЛАТНЫЙ МИКС – ДЛЯ ЛЮБИТЕЛЕЙ СЛЕДИТЬ ЗА ФИГУРОЙ</h6>
         </div>
     
-        <div id="button-1" class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('рис', 40)">
-          <b>рис</b> &nbsp; &nbsp; <span class="small">150 гр</span> &nbsp; <b>40</b>
+        <div id="button-1" class="items pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addOsnova('рис', 40, this)">
+            <b>рис</b> &nbsp; &nbsp; <span class="small">150 гр</span> &nbsp; <b>40</b>
+          </span>          
         </div>
         
-        <div id="button-2" class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('киноа', 80)">
-          <b>киноа</b> &nbsp; &nbsp; <span class="small">120 гр</span> &nbsp; <b>80</b>
+        <div id="button-2" class="items pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addOsnova('киноа', 80, this)">
+            <b>киноа</b> &nbsp; &nbsp; <span class="small">120 гр</span> &nbsp; <b>80</b>
+          </span>
         </div>
         
-        <div id="button-3" class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('микс корн-мангольд', 80)">
-          <b>микс корн-мангольд</b> &nbsp; &nbsp; <span class="small">120 гр</span> &nbsp; <b>80</b>
+        <div id="button-3" class="items pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addOsnova('микс корн-мангольд', 80, this)">
+            <b>микс корн-мангольд</b> &nbsp; &nbsp; <span class="small">120 гр</span> &nbsp; <b>80</b>
+          </span>
         </div>
 
         <div style='height: 200px'></div>
@@ -122,36 +128,53 @@
           </h6>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('лосось', 200)">
-          <b>лосось</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp" >
+
+          <span onclick="addProtein('лосось', 200, this)">
+            <b>лосось</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('тунец', 200)">
-          <b>тунец</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp" >
+          <span onclick="addProtein('тунец', 200, this)">
+            <b>тунец</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('угорь', 200)">
-          <b>угорь</b> &nbsp; &nbsp; <span class="small">30&nbsp;гр</span> &nbsp; <b>200</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('угорь', 200, this)">
+            <b>угорь</b> &nbsp; &nbsp; <span class="small">30&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('креветка', 200)">
-          <b>креветка</b> &nbsp; &nbsp; <span class="small">60&nbsp;гр</span> &nbsp; <b>200</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('креветка', 200, this)">
+            <b>креветка</b> &nbsp; &nbsp; <span class="small">60&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('говядина', 200)">
-          <b>говядина</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('говядина', 200, this)">
+            <b>говядина</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>200</b>
+          </span>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('курица', 120)">
-          <b>курица</b> &nbsp; &nbsp; <span class="small">80&nbsp;гр</span> &nbsp; <b>120</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('курица', 120, this)">
+            <b>курица</b> &nbsp; &nbsp; <span class="small">80&nbsp;гр</span> &nbsp; <b>120</b>
+          </span>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('индейка', 120)">
-          <b>индейка</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>120</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('индейка', 120, this)">
+            <b>индейка</b> &nbsp; &nbsp; <span class="small">50&nbsp;гр</span> &nbsp; <b>120</b>
+          </span>
         </div>
 
-        <div class="items pb-4 animate__animated animate__zoomInUp" onclick="addItem('тофу VEG', 100)">
-          <b>тофу <span class="special-badge">VEG</span></b> &nbsp; &nbsp; <span class=" small">50&nbsp;гр</span> &nbsp; <b>100</b>
+        <div class="proteins pb-4 animate__animated animate__zoomInUp">
+          <span onclick="addProtein('тофу VEG', 100, this)">
+            <b>тофу <span class="special-badge">VEG</span></b> &nbsp; &nbsp; <span class=" small">50&nbsp;гр</span> &nbsp; <b>100</b>
+          </span>
         </div>
 
         <div style='height: 200px'></div>
@@ -170,90 +193,146 @@
 
       <div class="col-6 col-md-3 ">
 
-          <div class="pb-4 topping" onclick="addTopping('авокадо', 70)">
-            <b>авокадо</b><br><span class=" small">20&nbsp;гр</span> <b>70</b>
+          <div class="topping pb-4">
+            <span onclick="addTopping('авокадо', 70, this)">
+              <b>авокадо</b><br><span class=" small">20&nbsp;гр</span> <b>70</b>
+            </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('манго', 70)">
-            <b>манго</b><br><span class=" small">10&nbsp;гр</span> <b>70</b>
+          <div class="topping pb-4">
+            <span onclick="addTopping('манго', 70, this)">
+              <b>манго</b><br><span class=" small">10&nbsp;гр</span> <b>70</b>
+            </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('гуакамоле', 70)"><b>гуакамоле</b><br><span class=" small">30&nbsp;гр</span>
-            <b class="">70</b>
+          <div class="topping pb-4">
+            <span onclick="addTopping('гуакамоле', 70, this)">
+              <b>гуакамоле</b><br><span class=" small">30&nbsp;гр</span>
+              <b class="">70</b>
+            </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('шпинат', 50)"><b>шпинат</b><br><span class=" small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('шпинат', 50, this)">
+            <b>шпинат</b><br><span class=" small">10&nbsp;гр</span>
             <b class="">50</b>
+            </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('эдамаме', 50)"><b>эдамаме</b><br><span class=" small">20&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('эдамаме', 50, this)">
+            <b>эдамаме</b><br><span class=" small">20&nbsp;гр</span>
             <b class="">50</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('вяленый томат', 50)"><b>вяленый томат</b><br><span class=" small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('вяленый томат', 50, this)">
+            <b>вяленый томат</b><br><span class=" small">10&nbsp;гр</span>
             <b class="">50</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('чукка', 30)"><b>чукка</b><br><span class=" small">40&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('чукка', 30, this)">
+            <b>чукка</b><br><span class=" small">40&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('огурец битый', 30)"><b>огурец битый</b><br><span class=" small">20&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('огурец битый', 30, this)">
+            <b>огурец битый</b><br><span class=" small">20&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('японский омлет', 30)"><b>японский омлет</b><br><span class=" small">20&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('японский омлет', 30, this)">
+            <b>японский омлет</b><br><span class=" small">20&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('грибы муэр', 30)"><b>грибы муэр</b><br><span class=" small">20&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('грибы муэр', 30, this)">
+            <b>грибы муэр</b><br><span class=" small">20&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
-
-          
 
       </div>
       
-      <div class="col-6 ">
+      <div class="col-6">
         
-          <div class="pb-4 topping" onclick="addTopping('огурец свежий', 30)"><b>огурец свежий</b><br><span class="small">20&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('огурец свежий', 30, this)">
+            <b>огурец свежий</b><br><span class="small">20&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('дайкон', 30)"><b>дайкон</b><br><span class="small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('дайкон', 30, this)">
+            <b>дайкон</b><br><span class="small">10&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
           
-          <div class="pb-4 topping" onclick="addTopping('черри', 30)"><b>черри</b><br><span class="small">20&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('черри', 30, this)">
+            <b>черри</b><br><span class="small">20&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('редис', 30)"><b>редис</b><br><span class="small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('редис', 30, this)">
+            <b>редис</b><br><span class="small">10&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('красная капуста', 30)"><b>красная капуста</b><br><span class="small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('красная капуста', 30, this)">
+            <b>красная капуста</b><br><span class="small">10&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('морковь маринованная', 30)"><b>морковь маринованная</b><br><span class="small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('морковь маринованная', 30, this)">
+            <b>морковь маринованная</b><br><span class="small">10&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>     
         
-          <div class="pb-4 topping" onclick="addTopping('лук красный', 30)"><b>лук красный</b><br><span class="small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('лук красный', 30, this)">
+            <b>лук красный</b><br><span class="small">10&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('халапеньо', 30)"><b>халапеньо</b><br><span class="small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('халапеньо', 30, this)">
+            <b>халапеньо</b><br><span class="small">10&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
 
-          <div class="pb-4 topping" onclick="addTopping('ананас', 30)"><b>ананас</b><br><span class="small">20&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('ананас', 30, this)">
+            <b>ананас</b><br><span class="small">20&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>          
 
-          <div class="pb-4 topping" onclick="addTopping('ростки мояши', 30)"><b>ростки мояши</b><br><span class=" small">10&nbsp;гр</span>
+          <div class="topping pb-4">
+            <span onclick="addTopping('ростки мояши', 30, this)">
+            <b>ростки мояши</b><br><span class=" small">10&nbsp;гр</span>
             <b class="">30</b>
+          </span>
           </div>
   
       </div>
@@ -270,91 +349,155 @@
 
       <div class="col-6 animate__animated animate__zoomInUp">
           
-          <div class="pb-4 sauce" onclick="addSauce('айоли', 50)"><b>айоли</b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4">
+            <span onclick="addSauce('айоли', 50, this)">
+            <b>айоли</b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+          </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('имбирный', 50)"><b>имбирный</b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4">
+          <span onclick="addSauce('имбирный', 50, this)">
+            <b>имбирный</b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+          </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('манго', 50)"><b>манго</b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4 ">
+          <span onclick="addSauce('манго', 50, this)">
+            <b>манго</b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('ореховый', 50)"><b>ореховый <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('ореховый', 50, this)">
+            <b>ореховый <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('спайси', 50)"><b>спайси</b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('спайси', 50, this)">
+            <b>спайси</b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('лимонный кимчи', 50)"><b>лимонный кимчи <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4 " >
+          <span onclick="addSauce('лимонный кимчи', 50, this)">
+            <b>лимонный кимчи <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('тофу', 50)"><b>тофу <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
+          <!-- <div class="sauce pb-4 ">
+          <span onclick="addSauce('тофу', 50, this)">
+            <b>тофу <span class="special-badge">VEG</span></b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+          </span>
+          </div> -->
+
+          <div class="sauce pb-4 ">
+          <span onclick="addSauce('терияки', 50, this)">
+            <b>терияки</b><br><span class="small">30&nbsp;гр</span> 
+            <b class="">50</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('терияки', 50)"><b>терияки</b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('свит чили', 50, this)">
+            <b>свит чили</b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addSauce('свит чили HOT', 50)"><b>свит чили</b><br><span class="small">30&nbsp;гр</span> 
+          <div class="sauce pb-4 ">
+           <span onclick="addSauce('шрирача', 50, this)">
+            <b>шрирача <span class="special-badge">HOT!</span></b><br><span class="small">30&nbsp;гр</span> 
             <b class="">50</b>
-          </div>
-
-          <div class="pb-4 sauce" onclick="addSauce('шрирача HOT!', 50)"><b>шрирача <span class="special-badge">HOT!</span></b><br><span class="small">30&nbsp;гр</span> 
-            <b class="">50</b>
+            </span>
           </div>  
         
       </div>
+
       <div class="col-6 animate__animated animate__zoomInUp">
         
-          <div class="pb-4 sauce" onclick="addExtra('кешью', 30)"><b>кешью</b><br><span class="small">10&nbsp;гр</span> 
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('кешью', 30, this)">
+            <b>кешью</b><br><span class="small">10&nbsp;гр</span> 
             <b class="">30</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('начос', 10)"><b>начос</b><br><span class="small">10&nbsp;гр</span> 
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('начос', 10, this)">
+            <b>начос</b><br><span class="small">10&nbsp;гр</span> 
             <b class="">10</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('лук фри', 10)"><b>лук фри</b><br><span class="small">10&nbsp;гр</span> 
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('лук фри', 10, this)">
+            <b>лук фри</b><br><span class="small">10&nbsp;гр</span> 
             <b class="">10</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('картофель пай', 10)"><b>картофель пай</b><br><span class="small">10&nbsp;гр</span> 
+          <div class="extra pb-4 ">
+           <span onclick="addExtra('картофель пай', 10, this)">
+            <b>картофель пай</b><br><span class="small">10&nbsp;гр</span> 
             <b class="">10</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('арахис', 10)"><b>арахис</b><br><span class="small">10&nbsp;гр</span> 
+          <div class="extra pb-4 ">
+           <span onclick="addExtra('арахис', 10, this)">
+            <b>арахис</b><br><span class="small">10&nbsp;гр</span> 
             <b class="">10</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('тобико', 30)"><b>тобико</b><br><span class="small">5&nbsp;гр</span> 
+          <div class="extra pb-4 ">
+          <span onclick="addExtra('тобико', 30, this)">
+            <b>тобико</b><br><span class="small">5&nbsp;гр</span> 
             <b class="">30</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('фурикаке', 30)"><b>фурикаке</b><br><span class="small">1&nbsp;гр</span> 
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('фурикаке', 30, this)">
+            <b>фурикаке</b><br><span class="small">1&nbsp;гр</span> 
             <b class="">30</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('имбирь', 10)"><b>имбирь</b><br><span class="small">5&nbsp;гр</span> 
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('имбирь', 10, this)">
+            <b>имбирь</b><br><span class="small">5&nbsp;гр</span> 
             <b class="">10</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('нори', 5)"><b>нори</b><br><span class="small">1&nbsp;гр</span> 
+          <div class="extra pb-4 ">
+          <span onclick="addExtra('нори', 5, this)">
+            <b>нори</b><br><span class="small">1&nbsp;гр</span> 
             <b class="">5</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('кунжут микс', 0)"><b>кунжут микс</b><br><span class="small">1&nbsp;гр</span> 
+          <div class="extra pb-4 ">
+           <span onclick="addExtra('кунжут микс', 0, this)">
+            <b>кунжут микс</b><br><span class="small">1&nbsp;гр</span> 
             <b class="">бесплатно</b>
+            </span>
           </div>
 
-          <div class="pb-4 sauce" onclick="addExtra('зеленый лук', 0)"><b>зеленый лук</b><br><span class="small">5&nbsp;гр</span> 
+          <div class="extra pb-4 " >
+          <span onclick="addExtra('зеленый лук', 0, this)">
+            <b>зеленый лук</b><br><span class="small">5&nbsp;гр</span> 
             <b class="">бесплатно</b>
+            </span>
           </div>
           
       </div>
