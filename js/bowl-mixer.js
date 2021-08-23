@@ -455,6 +455,7 @@ toppingsFinished = function() {
 order = function() {
 
     customBowlAdd(bowlDesc, bowlPrice);
+    ym(80321737,'reachGoal','bowl-make');
 
     Swal.fire({
         title: "Готово",

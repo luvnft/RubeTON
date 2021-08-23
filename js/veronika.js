@@ -135,6 +135,7 @@ addToCart = function (item) {
         $("#cartClear").show();
     }
     animateCSS('#blockCart', 'pulse');
+    ym(80321737,'reachGoal','add-item');
 }
 
 $("#cartClear").on("click", function () {
@@ -214,6 +215,7 @@ $("#btnOrder").on("click", function () {
 
         if (phone.length > 5) {
             placeOrder( $("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowlsDesc );
+            ym(80321737,'reachGoal','order');
             Swal.fire({
                 icon: 'success',
                 title: 'Ваш заказ успешно оформлен',
