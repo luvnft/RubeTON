@@ -31,6 +31,19 @@ customBowlAdd = function(item, price) {
   localStorage.setItem("bowls", JSON.stringify(bowls) );
 };
 
+menuAdd = function(item) {
+  menu = JSON.parse( localStorage.getItem("menu") );
+ 
+  if (menu) {
+    menu.push(item);
+  } else {
+    menu = [];
+    menu.push(item);
+  }
+
+  localStorage.setItem("menu", JSON.stringify(menu) );
+}
+
 
 getCustomBowls = function() {
   bowls = JSON.parse( localStorage.getItem("bowls") );
@@ -41,6 +54,19 @@ getCustomBowls = function() {
 
 }
 
+getMenu = function() {
+  menu = JSON.parse( localStorage.getItem("menu") );
+
+  if (menu) {
+    return menu
+  }
+  
+}
+
 removeCustomBowls = function() {
-  localStorage.clear();
+  localStorage.removeItem('bowls');
+}
+
+removeMenu = function() {
+  localStorage.removeItem('menu');
 }

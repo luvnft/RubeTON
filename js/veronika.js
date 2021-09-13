@@ -117,7 +117,8 @@ showAlert = function (id, showMessage) {
 deliveryOption = 0;
 cart = [];
 
-addToCart = function (item) {
+addToCart = function (item, roboAdd) {
+    
     price = 0;
     cart.push(item);
     $("#totalOrder").html("");
@@ -134,8 +135,14 @@ addToCart = function (item) {
         $("#btnOrder").show();
         $("#cartClear").show();
     }
-    animateCSS('#blockCart', 'pulse');
-    ym(80321737,'reachGoal','add-item');
+
+    if (!roboAdd) {
+        menuAdd(item);
+        ym(80321737,'reachGoal','add-item');
+        animateCSS('#blockCart', 'pulse');
+    }
+    
+
 }
 
 $("#cartClear").on("click", function () {
@@ -145,6 +152,7 @@ $("#cartClear").on("click", function () {
     $("#btnOrder").hide();
     $("#cartClear").hide();
     removeCustomBowls();
+    removeMenu();
 });
 
 
@@ -294,6 +302,7 @@ placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
         }
     }).done(function (response) {
         removeCustomBowls();
+        removeMenu();
         
         $("#payFormDesc").val(userName + " " + phone);
         $("#payFormVal").val(sum);
@@ -343,11 +352,17 @@ if ( getCustomBowls() ) {
             description: bowl.split("|")[1]
         }
 
-        addToCart(item);
+        addToCart(item, true);
 
         customBowlsDesc.push(item.name + ":<br>" + item.description)
     });
 }
 
 
+if ( getMenu() ) {
+    menu = getMenu();
+    menu.forEach( (item, index) => {
+        addToCart(item, true);
+    });
+}
 
