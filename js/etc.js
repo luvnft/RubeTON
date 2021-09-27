@@ -70,3 +70,6 @@ removeCustomBowls = function() {
 removeMenu = function() {
   localStorage.removeItem('menu');
 }
+
+
+Swal.fire("Заказы не принимаются", "Добрый день! Сегодня у команды Miska Bowls выходной, заказы не принимаются, ждём вас завтра!");
