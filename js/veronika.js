@@ -156,7 +156,7 @@ $("#cartClear").on("click", function () {
 });
 
 
-$("#btnOrder-none").on("click", function () {
+$("#btnOrder").on("click", function () {
 
     if (deliveryOption == 0) {
         if (price < 2000) {        
