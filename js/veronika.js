@@ -5,7 +5,7 @@ const db = new GoogleSpreadsheetsDb(
 
 rows2 = {};
 
-db.getAll('Меню!A1:L100', (err, rows) => {
+db.getAll('New Menu!A1:L100', (err, rows) => {
     rows2 = rows;
 
     elHTML_poke = "";
@@ -15,6 +15,8 @@ db.getAll('Меню!A1:L100', (err, rows) => {
     elHTML_zavtrak = "";
     elHTML_smuzi = "";
     elHTML_napitok = "";
+    elHTML_asai = "";
+    elHTML_desert = "";
 
     rows.forEach(row => {
         if (!row.image) {
@@ -57,6 +59,16 @@ db.getAll('Меню!A1:L100', (err, rows) => {
             case "НАПИТОК":
                 elHTML_napitok = elHTML_napitok + generateHTML(row);
                 el.innerHTML = elHTML_napitok;
+                break;
+
+            case "АСАИ БОУЛ":
+                elHTML_asai = elHTML_asai + generateHTML(row);
+                el.innerHTML = elHTML_asai;
+                break;
+
+            case "ДЕСЕРТ":
+                elHTML_desert = elHTML_desert + generateHTML(row);
+                el.innerHTML = elHTML_desert;
                 break;
 
             default:
@@ -322,7 +334,7 @@ placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
 i = 0;
 function runSwiper() {
     i++;
-    if (i > 60) {
+    if (i > 55) {
         const swiper = new Swiper('.swiper-container', {
             direction: 'horizontal',
             loop: false,
