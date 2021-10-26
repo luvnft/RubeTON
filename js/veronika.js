@@ -106,10 +106,10 @@ showAlert = function (id, showMessage) {
         } else {
             item.description = "";
         }
-    
+        console.log(item.description);
         Swal.fire({
             title: item.name,
-            html: item.description + '<br><br><b>' + item.output + ' гр</b>',
+            html: '<text style="white-space: pre-line;">'+item.description+'</text>' + '<br><br><b>' + item.output + ' гр</b>',
             imageUrl: img,
             showCloseButton: true,
             confirmButtonText: item.price,
