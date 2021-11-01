@@ -11,6 +11,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
     elHTML_poke = "";
     elHTML_bowl = "";
     elHTML_starter = "";
+    elHTML_noritako = "";
     elHTML_soup = "";
     elHTML_zavtrak = "";
     elHTML_smuzi = "";
@@ -39,6 +40,11 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
             case "СТАРТЕР":
                 elHTML_starter = elHTML_starter + generateHTML(row);
                 el.innerHTML = elHTML_starter;
+                break;
+
+            case "НОРИ-ТАКО":
+                elHTML_noritako = elHTML_noritako + generateHTML(row);
+                el.innerHTML = elHTML_noritako;
                 break;
 
             case "СУП":
