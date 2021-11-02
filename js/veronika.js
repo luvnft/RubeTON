@@ -57,7 +57,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_zavtrak;
                 break;
 
-            case "СМУЗИ БОУЛ":
+            case "СМУЗИ-БОУЛ":
                 elHTML_smuzi = elHTML_smuzi + generateHTML(row);
                 el.innerHTML = elHTML_smuzi;
                 break;
@@ -67,7 +67,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_napitok;
                 break;
 
-            case "АСАИ БОУЛ":
+            case "АСАИ-БОУЛ":
                 elHTML_asai = elHTML_asai + generateHTML(row);
                 el.innerHTML = elHTML_asai;
                 break;
