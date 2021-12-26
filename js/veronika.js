@@ -173,8 +173,12 @@ $("#cartClear").on("click", function () {
     removeMenu();
 });
 
+btnOrderName = "#btnOrder";
+if (error) {
+    btnOrderName = "#btnOrder-none";
+}
 
-$("#btnOrder").on("click", function () {
+$(btnOrderName).on("click", function () {
 
     if (deliveryOption == 0) {
         if (price < 2000) {        

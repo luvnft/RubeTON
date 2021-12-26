@@ -71,5 +71,10 @@ removeMenu = function() {
   localStorage.removeItem('menu');
 }
 
+var error = true;
+errorMessage = "Добрый день! В данный момент заказы на доставку не принимаются!";
 
-// Swal.fire("Заказы не принимаются", "Добрый день! Сегодня у команды Miska Bowls выходной, заказы не принимаются, ждём вас завтра!");
+if (error) {
+ Swal.fire("Заказы не принимаются", errorMessage);
+}
+
