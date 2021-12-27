@@ -71,7 +71,7 @@ removeMenu = function() {
   localStorage.removeItem('menu');
 }
 
-var error = true;
+var error = false;
 errorMessage = "Добрый день! В данный момент заказы на доставку не принимаются!";
 
 if (error) {
