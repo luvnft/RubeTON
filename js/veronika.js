@@ -27,52 +27,52 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
         el = document.getElementById(row.category);
 
         switch (row.category) {
-            case "ПОКЕ":
+            case "Asian Noodles":
                 elHTML_poke = elHTML_poke + generateHTML(row);
                 el.innerHTML = elHTML_poke;
                 break;
 
-            case "БОУЛ":
+            case "RubeTON PAY":
                 elHTML_bowl = elHTML_bowl + generateHTML(row);
                 el.innerHTML = elHTML_bowl;
                 break;
 
-            case "СТАРТЕР":
+            case "RubeTON Future Box":
                 elHTML_starter = elHTML_starter + generateHTML(row);
                 el.innerHTML = elHTML_starter;
                 break;
 
-            case "НОРИ-ТАКО":
+            case "Rubeton Exchange":
                 elHTML_noritako = elHTML_noritako + generateHTML(row);
                 el.innerHTML = elHTML_noritako;
                 break;
 
-            case "СУП":
+            case "Chips":
                 elHTML_soup = elHTML_soup + generateHTML(row);
                 el.innerHTML = elHTML_soup;
                 break;
 
-            case "ЗАВТРАК":
+            case "Vitamins":
                 elHTML_zavtrak = elHTML_zavtrak + generateHTML(row);
                 el.innerHTML = elHTML_zavtrak;
                 break;
 
-            case "СМУЗИ-БОУЛ":
+            case "Events":
                 elHTML_smuzi = elHTML_smuzi + generateHTML(row);
                 el.innerHTML = elHTML_smuzi;
                 break;
 
-            case "НАПИТОК":
+            case "TON MEMES":
                 elHTML_napitok = elHTML_napitok + generateHTML(row);
                 el.innerHTML = elHTML_napitok;
                 break;
 
-            case "АСАИ-БОУЛ":
+            case "Consultations":
                 elHTML_asai = elHTML_asai + generateHTML(row);
                 el.innerHTML = elHTML_asai;
                 break;
 
-            case "ДЕСЕРТ":
+            case "Seminars":
                 elHTML_desert = elHTML_desert + generateHTML(row);
                 el.innerHTML = elHTML_desert;
                 break;
@@ -86,7 +86,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
 
 
 generateHTML = function (row) {
-    units = "гр";
+    units = "";
     if (row.category == "НАПИТОК") {
         units = "мл";
     }
@@ -115,12 +115,12 @@ showAlert = function (id, showMessage) {
         console.log(item.description);
         Swal.fire({
             title: item.name,
-            html: '<text style="white-space: pre-line;">'+item.description+'</text>' + '<br><br><b>' + item.output + ' гр</b>',
+            html: '<text style="white-space: pre-line;">'+item.description+'</text>' + '<br><br><b>' + item.output + ' </b>',
             imageUrl: img,
             showCloseButton: true,
             confirmButtonText: item.price,
             confirmButtonColor: 'rgb(77, 89, 166)',
-            imageAlt: 'Miska Bowls'
+            imageAlt: 'RubeTON'
         }).then((result) => {
             if (result.value) {
                 addToCart(item);
@@ -141,7 +141,7 @@ addToCart = function (item, roboAdd) {
     cart.push(item);
     $("#totalOrder").html("");
     cart.forEach(element => {
-        str = element.name + " – " + element.price + " ₽<br>"
+        str = element.name + " – " + element.price + " TON<br>"
         $("#totalOrder").append(str);
         price = price + parseInt(element.price);
     });
@@ -166,7 +166,7 @@ addToCart = function (item, roboAdd) {
 $("#cartClear").on("click", function () {
     cart = [];
     $("#totalSum").html("0");
-    $("#totalOrder").html("В корзине пусто");
+    $("#totalOrder").html("Empty cart");
     $("#btnOrder").hide();
     $("#cartClear").hide();
     removeCustomBowls();
@@ -198,39 +198,39 @@ $(btnOrderName).on("click", function () {
     }
     
     Swal.fire({
-        title: "Оформить заказ",
-        confirmButtonText: 'Заказать',
+        title: "Order",
+        confirmButtonText: 'Purchase',
         confirmButtonColor: 'rgb(77, 89, 166)',
         showCloseButton: true,
         html: `
         <div class="input-group flex-nowrap pt-2 pb-2">
-            <input id="userName" type="text" class="form-control" placeholder="Ваше имя">
+            <input id="userName" type="text" class="form-control" placeholder="Your Name">
         </div>
 
         <div class="input-group flex-nowrap pb-2">
-            <input id="phone" type="text" class="form-control" placeholder="Телефон">
+            <input id="phone" type="text" class="form-control" placeholder="E-mail">
         </div>
        
         <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
         
             <label class="btn btn-secondary active">
-                <input type="radio" name="options" onclick="deliveryMethod(1)" id="option1" ${option1}> Доставка
+                <input type="radio" name="options" onclick="deliveryMethod(1)" id="option1" ${option1}> EMS Delivery
             </label>
 
             <label class="btn btn-secondary">
-                <input type="radio" name="options" onclick="deliveryMethod(2)" id="option2" ${option2}> Самовывоз
+                <input type="radio" name="options" onclick="deliveryMethod(2)" id="option2" ${option2}> No Delivery
             </label>
         </div>
 
         <div id="samovivoz" style="display: none" class="flex-nowrap pb-2">
-            Шаумяна 90, можно подходить через 30 мин 
+            No Delivery
         </div>
         
         <div id="dostavka"  class="flex-nowrap">
-            <textarea id="address" class="mb-2 form-control" placeholder="Адрес доставки"></textarea>
-            Стоимость доставки 200₽ в пределах <a href="delivery.html" style="color: rgb(77, 89, 166);">зоны доставки</a>. При заказах от 2000₽ – доставка бесплатно
+            <textarea id="address" class="mb-2 form-control" placeholder="Your Address"></textarea>
+            Delivery cost is 5 rubeton inside the <a href="delivery.html" style="color: rgb(77, 89, 166);">delivery zone</a>. Delivery is free on orders more than 20 Rubeton
             <br><br>
-            Доставка осуществляется сервисом Яндекс GO
+            Delivery is made by EMS Post First Class with tracking
             
         </div>
         `
@@ -238,7 +238,7 @@ $(btnOrderName).on("click", function () {
 
         userName = $("#userName").val();
         phone = $("#phone").val();
-        address = "Самовывоз";
+        address = "No Delivery";
         if ( $("#address").val().length > 0 ) {
             address = $("#address").val();
         }
@@ -248,17 +248,17 @@ $(btnOrderName).on("click", function () {
             ym(80321737,'reachGoal','order');
             Swal.fire({
                 icon: 'success',
-                title: 'Ваш заказ успешно оформлен',
-                text: 'Открываем форму оплаты',
+                title: 'Success',
+                text: 'Opening TON-wallet',
                 showConfirmButton: false
             })
         } else if (result.isConfirmed) {
             Swal.fire({
                 // icon: 'warning',
-                title: 'Ой',
-                text: 'Вы забыли указать телефон',
+                title: 'Oop',
+                text: 'Provide your E-mail',
                 confirmButtonColor: 'rgb(77, 89, 166)',
-                confirmButtonText: 'Хорошо'
+                confirmButtonText: 'Ok'
             })
         }
 
@@ -306,22 +306,22 @@ placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
     }
 
     jQuery.ajax({
-        type: "POST",
-        url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
-        data: {
-            'message': {
-                'from_email': 'robot@miskabowls.ru',
-                'from_name': 'Miska Orders',
-                'to': [{
-                    'email': "orders@miskabowls.ru",
-                    'name': "",
-                    'type': 'to'
-                }],
-                'autotext': 'true',
-                'subject': "Новый заказ",
-                'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + customBowlTxt + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
-            }
-        }
+        // type: "POST",
+        // url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
+        // data: {
+        //     'message': {
+        //         'from_email': 'robot@miskabowls.ru',
+        //         'from_name': 'Miska Orders',
+        //         'to': [{
+        //             'email': "orders@miskabowls.ru",
+        //             'name': "",
+        //             'type': 'to'
+        //         }],
+        //         'autotext': 'true',
+        //         'subject': "Новый заказ",
+        //         'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + customBowlTxt + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
+        //     }
+        // }
     }).done(function (response) {
         removeCustomBowls();
         removeMenu();
@@ -332,9 +332,9 @@ placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
     }).fail(function (error) {
         Swal.fire({
             icon: 'error',
-            title: 'Ой',
-            text: 'Произошла ошибка при попытке отправить уведомление на orders@miskabowls.ru, пожалуйста, сообщите об этом администрации сайта',
-            confirmButtonText: 'Ок'
+            title: 'Oop',
+            text: 'Error in sending',
+            confirmButtonText: 'Ok'
         })
         console.log(error);
     });
