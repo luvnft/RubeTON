@@ -156,7 +156,7 @@ addToCart = function (item, roboAdd) {
 
     if (!roboAdd) {
         menuAdd(item);
-        ym(80321737,'reachGoal','add-item');
+        ym(96980244,'reachGoal','add-item');
         animateCSS('#blockCart', 'pulse');
     }
     
@@ -245,7 +245,7 @@ $(btnOrderName).on("click", function () {
 
         if (phone.length > 5) {
             placeOrder( $("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowlsDesc );
-            ym(80321737,'reachGoal','order');
+            ym(96980244,'reachGoal','order');
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
@@ -306,29 +306,29 @@ placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
     }
 
     jQuery.ajax({
-        // type: "POST",
-        // url: "https://hook.integromat.com/d9pqvw3awypa7v8mvfby5k3w59s6rv45",
-        // data: {
-        //     'message': {
-        //         'from_email': 'robot@miskabowls.ru',
-        //         'from_name': 'Miska Orders',
-        //         'to': [{
-        //             'email': "orders@miskabowls.ru",
-        //             'name': "",
-        //             'type': 'to'
-        //         }],
-        //         'autotext': 'true',
-        //         'subject': "Новый заказ",
-        //         'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + customBowlTxt + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
-        //     }
-        // }
+        type: "POST",
+        url: "https://hook.eu2.make.com/mpm7ftxmyfllge6wiu54ouk5ve9r1eit",
+        data: {
+            'message': {
+                'from_email': 'rybik@yandex.ru',
+                'from_name': 'RubeTON Market',
+                'to': [{
+                    'email': "just14zy@gmail.com",
+                    'name': "",
+                    'type': 'to'
+                }],
+                'autotext': 'true',
+                'subject': "Новый заказ",
+                'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + customBowlTxt + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
+            }
+        }
     }).done(function (response) {
         removeCustomBowls();
         removeMenu();
         
         $("#payFormDesc").val(userName + " " + phone);
         $("#payFormVal").val(sum);
-        $( "#payForm" ).submit();
+        // $( "#payForm" ).submit();
     }).fail(function (error) {
         Swal.fire({
             icon: 'error',
