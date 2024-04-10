@@ -87,9 +87,9 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
 
 generateHTML = function (row) {
     units = "";
-    if (row.category == "НАПИТОК") {
-        units = "мл";
-    }
+    // if (row.category == "НАПИТОК") {
+    //     units = "мл";
+    // }
     if (row.hide != "yes") {
         return `<div class="swiper-slide">
         <img src="img/food/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
@@ -112,7 +112,7 @@ showAlert = function (id, showMessage) {
         } else {
             item.description = "";
         }
-        console.log(item.description);
+        // console.log(item.description);
         Swal.fire({
             title: item.name,
             html: '<text style="white-space: pre-line;">'+item.description+'</text>' + '<br><br><b>' + item.output + ' </b>',
@@ -141,12 +141,12 @@ addToCart = function (item, roboAdd) {
     cart.push(item);
     $("#totalOrder").html("");
     cart.forEach(element => {
-        str = element.name + " – " + element.price + " TON<br>"
+        str = element.name + " – " + element.price + "<br>"
         $("#totalOrder").append(str);
         price = price + parseInt(element.price);
     });
-    if (deliveryOption == 1 && price < 2000) {
-            price = price + 200;
+    if (deliveryOption == 1 && price < 20) {
+            price = price + 5;
         }
     $("#totalSum").html(price)
     if (price > 0) {
@@ -181,8 +181,8 @@ if (error) {
 $(btnOrderName).on("click", function () {
 
     if (deliveryOption == 0) {
-        if (price < 2000) {        
-           $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+        if (price < 20) {        
+           $("#totalSum").html( parseInt($("#totalSum").html()) + 5 );
         }
         deliveryOption = 1;
     }
@@ -196,7 +196,7 @@ $(btnOrderName).on("click", function () {
         option1 = "";
         option2 = "checked";
     }
-    
+    // log in with telegram
     Swal.fire({
         title: "Order",
         confirmButtonText: 'Purchase',
@@ -249,8 +249,7 @@ $(btnOrderName).on("click", function () {
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: 'Opening TON-wallet',
-                showConfirmButton: false
+                text: 'Opening TON-wallet', //usd tonconnect 
             })
         } else if (result.isConfirmed) {
             Swal.fire({
@@ -273,8 +272,8 @@ deliveryMethod = function(id) {
         $("#samovivoz").hide();
 
         if (deliveryOption == 2) {
-            if (price < 2000) {
-                $("#totalSum").html( parseInt($("#totalSum").html()) + 200 );
+            if (price < 20) {
+                $("#totalSum").html( parseInt($("#totalSum").html()) + 5 );
             }
             deliveryOption = id;
         }
@@ -285,8 +284,8 @@ deliveryMethod = function(id) {
         $("#samovivoz").show();
 
         if (deliveryOption == 1) {
-            if (price < 2000) {
-                $("#totalSum").html( parseInt($("#totalSum").html()) - 200 );
+            if (price < 20) {
+                $("#totalSum").html( parseInt($("#totalSum").html()) - 5 );
             }
             deliveryOption = id;
         }
@@ -295,15 +294,15 @@ deliveryMethod = function(id) {
 }
 
 
-placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
+placeOrder = function (order, sum, userName, phone, address) {
 
-    customBowlTxt = "";
-    if (customBowlsDesc) {
-        customBowlTxt = "Свои боулы:<br>";
-        customBowlsDesc.forEach( (bowlDesc) => {
-            customBowlTxt = customBowlTxt + bowlDesc + "<br><br>"
-        });
-    }
+    // customBowlTxt = "";
+    // if (customBowlsDesc) {
+    //     customBowlTxt = "Свои боулы:<br>";
+    //     customBowlsDesc.forEach( (bowlDesc) => {
+    //         customBowlTxt = customBowlTxt + bowlDesc + "<br><br>"
+    //     });
+    // }
 
     jQuery.ajax({
         type: "POST",
@@ -323,7 +322,7 @@ placeOrder = function (order, sum, userName, phone, address, customBowlsDesc) {
             }
         }
     }).done(function (response) {
-        removeCustomBowls();
+        // removeCustomBowls();
         removeMenu();
         
         $("#payFormDesc").val(userName + " " + phone);
@@ -356,29 +355,29 @@ function runSwiper() {
 }
 
 
-customBowlsDesc = false;
+// customBowlsDesc = false;
 
-if ( getCustomBowls() ) {
+// if ( getCustomBowls() ) {
 
-    bowls = getCustomBowls();
-    customBowlsDesc = [];
+//     bowls = getCustomBowls();
+//     customBowlsDesc = [];
 
-    bowls.forEach( (bowl, index) => {
-        item = {
-            id: "",
-            name: "свой боул №" + (index+1),
-            category: "",
-            image: "",
-            price: bowl.split("|")[0],
-            output: "",
-            description: bowl.split("|")[1]
-        }
+//     bowls.forEach( (bowl, index) => {
+//         item = {
+//             id: "",
+//             name: "свой боул №" + (index+1),
+//             category: "",
+//             image: "",
+//             price: bowl.split("|")[0],
+//             output: "",
+//             description: bowl.split("|")[1]
+//         }
 
-        addToCart(item, true);
+//         addToCart(item, true);
 
-        customBowlsDesc.push(item.name + ":<br>" + item.description)
-    });
-}
+//         customBowlsDesc.push(item.name + ":<br>" + item.description)
+//     });
+// }
 
 
 if ( getMenu() ) {
