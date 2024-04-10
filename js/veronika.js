@@ -37,10 +37,10 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_bowl;
                 break;
 
-            case "RubeTON Future Box":
-                elHTML_starter = elHTML_starter + generateHTML(row);
-                el.innerHTML = elHTML_starter;
-                break;
+            // case "RubeTON Future Box":
+            //     elHTML_starter = elHTML_starter + generateHTML(row);
+            //     el.innerHTML = elHTML_starter;
+            //     break;
 
             case "Rubeton Exchange":
                 elHTML_noritako = elHTML_noritako + generateHTML(row);
