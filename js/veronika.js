@@ -57,7 +57,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_zavtrak;
                 break;
 
-            case "Events":
+            case "Chat Access":
                 elHTML_smuzi = elHTML_smuzi + generateHTML(row);
                 el.innerHTML = elHTML_smuzi;
                 break;
