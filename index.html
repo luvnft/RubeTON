@@ -43,12 +43,8 @@
   <!-- /Yandex.Metrika counter -->
 
   <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-  <script>
-    const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-        manifestUrl: 'https://market.rubeton.app/tonconnect-manifest.json',
-        buttonRootId: 'ton-connect'
-    });
-  </script>
+
+  
 
 </head>
 
@@ -94,6 +90,13 @@
       </div>
 
       <div id="ton-connect"></div>
+
+      <script>
+        const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+            manifestUrl: 'https://market.rubeton.app/tonconnect-manifest.json',
+            buttonRootId: 'ton-connect'
+        });
+      </script>
 
     </div>
   </nav>
