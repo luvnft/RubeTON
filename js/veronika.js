@@ -244,13 +244,13 @@ $(btnOrderName).on("click", function () {
         }
 
         if (phone.length > 5) {
-            placeOrder( $("#totalOrder").html(), $("#totalSum").html(), userName, phone, address, customBowlsDesc );
+            placeOrder( $("#totalOrder").html(), $("#totalSum").html(), userName, phone, address );
             ym(96980244,'reachGoal','order');
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: 'Opening TON-wallet', //usd tonconnect 
-            })
+            // Swal.fire({
+            //     icon: 'success',
+            //     title: 'Success',
+            //     text: 'Opening TON-wallet', //usd tonconnect 
+            // })
         } else if (result.isConfirmed) {
             Swal.fire({
                 // icon: 'warning',
@@ -294,15 +294,25 @@ deliveryMethod = function(id) {
 }
 
 
-placeOrder = function (order, sum, userName, phone, address) {
+placeOrder = async function (order, sum, userName, phone, address) {
 
-    // customBowlTxt = "";
-    // if (customBowlsDesc) {
-    //     customBowlTxt = "Свои боулы:<br>";
-    //     customBowlsDesc.forEach( (bowlDesc) => {
-    //         customBowlTxt = customBowlTxt + bowlDesc + "<br><br>"
-    //     });
-    // }
+    try {
+        
+        console.log(
+            await tonConnectUI.sendTransaction({
+            validUntil: Math.floor(new Date() / 1000) + 360,
+            messages: [
+              {
+                address: "0:839e447534ec1953301108b0c063967a62e0f593f2d5b3989455404e8ae5092a",
+                amount: "1000000000"
+              }
+            ]
+          })
+        );
+
+      } catch (error) {
+        console.error(error);
+      }
 
     jQuery.ajax({
         type: "POST",
@@ -318,15 +328,23 @@ placeOrder = function (order, sum, userName, phone, address) {
                 }],
                 'autotext': 'true',
                 'subject': "Новый заказ",
-                'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + customBowlTxt + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
+                'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
             }
         }
     }).done(function (response) {
         // removeCustomBowls();
         removeMenu();
+
+        Swal.fire({
+                icon: 'success',
+                title: 'Thank you!',
+                text: 'We will start preparing your order'
+            })
+        console.log("done");
         
         $("#payFormDesc").val(userName + " " + phone);
         $("#payFormVal").val(sum);
+
         // $( "#payForm" ).submit();
     }).fail(function (error) {
         Swal.fire({
@@ -337,6 +355,7 @@ placeOrder = function (order, sum, userName, phone, address) {
         })
         console.log(error);
     });
+
 }
 
 
