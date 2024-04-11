@@ -304,7 +304,7 @@ placeOrder = async function (order, sum, userName, phone, address) {
             messages: [
               {
                 address: "0:839e447534ec1953301108b0c063967a62e0f593f2d5b3989455404e8ae5092a",
-                amount: "1000000000"
+                amount: sum + "000000000"
               }
             ]
           })
