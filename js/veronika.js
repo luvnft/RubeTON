@@ -32,15 +32,15 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_poke;
                 break;
 
-            case "RubeTON PAY":
+            case "RubeTON Pay":
                 elHTML_bowl = elHTML_bowl + generateHTML(row);
                 el.innerHTML = elHTML_bowl;
                 break;
 
-            // case "RubeTON Future Box":
-            //     elHTML_starter = elHTML_starter + generateHTML(row);
-            //     el.innerHTML = elHTML_starter;
-            //     break;
+            case "RubeTON Future Box":
+                elHTML_starter = elHTML_starter + generateHTML(row);
+                el.innerHTML = elHTML_starter;
+                break;
 
             case "Rubeton Exchange":
                 elHTML_noritako = elHTML_noritako + generateHTML(row);
@@ -62,7 +62,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_smuzi;
                 break;
 
-            case "TON MEMES":
+            case "TON Memes Game":
                 elHTML_napitok = elHTML_napitok + generateHTML(row);
                 el.innerHTML = elHTML_napitok;
                 break;
@@ -362,7 +362,7 @@ placeOrder = async function (order, sum, userName, phone, address) {
 i = 0;
 function runSwiper() {
     i++;
-    if (i > 55) {
+    if (i > 90) {
         const swiper = new Swiper('.swiper-container', {
             direction: 'horizontal',
             loop: false,
