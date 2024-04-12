@@ -92,7 +92,7 @@ generateHTML = function (row) {
     // }
     if (row.hide != "yes") {
         return `<div class="swiper-slide">
-        <img src="img/food/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
+        <img src="img/goods/`+ row.image + `" width="100%" class="rounded" onclick="showAlert(` + row.id + `)">
         <span class=""><b>`+ row.name + `</b></span><br>
         <span class="text-muted small">`+ row.output + ` ${units}</span>
         <br>
@@ -105,7 +105,7 @@ generateHTML = function (row) {
 
 showAlert = function (id, showMessage) {
     item = rows2[id - 1];
-    img = "img/food/" + item.image;
+    img = "img/goods/" + item.image;
     if (showMessage != false) {
         if (item.description) {
 
