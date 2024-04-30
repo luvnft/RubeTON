@@ -18,6 +18,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
     elHTML_napitok = "";
     elHTML_asai = "";
     elHTML_desert = "";
+    elHTML_premium = "";
 
     rows.forEach(row => {
         if (!row.image) {
@@ -75,6 +76,11 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
             case "Seminars":
                 elHTML_desert = elHTML_desert + generateHTML(row);
                 el.innerHTML = elHTML_desert;
+                break;
+
+            case "Telegram Premium":
+                elHTML_premium = elHTML_premium + generateHTML(row);
+                el.innerHTML = elHTML_premium;
                 break;
 
             default:
