@@ -187,15 +187,16 @@ if (error) {
 $(btnOrderName).on("click", function () {
 
     if (deliveryOption == 0) {
-        if (price < 20) {        
-           $("#totalSum").html( parseInt($("#totalSum").html()) + 5 );
-        }
-        deliveryOption = 1;
+        // if (price < 20) {        
+        //    $("#totalSum").html( parseInt($("#totalSum").html()) + 5 );
+        // }
+        deliveryOption = 2;
     }
 
     if (deliveryOption == 1) {
         option1 = "checked";
         option2 = "";
+        
     }
 
     if (deliveryOption == 2) {
@@ -218,23 +219,24 @@ $(btnOrderName).on("click", function () {
         </div>
        
         <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
+
+            <label class="btn btn-secondary">
+                <input type="radio" name="options" onclick="deliveryMethod(2)" id="option2" ${option2}> No EMS Delivery
+            </label>
         
             <label class="btn btn-secondary active">
                 <input type="radio" name="options" onclick="deliveryMethod(1)" id="option1" ${option1}> EMS Delivery
             </label>
 
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" onclick="deliveryMethod(2)" id="option2" ${option2}> No Delivery
-            </label>
         </div>
 
-        <div id="samovivoz" style="display: none" class="flex-nowrap pb-2">
+        <div id="samovivoz"  class="flex-nowrap pb-2">
             No Delivery
         </div>
         
-        <div id="dostavka"  class="flex-nowrap">
+        <div id="dostavka"  style="display: none" class="flex-nowrap">
             <textarea id="address" class="mb-2 form-control" placeholder="Your Address"></textarea>
-            Delivery cost is 5 rubeton inside the <a href="delivery.html" style="color: rgb(77, 89, 166);">delivery zone</a>. Delivery is free on orders more than 20 Rubeton
+            Delivery cost is 5 ton inside the <a href="delivery.html" style="color: rgb(77, 89, 166);">delivery zone</a>. Delivery is free on orders more than 20 tons
             <br><br>
             Delivery is made by EMS Post First Class with tracking
             
