@@ -18,7 +18,7 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
     elHTML_napitok = "";
     elHTML_asai = "";
     elHTML_desert = "";
-    elHTML_premium = "";
+    elHTML_incubator = "";
 
     rows.forEach(row => {
         if (!row.image) {
@@ -78,9 +78,9 @@ db.getAll('New Menu!A1:L100', (err, rows) => {
                 el.innerHTML = elHTML_desert;
                 break;
 
-            case "Telegram Premium":
-                elHTML_premium = elHTML_premium + generateHTML(row);
-                el.innerHTML = elHTML_premium;
+            case "RubeTON Incubator":
+                elHTML_incubator = elHTML_incubator + generateHTML(row);
+                el.innerHTML = elHTML_incubator;
                 break;
 
             default:
@@ -103,6 +103,7 @@ generateHTML = function (row) {
         <span class="text-muted small">`+ row.output + ` ${units}</span>
         <br>
         <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + `</span>
+        <a href="ton://transfer/rubenwallet.ton?amount=10000000000&jetton=EQCweXSZaX5k5xOtXLbGgfF8FY6Dbg6rNiPrd9d0f_-kDSHZ&text=buy">Buy 10 Rubetons</a>
         </div>`;
     } else {
         return "";
