@@ -103,8 +103,7 @@ generateHTML = function (row) {
         <span class="text-muted small">`+ row.output + ` ${units}</span>
         <br>
         <span class="badge bg-primary rounded-pill price-pill" onclick="showAlert(` + row.id + `, false)">`+ row.price + `</span>
-        <a href="ton://transfer/rubenwallet.ton?amount=10000000000&jetton=EQCweXSZaX5k5xOtXLbGgfF8FY6Dbg6rNiPrd9d0f_-kDSHZ&text=buy">Buy 10 Rubetons</a>
-        </div>`;
+        </div>`; // <a href="ton://transfer/rubenwallet.ton?amount=10000000000&jetton=EQCweXSZaX5k5xOtXLbGgfF8FY6Dbg6rNiPrd9d0f_-kDSHZ&text=buy">Buy 10 Rubetons</a>
     } else {
         return "";
     }
