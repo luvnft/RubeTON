@@ -336,7 +336,7 @@ placeOrder = async function (order, sum, userName, phone, address) {
                 }],
                 'autotext': 'true',
                 'subject': "Новый заказ",
-                'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " ₽<br><br>" + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
+                'html': "Заказ:<br>" + order + "<br>Итого: " + sum + " TON<br><br>" + "Имя: "+ userName +"<br>Телефон: " + phone + "<br>Адрес доставки: " + address
             }
         }
     }).done(function (response) {
