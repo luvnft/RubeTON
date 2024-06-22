@@ -172,7 +172,7 @@ addToCart = function (item, roboAdd) {
 $("#cartClear").on("click", function () {
     cart = [];
     $("#totalSum").html("0");
-    $("#totalOrder").html("Empty cart");
+    $("#totalOrder").html("<img src='img/logo/rubeton3 copy.png' width='200px'>");
     $("#btnOrder").hide();
     $("#cartClear").hide();
     removeCustomBowls();
